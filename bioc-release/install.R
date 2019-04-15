@@ -5,9 +5,12 @@ suppressWarnings(
     install(update = TRUE, ask = FALSE)
 )
 install(c(
+    "BiocCheck",
+    "SingleCellExperiment",
+    "rcmdcheck",
     "remotes",
     "devtools",
-    "tidyverse",
-    "BiocCheck",
-    "covr"
+    "roxygen2",
+    "covr",
+    "tidyverse"
 ))
