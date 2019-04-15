@@ -1,0 +1,9 @@
+library(BiocManager)
+install(c(
+    "Matrix.utils",
+    "SingleCellExperiment",
+    "R.utils",
+    "rio",
+    "testthat",
+    "xmlparsedata"
+))
