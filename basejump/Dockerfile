@@ -4,11 +4,19 @@
 FROM acidgenomics/bioc-release
 MAINTAINER mike@steinbaugh.com
 
-WORKDIR /tmp
+WORKDIR /
+ARG GITHUB_PAT
 
-ADD 01-install-bioc.R .
-RUN R -f 01-install-bioc.R
+RUN R -e 'BiocManager::install("acidgenomics/acidtest")'
+RUN R -e 'BiocManager::install("acidgenomics/bioverbs")'
+RUN R -e 'BiocManager::install("acidgenomics/goalie")'
+RUN R -e 'BiocManager::install("acidgenomics/transformer")'
+RUN R -e 'BiocManager::install("acidgenomics/syntactic")'
+RUN R -e 'BiocManager::install("acidgenomics/brio")'
+RUN R -e 'BiocManager::install("acidgenomics/freerange")'
+RUN R -e 'BiocManager::install("acidgenomics/basejump")'
 
-ADD 02-install-github.sh .
-RUN chmod +x 02-install-github.sh
-RUN ./02-install-github.sh
+RUN R -e 'BiocManager::install("EnsDb.Hsapiens.v75")'
+RUN R -e 'BiocManager::install("pheatmap")'
+RUN R -e 'BiocManager::install(c("gdata", "pzfx", "rio"))'
+RUN R -e 'BiocManager::install("tidyverse/googlesheets4")'
