@@ -1,4 +1,4 @@
-repo="bioc-release"
+repo="$1"
 today=$(date "+%Y%m%d")
 
 docker login
