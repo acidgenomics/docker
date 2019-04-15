@@ -2,7 +2,7 @@
 # Bioconductor 3.8 / R 3.5.3
 # Last updated 2019-04-14
 
-FROM acidgenomics/bioc-release:20190414
+FROM acidgenomics/bioc-release
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp

@@ -21,5 +21,7 @@
 FROM bioconductor/release_core2
 MAINTAINER mike@steinbaugh.com
 
-ADD install.R /tmp/
-RUN R -f /tmp/install.R
+WORKDIR /tmp
+
+ADD install.R .
+RUN R -f install.R

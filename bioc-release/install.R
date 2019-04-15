@@ -6,11 +6,17 @@ suppressWarnings(
 )
 install(c(
     "BiocCheck",
+    "Matrix",
+    "Matrix.utils",
+    "R.utils",
     "SingleCellExperiment",
+    "covr",
+    "devtools",
+    "patrick",
     "rcmdcheck",
     "remotes",
-    "devtools",
     "roxygen2",
-    "covr",
-    "tidyverse"
+    "testthat",
+    "tidyverse",
+    "xmlparsedata"
 ))
