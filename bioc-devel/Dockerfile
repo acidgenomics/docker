@@ -1,6 +1,5 @@
 # Acid Genomics
 # Bioconductor 3.9 / R 3.6
-# Last updated 2019-04-14
 #
 # Based on:
 # - bioc_docker
