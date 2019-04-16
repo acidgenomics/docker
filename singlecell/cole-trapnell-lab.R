@@ -2,18 +2,7 @@
 # cicero: https://cole-trapnell-lab.github.io/cicero-release/
 # garnett: https://cole-trapnell-lab.github.io/garnett/
 
-library(BiocManager)
-library(reticulate)
-
-# Prepare virtual environment using reticulate.
-virtualenv_create(envname = "reticulate")
-virtualenv_install(
-    envname = "reticulate",
-    packages = c("umap-learn", "louvain")
-)
-
 # monocle 3 alpha
-install("monocle")
 install("cole-trapnell-lab/DDRTree", ref = "simple-ppt-like")
 install("cole-trapnell-lab/L1-graph")
 install("cole-trapnell-lab/monocle-release", ref = "monocle3_alpha")
