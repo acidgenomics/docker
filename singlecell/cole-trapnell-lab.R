@@ -3,9 +3,9 @@
 # garnett: https://cole-trapnell-lab.github.io/garnett/
 
 library(BiocManager)
+library(reticulate)
 
 # Prepare virtual environment using reticulate.
-library(reticulate)
 virtualenv_create(envname = "reticulate")
 virtualenv_install(
     envname = "reticulate",

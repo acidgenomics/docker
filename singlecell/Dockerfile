@@ -4,16 +4,15 @@
 FROM acidgenomics/rnaseq
 MAINTAINER mike@steinbaugh.com
 
-WORKDIR /
 ARG GITHUB_PAT
 
+WORKDIR /tmp
+
 RUN R -e 'BiocManager::install("reticulate")'
-
-# Seurat 3
-RUN R -e 'BiocManager::install("satijalab/seurat", ref = "release/3.0")'
-
+RUN R -e 'BiocManager::install("Seurat")'
 RUN R -e 'BiocManager::install("acidgenomics/bcbioSingleCell")'
 RUN R -e 'BiocManager::install("acidgenomics/pointillism")'
+RUN R -f cole-trapnell-lab.R
 
-
+WORKDIR /
 
