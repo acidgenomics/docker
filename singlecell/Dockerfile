@@ -8,11 +8,16 @@ ARG GITHUB_PAT
 
 WORKDIR /tmp
 
+RUN python2.7 -m pip install --upgrade --user virtualenv
 RUN R -e 'BiocManager::install("reticulate")'
+
 RUN R -e 'BiocManager::install("Seurat")'
+
+ADD cole-trapnell-lab.R .
+RUN R -f cole-trapnell-lab.R
+
 RUN R -e 'BiocManager::install("acidgenomics/bcbioSingleCell")'
 RUN R -e 'BiocManager::install("acidgenomics/pointillism")'
-RUN R -f cole-trapnell-lab.R
 
 WORKDIR /
 
