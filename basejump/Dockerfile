@@ -15,6 +15,8 @@ RUN R -e 'BiocManager::install("acidgenomics/syntactic")'
 RUN R -e 'BiocManager::install("acidgenomics/brio")'
 RUN R -e 'BiocManager::install("acidgenomics/freerange")'
 RUN R -e 'BiocManager::install("acidgenomics/basejump")'
+RUN R -e 'BiocManager::install("acidgenomics/minimalism")'
+RUN R -e 'BiocManager::install("acidgenomics/firestarter")'
 
 RUN R -e 'BiocManager::install("EnsDb.Hsapiens.v75")'
 RUN R -e 'BiocManager::install("pheatmap")'
