@@ -4,8 +4,10 @@
 FROM acidgenomics/basejump
 MAINTAINER mike@steinbaugh.com
 
-WORKDIR /
+# Pass through `GITHUB_PAT` to install R packages from GitHub.
 ARG GITHUB_PAT
+
+WORKDIR /
 
 RUN R -e 'BiocManager::install(c("DESeq2", "apeglm", "edgeR", "limma"))'
 RUN R -e 'BiocManager::install("acidgenomics/DESeqAnalysis")'
