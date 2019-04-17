@@ -19,17 +19,9 @@ MAINTAINER mike@steinbaugh.com
 # Pass through `GITHUB_PAT` to install R packages from GitHub.
 ARG GITHUB_PAT
 
-WORKDIR /
+WORKDIR /tmp
 
-RUN R -e 'suppressWarnings(BiocManager::install(update = TRUE, ask = FALSE))'
-RUN R -e 'BiocManager::install(c("devtools", "rcmdcheck", "remotes", "rlang", "sessioninfo"))'
-RUN R -e 'BiocManager::install(c("R.utils", "backports", "curl", "pbapply", "xmlparsedata"))'
-RUN R -e 'BiocManager::install(c("Matrix", "Matrix.utils"))'
-RUN R -e 'BiocManager::install("SingleCellExperiment")'
-RUN R -e 'BiocManager::install(c("knitr", "magrittr", "rmarkdown", "roxygen2"))'
-RUN R -e 'BiocManager::install("tidyverse")'
-RUN R -e 'BiocManager::install(c("cowplot", "ggrepel", "viridis"))'
-RUN R -e 'BiocManager::install("BiocCheck")'
-RUN R -e 'BiocManager::install(c("testthat", "patrick"))'
-RUN R -e 'BiocManager::install(c("DT", "covr"))'
-RUN R -e 'BiocManager::install("acidgenomics/lintr")'
+ADD install.R .
+RUN R -f install.R
+
+WORKDIR /
