@@ -16,8 +16,10 @@
 FROM bioconductor/release_core2
 MAINTAINER mike@steinbaugh.com
 
-WORKDIR /
+# Pass through `GITHUB_PAT` to install R packages from GitHub.
 ARG GITHUB_PAT
+
+WORKDIR /
 
 RUN R -e 'suppressWarnings(BiocManager::install(update = TRUE, ask = FALSE))'
 RUN R -e 'BiocManager::install(c("devtools", "rcmdcheck", "remotes", "rlang", "sessioninfo"))'
