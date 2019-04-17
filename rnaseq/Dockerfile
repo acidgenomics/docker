@@ -1,4 +1,4 @@
-# Acid Genomics
+# Acid Genomics RNA-seq image
 # Bioconductor 3.8 / R 3.5.3
 
 FROM acidgenomics/basejump
