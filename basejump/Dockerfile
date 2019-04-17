@@ -9,10 +9,10 @@ ARG GITHUB_PAT
 
 WORKDIR /tmp
 
-ADD 01-suggested.R
+ADD 01-suggested.R .
 RUN R -f 01-suggested.R
 
-ADD 02-basejump.R
+ADD 02-basejump.R .
 RUN R -f 02-basejump.R
 
 WORKDIR /
