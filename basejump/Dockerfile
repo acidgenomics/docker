@@ -1,4 +1,4 @@
-# Acid Genomics
+# Acid Genomics basejump toolkit
 # Bioconductor 3.8 / R 3.5.3
 
 FROM acidgenomics/bioc-release
