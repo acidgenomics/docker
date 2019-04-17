@@ -60,4 +60,7 @@ RUN R -e 'BiocManager::install("cole-trapnell-lab/monocle-release", ref = "monoc
 RUN R -e 'BiocManager::install("acidgenomics/bcbioSingleCell")'
 RUN R -e 'BiocManager::install("acidgenomics/pointillism")'
 
+# Suggested ====================================================================
+RUN R -e 'BiocManager::install("splatter")'
+
 WORKDIR /
