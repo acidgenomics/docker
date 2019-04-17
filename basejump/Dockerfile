@@ -4,8 +4,10 @@
 FROM acidgenomics/bioc-release
 MAINTAINER mike@steinbaugh.com
 
-WORKDIR /
+# Pass through `GITHUB_PAT` to install R packages from GitHub.
 ARG GITHUB_PAT
+
+WORKDIR /
 
 RUN R -e 'BiocManager::install("acidgenomics/acidtest")'
 RUN R -e 'BiocManager::install("acidgenomics/bioverbs")'
