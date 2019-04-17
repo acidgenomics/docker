@@ -7,20 +7,12 @@ MAINTAINER mike@steinbaugh.com
 # Pass through `GITHUB_PAT` to install R packages from GitHub.
 ARG GITHUB_PAT
 
+WORKDIR /tmp
+
+ADD 01-suggested.R
+RUN R -f 01-suggested.R
+
+ADD 02-basejump.R
+RUN R -f 02-basejump.R
+
 WORKDIR /
-
-RUN R -e 'BiocManager::install("acidgenomics/acidtest")'
-RUN R -e 'BiocManager::install("acidgenomics/bioverbs")'
-RUN R -e 'BiocManager::install("acidgenomics/goalie")'
-RUN R -e 'BiocManager::install("acidgenomics/transformer")'
-RUN R -e 'BiocManager::install("acidgenomics/syntactic")'
-RUN R -e 'BiocManager::install("acidgenomics/brio")'
-RUN R -e 'BiocManager::install("acidgenomics/freerange")'
-RUN R -e 'BiocManager::install("acidgenomics/basejump")'
-RUN R -e 'BiocManager::install("acidgenomics/minimalism")'
-RUN R -e 'BiocManager::install("acidgenomics/firestarter")'
-
-RUN R -e 'BiocManager::install("EnsDb.Hsapiens.v75")'
-RUN R -e 'BiocManager::install("pheatmap")'
-RUN R -e 'BiocManager::install(c("gdata", "pzfx", "rio"))'
-RUN R -e 'BiocManager::install("tidyverse/googlesheets4")'
