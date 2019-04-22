@@ -13,5 +13,12 @@
 FROM bioconductor/devel_core2
 MAINTAINER mike@steinbaugh.com
 
-ADD install.R /tmp/
+# Pass through `GITHUB_PAT` to install R packages from GitHub.
+ARG GITHUB_PAT
+
+WORKDIR /tmp
+
+ADD install.R .
 RUN R -f /tmp/install.R
+
+WORKDIR /
