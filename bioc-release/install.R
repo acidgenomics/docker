@@ -1,5 +1,4 @@
 library(BiocManager)
-library(remotes)
 suppressWarnings(
     install(update = TRUE, ask = FALSE)
 )
@@ -34,6 +33,7 @@ install(
     ),
     dependencies = TRUE
 )
+library(remotes)
 install_github(
     repo = "acidgenomics/lintr",
     dependencies = TRUE,
