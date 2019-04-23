@@ -13,14 +13,23 @@ ARG GITHUB_PAT
 
 WORKDIR /tmp
 
+# python3 doesn't currently work right for virtual environments with this image.
+# > RUN apt-get install -y python3-venv
+# > RUN python3 -m venv ~/.virtualenvs/reticulate
+
+RUN python2.7 -m pip install --upgrade --user virtualenv
 ADD reticulate.R .
 RUN R -f reticulate.R
 
-ADD satija.R .
-RUN R -f saitja.R
-
+RUN apt-get install -y \
+    libudunits2-dev \
+    libgdal-dev \
+    libfreetype6-dev libglu1-mesa-dev libx11-dev xorg
 ADD trapnell.R .
 RUN R -f trapnell.R
+
+ADD satija.R .
+RUN R -f saitja.R
 
 ADD acidgenomics.R .
 RUN R -f acidgenomics.R
