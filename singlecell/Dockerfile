@@ -17,7 +17,8 @@ RUN apt-get update && \
     apt-get install -y \
         libudunits2-dev \
         libgdal-dev \
-        libfreetype6-dev libglu1-mesa-dev libx11-dev xorg
+        libfreetype6-dev libglu1-mesa-dev libx11-dev xorg \
+        libcairo2-dev
 
 # python3 doesn't currently work right for virtual environments with this image.
 # > RUN apt-get install -y python3-venv
@@ -32,7 +33,7 @@ ADD trapnell.R .
 RUN R -f trapnell.R
 
 ADD satija.R .
-RUN R -f saitja.R
+RUN R -f satija.R
 
 ADD acidgenomics.R .
 RUN R -f acidgenomics.R

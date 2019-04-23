@@ -1,2 +1,2 @@
 library(BiocManager)
-install(pkgs = "Seurat", dependencies = TRUE)
+install(pkgs = "Seurat")
