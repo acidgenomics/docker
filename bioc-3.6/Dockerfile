@@ -26,6 +26,7 @@ RUN apt-get update && \
         liblzma-dev \
         libmariadb-client-lgpl-dev \
         libpng-dev \
+        libssh2-1-dev \
         libssl-dev \
         libudunits2-dev \
         libxml2-dev \
