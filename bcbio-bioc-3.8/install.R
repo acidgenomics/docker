@@ -6,20 +6,13 @@ library(remotes)
 Sys.setenv("R_REMOTES_UPGRADE" = "always")
 install_github(
     repo = paste(
-        "acidgenomics",
+        "hbc",
         c(
-            "lintr",
-            "acidtest",
-            "bioverbs",
-            "goalie",
-            "transformer",
-            "syntactic",
-            "brio",
-            "freerange",
-            "basejump",
-            "acidplots"
+            "bcbioBase",
+            "bcbioRNASeq",
+            "bcbioSingleCell"
         ),
         sep = "/"
-    ),
+    )
     dependencies = TRUE
 )
