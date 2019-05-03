@@ -1,17 +1,27 @@
-source("https://bioconductor.org/biocLite.R")
-biocLite()
-biocLite("BiocCheck")
-
 install.packages("remotes")
 library(remotes)
-Sys.setenv("R_REMOTES_UPGRADE" = "always")
-install_github(repo = "acidgenomics/acidtest", dependencies = TRUE)
-install_github(repo = "acidgenomics/bioverbs", dependencies = TRUE)
-install_github(repo = "acidgenomics/goalie", dependencies = TRUE)
-install_github(repo = "acidgenomics/transformer", dependencies = TRUE)
-install_github(repo = "acidgenomics/syntactic", dependencies = TRUE)
-install_github(repo = "acidgenomics/brio", dependencies = TRUE)
-install_github(repo = "acidgenomics/freerange", dependencies = TRUE)
-install_github(repo = "acidgenomics/basejump", dependencies = TRUE)
-install_github(repo = "acidgenomics/acidplots", dependencies = TRUE)
-update_packages(ask = FALSE)
+install_github(
+    repo = paste(
+        "acidgenomics",
+        c(
+            "lintr",
+            "acidtest",
+            "bioverbs",
+            "goalie",
+            "transformer",
+            "syntactic",
+            "brio",
+            "freerange",
+            "basejump",
+            "acidplots"
+        ),
+        sep = "/"
+    ),
+    dependencies = TRUE,
+    upgrade = "always"
+)
+update_packages(
+    dependencies = TRUE,
+    upgrade = "always",
+    ask = FALSE
+)
