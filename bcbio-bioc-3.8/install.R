@@ -13,6 +13,6 @@ install_github(
             "bcbioSingleCell"
         ),
         sep = "/"
-    )
+    ),
     dependencies = TRUE
 )
