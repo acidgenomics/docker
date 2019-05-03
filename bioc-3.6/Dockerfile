@@ -16,16 +16,23 @@ RUN rm -f /var/lib/dpkg/available && rm -rf /var/cache/apt/*
 
 # Install missing compilation dependencies.
 RUN apt-get update && \
-    apt-get -y install --fix-missing gdb \
+    DEBIAN_FRONTEND=noninteractive apt-get -yq install \
         libbz2-dev \
+        libcairo2-dev \
         libcurl4-openssl-dev \
+        libfreetype6-dev \
+        libgdal-dev \
+        libglu1-mesa-dev \
         liblzma-dev \
         libmariadb-client-lgpl-dev \
         libpng-dev \
         libssl-dev \
+        libudunits2-dev \
         libxml2-dev \
+        libx11-dev \
         libz-dev \
-        pkg-config
+        pkg-config \
+        xorg
 
 # Install R packages.
 WORKDIR /tmp
