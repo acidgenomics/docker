@@ -1,15 +1,12 @@
 # Acid Genomics RNA-seq image
-# Bioconductor 3.8 / R 3.5.3
+# Bioconductor 3.8
 
-FROM acidgenomics/basejump
+FROM acidgenomics/basejump-bioc-3.8
 MAINTAINER mike@steinbaugh.com
 
-# Pass through `GITHUB_PAT` to install R packages from GitHub.
-ARG GITHUB_PAT
-
+# Install R packages.
 WORKDIR /tmp
-
+ARG GITHUB_PAT
 ADD install.R .
 RUN R -f install.R
-
 WORKDIR /

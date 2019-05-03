@@ -1,5 +1,5 @@
 # Acid Genomics single-cell RNA-seq image
-# Bioconductor 3.8 / R 3.5.3
+# Bioconductor 3.8
 #
 # See also:
 # - https://singularity-hub.org/containers/5533
