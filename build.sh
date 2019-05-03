@@ -10,5 +10,8 @@ set -Eeuxo pipefail
 # Use `--no-cache` flag to disable build cache.
 
 package="$1"
-docker build --tag="$package" --build-arg "GITHUB_PAT=$DOCKER_GITHUB_PAT" "${HOME}/git/docker/${package}"
+docker build \
+    --no-cache \
+    --tag="$package" \
+    --build-arg "GITHUB_PAT=$DOCKER_GITHUB_PAT" "${HOME}/git/docker/${package}"
 unset -v package
