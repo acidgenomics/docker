@@ -17,6 +17,7 @@ RUN rm -f /var/lib/dpkg/available && rm -rf /var/cache/apt/*
 # Install missing compilation dependencies.
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -yq install \
+        cargo \
         libbz2-dev \
         libcairo2-dev \
         libcurl4-openssl-dev \
