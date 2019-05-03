@@ -1,3 +1,4 @@
+install.packages("remotes")
 library(remotes)
 Sys.setenv("R_REMOTES_UPGRADE" = "always")
 install_github(

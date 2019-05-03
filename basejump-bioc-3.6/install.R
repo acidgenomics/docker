@@ -50,4 +50,4 @@ install_github(
     ),
     dependencies = TRUE
 )
-update_packages(dependencies = TRUE)
+update_packages(dependencies = TRUE, ask = FALSE)
