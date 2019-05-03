@@ -20,8 +20,4 @@ install_github(
     dependencies = TRUE,
     upgrade = "always"
 )
-update_packages(
-    dependencies = TRUE,
-    upgrade = "always",
-    ask = FALSE
-)
+update_packages(dependencies = TRUE, upgrade = "always")
