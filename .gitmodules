@@ -1,9 +1,15 @@
-[submodule "bioconductor"]
-	path = bioconductor
-	url = git@github.com:acidgenomics/docker-bioconductor.git
 [submodule "basejump"]
 	path = basejump
 	url = git@github.com:acidgenomics/docker-basejump.git
+[submodule "bioconductor"]
+	path = bioconductor
+	url = git@github.com:acidgenomics/docker-bioconductor.git
 [submodule "r-bcbio"]
 	path = r-bcbio
 	url = git@github.com:acidgenomics/docker-r-bcbio.git
+[submodule "rstudio"]
+	path = rstudio
+	url = git@github.com:acidgenomics/docker-rstudio.git
+[submodule "singlecell"]
+	path = singlecell
+	url = git@github.com:acidgenomics/docker-singlecell.git
