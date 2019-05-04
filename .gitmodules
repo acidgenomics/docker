@@ -4,3 +4,6 @@
 [submodule "basejump"]
 	path = basejump
 	url = git@github.com:acidgenomics/docker-basejump.git
+[submodule "r-bcbio"]
+	path = r-bcbio
+	url = git@github.com:acidgenomics/docker-r-bcbio.git
