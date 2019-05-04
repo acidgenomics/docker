@@ -1,19 +1,23 @@
+options(repos = BiocManager::repositories())
 library(BiocManager)
 library(remotes)
 install(
     pkgs = c(
-        "DESeq2", "apeglm", "edgeR", "limma",
-        "hexbin", "rhdf5"
-    ),
-    dependencies = TRUE
+        "DESeq2",
+        "apeglm",
+        "edgeR",
+        "hexbin",
+        "limma",
+        "rhdf5"
+    )
 )
 install_github(
     repo = paste(
         "acidgenomics",
         c(
             "DESeqAnalysis",
-            "pfgsea",
-            "bcbioRNASeq"
+            "bcbioRNASeq",
+            "pfgsea"
         ),
         sep = "/"
     ),

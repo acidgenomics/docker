@@ -1,7 +1,6 @@
-# Acid Genomics RNA-seq image
-# Bioconductor 3.8
+# Acid Genomics RNA-seq on Bioconductor 3.9
 
-FROM acidgenomics/basejump-bioc-3.8
+FROM acidgenomics/basejump:bioc-3.9
 MAINTAINER mike@steinbaugh.com
 
 # Install R packages.
