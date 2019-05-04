@@ -1,6 +1,6 @@
 # basejump on Bioconductor 3.9
 
-FROM acidgenomics/bioc-3.9
+FROM acidgenomics/bioconductor:3.9
 MAINTAINER mike@steinbaugh.com
 
 # Install R packages.

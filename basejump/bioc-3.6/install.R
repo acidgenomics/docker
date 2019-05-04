@@ -3,15 +3,6 @@ repos <- getOption("repos")
 repos["CRAN"] <- "https://cloud.r-project.org"
 options(repos = repos)
 
-library(BiocInstaller)
-biocLite(
-    c(
-      "DelayedArray",
-      "SummarizedExperiment",
-      "SingleCellExperiment"
-    )
-)
-
 install.packages("remotes")
 library(remotes)
 # If we attempt to set `upgrade = "always"` in `install_github()` call, it will
