@@ -8,6 +8,6 @@ version="$2"
 r_pkg="$3"
 
 image="acidgenomics/${repo}:${version}"
-r_pkg_dir="${HOME}/git/packages/${pkg}"
+r_pkg_dir="${HOME}/git/packages/${r_pkg}"
 
 docker run -ti --volume="${r_pkg_dir}:/${r_pkg}" --workdir="/${r_pkg}" "$image" bash
