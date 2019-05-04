@@ -1,5 +1,4 @@
-# Acid Genomics basejump toolkit image
-# Bioconductor 3.8
+# basejump on Bioconductor 3.8
 
 FROM acidgenomics/bioc-3.8
 MAINTAINER mike@steinbaugh.com

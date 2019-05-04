@@ -1,7 +1,6 @@
-# Acid Genomics basejump toolkit image
-# Bioconductor 3.8
+# basejump on Bioconductor 3.9
 
-FROM acidgenomics/bioc-3.8
+FROM acidgenomics/bioc-3.9
 MAINTAINER mike@steinbaugh.com
 
 # Install R packages.
