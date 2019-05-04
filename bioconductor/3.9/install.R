@@ -1,2 +1,2 @@
 install.packages("BiocManager")
-BiocManger::install()
+BiocManager::install()
