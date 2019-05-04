@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-repo="bioconductor"
-version="3.9"
+repo="$1"
+version="$2"
 
 docker login
 docker tag "${repo}:${version}" "${repo}:latest"
