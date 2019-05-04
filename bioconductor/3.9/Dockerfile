@@ -1,14 +1,14 @@
-# Bioconductor 3.6
+# Bioconductor 3.9
 #
 # See also:
 # - Bioconductor release notes
-#   https://bioconductor.org/news/bioc_3_6_release/
+#   https://bioconductor.org/news/bioc_3_9_release/
 # - rocker Dockerfile
 #   https://github.com/rocker-org/rocker/blob/master/r-base/Dockerfile
 # - Bioconductor Dockerfile
 #   https://github.com/Bioconductor/bioc_docker/blob/master/out/release_base/Dockerfile
 
-FROM rocker/r-ver:3.4.4
+FROM rocker/r-ver:3.6.0
 MAINTAINER mike@steinbaugh.com
 
 # Nuke cache dirs before installing packages.
@@ -20,7 +20,7 @@ RUN apt-get update && \
         cargo \
         libbz2-dev \
         libcairo2-dev \
-        libcurl4-openssl-dev \
+        libcurl4-gnutls-dev \
         libfreetype6-dev \
         libgdal-dev \
         libglu1-mesa-dev \

@@ -29,6 +29,5 @@ install(
         "tidyverse",
         "viridis",
         "xmlparsedata"
-    ),
-    dependencies = TRUE
+    )
 )
