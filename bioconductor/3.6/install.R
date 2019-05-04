@@ -28,6 +28,5 @@ biocLite(
         "tidyverse",
         "viridis",
         "xmlparsedata"
-    ),
-    dependencies = TRUE
+    )
 )
