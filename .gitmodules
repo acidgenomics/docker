@@ -1,0 +1,3 @@
+[submodule "bioconductor"]
+	path = bioconductor
+	url = git@github.com:acidgenomics/docker-bioconductor.git
