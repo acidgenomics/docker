@@ -1,10 +1,8 @@
-# Docker images
-
-Acid Genomics docker images
+# Acid Genomics Docker images
 
 https://cloud.docker.com/u/acidgenomics/
 
-## Building
+## Build an image
 
 ```sh
 # [1] image  [2] tag
