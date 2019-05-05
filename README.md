@@ -34,5 +34,5 @@ docker system prune
 Remove all images, not just dangling ones:
 
 ```sh
-docker system prune --all
+docker system prune --all --force
 ```
