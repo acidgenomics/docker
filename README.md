@@ -25,7 +25,7 @@ https://cloud.docker.com/u/acidgenomics/
 
 ## Clean up
 
-Delete all dangling data:
+Delete all dangling data (recommended):
 
 ```sh
 docker system prune
