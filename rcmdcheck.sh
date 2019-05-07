@@ -8,11 +8,11 @@ version="$2"
 r_pkg="$3"
 
 image="acidgenomics/${repo}:${version}"
-r_pkg_dir="${HOME}/git/packages/${r_pkg}"
+r_pkg_dir="${HOME}/packages/${r_pkg}"
 
 docker pull "$image"
 docker run -ti \
     --volume="${r_pkg_dir}:/${r_pkg}" \
     --workdir="/${r_pkg}" \
     "$image" \
-    Rscript -e 'source("travis-docker.R")'
+    ./rcmdcheck.sh
