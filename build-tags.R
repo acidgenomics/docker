@@ -24,7 +24,7 @@ stopifnot(
     is.character(image),
     dir.exists(image)
 )
-tags <- list.dirs(path = image, full.names = FALSE, recursive = FALSE)
+tags <- sort(list.dirs(path = image, full.names = FALSE, recursive = FALSE))
 stopifnot(length(tags) > 0L)
 
 mapply(
