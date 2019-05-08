@@ -13,7 +13,7 @@ posArgs <- commandArgs(trailingOnly = TRUE)
 
 # Get the script path from the command arguments.
 fileFlag <- "--file="
-fileArg <- args[grep(fileArg, args)]
+fileArg <- args[grep(fileFlag, args)]
 rscript <- sub(pattern = fileFlag, replacement = "", x = fileArg)
 baseDir <- dirname(rscript)
 
