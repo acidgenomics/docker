@@ -37,7 +37,7 @@ Here's how to tag a versioned build as `latest`:
 
 ```sh
 # [1] image  [2] tag  [3] package
-./r-pkg-check.sh rnaseq bioc-3.9 bcbioRNASeq
+./rcmdcheck.sh rnaseq bioc-3.9 bcbioRNASeq
 ```
 
 ## Clean up
