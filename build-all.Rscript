@@ -6,6 +6,9 @@ options(
     verbose = TRUE
 )
 
+# Parallelizing using `mcmapply()` below.
+requireNamespace("parallel")
+
 # This will include the `--file` flag we want to match to get the script source.
 args <- commandArgs(trailingOnly = FALSE)
 # This will return only the positional arguments.
@@ -27,7 +30,7 @@ tags <- sort(list.dirs(path = image, full.names = FALSE, recursive = FALSE))
 stopifnot(length(tags) > 0L)
 
 # Build the versioned images, defined by `Dockerfile` in the subdirectories.
-mapply(
+parallel::mcmapply(
     tag = tags,
     MoreArgs = list(image = image),
     FUN = function(image, tag) {
