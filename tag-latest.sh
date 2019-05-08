@@ -2,9 +2,9 @@
 set -Eeuxo pipefail
 
 repo="acidgenomics/$1"
-tag="$2"
+tag="${2:-}"
 
-if [[ -z "$version" ]]
+if [[ -z "$tag" ]]
 then
     tag="bioc-3.9"
 fi
