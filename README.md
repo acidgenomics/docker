@@ -18,6 +18,7 @@ Note that this script calls the recipe defined in `basejump/bioc-3.9/`:
 Here's how to build all versions of an image:
 
 ```sh
+# [1] image
 ./build-all.Rscript basejump
 ```
 
