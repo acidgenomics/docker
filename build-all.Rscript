@@ -6,7 +6,7 @@ options(
     verbose = TRUE
 )
 
-# This will include the `--file` flag we want to match.
+# This will include the `--file` flag we want to match to get the script source.
 args <- commandArgs(trailingOnly = FALSE)
 # This will return only the positional arguments.
 posArgs <- commandArgs(trailingOnly = TRUE)
