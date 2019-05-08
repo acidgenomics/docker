@@ -26,17 +26,21 @@ stopifnot(
 tags <- sort(list.dirs(path = image, full.names = FALSE, recursive = FALSE))
 stopifnot(length(tags) > 0L)
 
+# Build the versioned images, defined by `Dockerfile` in the subdirectories.
 mapply(
     tag = tags,
     MoreArgs = list(image = image),
     FUN = function(image, tag) {
-        command <- paste(
-            file.path(baseDir, "build.sh"),
-            image, tag
-        )
+        command <- paste(file.path(baseDir, "build.sh"), image, tag)
         print(command)
         system(command = command)
     },
     USE.NAMES = FALSE,
     SIMPLIFY = FALSE
 )
+
+# Tag the most recent version as "latest".
+tag <- tail(sort(tags), n = 1L)
+command <- paste(file.path(baseDir, "tag-latest.sh"), image, tag)
+print(command)
+system(command = command)
