@@ -12,12 +12,9 @@ args <- commandArgs(trailingOnly = FALSE)
 posArgs <- commandArgs(trailingOnly = TRUE)
 
 # Get the script path from the command arguments.
-fileArg <- "--file="
-rscript <- sub(
-    pattern = fileArg,
-    replacement = "",
-    x = args[grep(fileArg, args)]
-)
+fileFlag <- "--file="
+fileArg <- args[grep(fileArg, args)]
+rscript <- sub(pattern = fileFile, replacement = "", x = fileArg)
 baseDir <- dirname(rscript)
 
 # Specify the image name as a positional argument.
