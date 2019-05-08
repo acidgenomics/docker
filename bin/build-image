@@ -31,6 +31,6 @@ docker tag "$tag" "acidgenomics/${tag}"
 docker push "acidgenomics/${tag}"
 
 # Tag with date (e.g. basejump:bioc-3.8-20190101).
-# > docker tag "$tag" "acidgenomics/${tag_today}"
-# > docker push "acidgenomics/${tag_today}"
+docker tag "$tag" "acidgenomics/${tag_today}"
+docker push "acidgenomics/${tag_today}"
 

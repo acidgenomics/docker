@@ -34,7 +34,7 @@ parallel::mcmapply(
     tag = tags,
     MoreArgs = list(image = image),
     FUN = function(image, tag) {
-        command <- paste(file.path(baseDir, "build.sh"), image, tag)
+        command <- paste(file.path(baseDir, "build"), image, tag)
         print(command)
         system(command = command)
     },
@@ -44,6 +44,6 @@ parallel::mcmapply(
 
 # Tag the most recent version as "latest".
 tag <- tail(sort(tags), n = 1L)
-command <- paste(file.path(baseDir, "tag-latest.sh"), image, tag)
+command <- paste(file.path(baseDir, "tag-latest"), image, tag)
 print(command)
 system(command = command)
