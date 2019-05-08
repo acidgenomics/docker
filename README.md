@@ -10,7 +10,7 @@ Note that this script calls the recipe defined in `basejump/bioc-3.9/`:
 
 ```sh
 # [1] image  [2] tag
-./bin/build basejump bioc-3.9
+./bin/build-image basejump bioc-3.9
 ```
 
 ## Build all versions of an image
@@ -19,7 +19,7 @@ Here's how to build all versions of an image:
 
 ```sh
 # [1] image
-./bin/build-all basejump
+./bin/build-all-tags basejump
 ```
 
 That code will build basejump against bioc-3.7, bioc-3.8, etc.

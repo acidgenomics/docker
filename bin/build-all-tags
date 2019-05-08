@@ -34,7 +34,7 @@ parallel::mcmapply(
     tag = tags,
     MoreArgs = list(image = image),
     FUN = function(image, tag) {
-        command <- paste(file.path(baseDir, "build"), image, tag)
+        command <- paste(file.path(baseDir, "build-image"), image, tag)
         print(command)
         system(command = command)
     },
