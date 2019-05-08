@@ -10,7 +10,7 @@ Note that this script calls the recipe defined in `basejump/bioc-3.9/`:
 
 ```sh
 # [1] image  [2] tag
-./build.sh basejump bioc-3.9
+./bin/build basejump bioc-3.9
 ```
 
 ## Build all versions of an image
@@ -19,7 +19,7 @@ Here's how to build all versions of an image:
 
 ```sh
 # [1] image
-./build-all.Rscript basejump
+./bin/build-all basejump
 ```
 
 That code will build basejump against bioc-3.7, bioc-3.8, etc.
@@ -30,14 +30,14 @@ Here's how to tag a versioned build as `latest`:
 
 ```sh
 # [1] image  [2] tag
-./latest.sh basejump bioc-3.9
+./bin/tag-latest basejump bioc-3.9
 ```
 
 ## Test R package using image
 
 ```sh
 # [1] image  [2] tag  [3] package
-./rcmdcheck.sh rnaseq bioc-3.9 bcbioRNASeq
+./bin/rcmdcheck rnaseq bioc-3.9 bcbioRNASeq
 ```
 
 ## Clean up
