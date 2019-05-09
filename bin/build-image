@@ -9,11 +9,11 @@ set -Eeuxo pipefail
 #
 # Use `--no-cache` flag to disable build cache.
 
-repo="$1"
+image="$1"
 version="$2"
 
 today=$(date "+%Y%m%d")
-tag="${repo}:${version}"
+tag="${image}:${version}"
 tag_today="${tag}-${today}"
 
 # Build a local copy of the image.
@@ -21,7 +21,7 @@ docker build \
     --no-cache \
     --tag="$tag" \
     --build-arg "GITHUB_PAT=${DOCKER_GITHUB_PAT}" \
-    "${HOME}/git/docker/${repo}/${version}"
+    "${HOME}/git/docker/${image}/${version}"
 
 # Log in to Docker Hub.
 docker login
