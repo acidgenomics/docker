@@ -41,12 +41,14 @@ mapply(
         command <- paste(file.path(scriptDir, "build-image"), image, tag)
         print(command)
         system(command = command)
+        print(paste(image, tag, "build was successful."))
     },
     USE.NAMES = FALSE,
     SIMPLIFY = FALSE
 )
 
 # Tag the most recent version as "latest".
+print(paste("Tagging", image, tag, "as latest."))
 tag <- tail(sort(tags), n = 1L)
 command <- paste(file.path(scriptDir, "tag-latest"), image, tag)
 print(command)
