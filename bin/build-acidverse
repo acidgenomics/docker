@@ -7,7 +7,7 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 docker system prune --all --force
 
 # Build Bioconductor first.
-"${dir}/build-all-tags" bioconductor
+# "${dir}/build-all-tags" bioconductor
 
 # Next build basejump.
 "${dir}/build-all-tags" basejump

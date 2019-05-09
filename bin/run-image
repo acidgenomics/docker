@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -Eeuxo pipefail
+
+# Run an Acid Genomics Docker image.
+
+image="$1"
+tag="$2"
+
+image="acidgenomics/${image}:${tag}"
+docker pull "$image"
+docker run -ti "$image"
