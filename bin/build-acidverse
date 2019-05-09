@@ -1,23 +1,26 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
+build="${script_dir} build-all-tags"
 
 # Ensure we're working from a clean Docker installation.
-docker system prune --all --force
+# docker system prune --all --force
 
-# Build Bioconductor first.
+# Build Bioconductor.
+# These images are static, so safe to skip here.
 # "${dir}/build-all-tags" bioconductor
 
-# Next build basejump.
-"${dir}/build-all-tags" basejump
+# Build basejump.
+"$build" basejump
 
-# Now build the bulk and single-cell RNA-seq images.
-"${dir}/build-all-tags" rnaseq
-"${dir}/build-all-tags" singlecell
+# Build the bulk and single-cell RNA-seq images.
+"$build" rnaseq
+"$build" singlecell
 
-# Build HBC bcbio R packages.
-"${dir}/build-all-tags" r-bcbio
+# Build the HBC bcbio R packages.
+"$build" r-bcbio
 
-# Build interactive RStudio image.
-"${dir}/build-all-tags" rstudio
+# Build an interactive RStudio image.
+"$build" rstudio

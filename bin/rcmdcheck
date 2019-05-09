@@ -7,7 +7,7 @@ repo="$1"
 version="$2"
 r_pkg="$3"
 
-dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 image="acidgenomics/${repo}:${version}"
 r_pkg_dir="${HOME}/packages/${r_pkg}"
@@ -17,4 +17,4 @@ docker run -ti \
     --volume="${r_pkg_dir}:/${r_pkg}" \
     --workdir="/${r_pkg}" \
     "$image" \
-    "${dir}/rcmdcheck"
+    "${script_dir}/rcmdcheck"
