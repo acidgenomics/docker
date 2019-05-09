@@ -3,6 +3,7 @@
 # Quit and return non-zero status code on error.
 options(
     error = quote(quit(status = 1L)),
+    mc.cores = 3L,
     verbose = TRUE
 )
 
