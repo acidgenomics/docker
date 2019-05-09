@@ -19,15 +19,17 @@ posArgs <- commandArgs(trailingOnly = TRUE)
 fileFlag <- "--file="
 fileArg <- args[grep(fileFlag, args)]
 rscript <- sub(pattern = fileFlag, replacement = "", x = fileArg)
-baseDir <- dirname(rscript)
+scriptDir <- dirname(rscript)
+dockerDir <- dirname(scriptDir)
 
 # Specify the image name as a positional argument.
 image <- posArgs[[1L]]
+imageDir <- file.path(dockerDir, image)
 stopifnot(
     is.character(image),
-    dir.exists(image)
+    dir.exists(imageDir)
 )
-tags <- sort(list.dirs(path = image, full.names = FALSE, recursive = FALSE))
+tags <- sort(list.dirs(path = imageDir, full.names = FALSE, recursive = FALSE))
 stopifnot(length(tags) > 0L)
 
 # Build the versioned images, defined by `Dockerfile` in the subdirectories.
@@ -35,7 +37,7 @@ parallel::mcmapply(
     tag = tags,
     MoreArgs = list(image = image),
     FUN = function(image, tag) {
-        command <- paste(file.path(baseDir, "build-image"), image, tag)
+        command <- paste(file.path(scriptDir, "build-image"), image, tag)
         print(command)
         system(command = command)
     },
@@ -45,6 +47,6 @@ parallel::mcmapply(
 
 # Tag the most recent version as "latest".
 tag <- tail(sort(tags), n = 1L)
-command <- paste(file.path(baseDir, "tag-latest"), image, tag)
+command <- paste(file.path(scriptDir, "tag-latest"), image, tag)
 print(command)
 system(command = command)
