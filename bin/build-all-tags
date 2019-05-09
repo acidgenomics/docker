@@ -8,8 +8,8 @@ options(
 )
 
 # Parallelizing using `mcmapply()` below.
-requireNamespace("parallel")
-mapply <- parallel::mcmapply
+# requireNamespace("parallel")
+# mapply <- parallel::mcmapply
 
 # This will include the `--file` flag we want to match to get the script source.
 args <- commandArgs(trailingOnly = FALSE)
