@@ -1,7 +1,5 @@
-#!/usr/bin/env Rscript
-
+#!/usr/bin/env -S Rscript --vanilla
 # Note that this shebang requires coreutils 8.30, which aren't on RHEL 7:
-# #!/usr/bin/env -S Rscript --vanilla
 
 # Quit and return non-zero status code on error.
 options(
