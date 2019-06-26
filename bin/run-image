@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-set -Eeuxo pipefail
+set -Eeuo pipefail
 
-# Run an Acid Genomics Docker image.
+# Run Docker image locally.
+# Modified 2019-06-26.
 
 image="$1"
 tag="$2"

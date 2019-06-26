@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
+# Build Acid Genomics "acidverse" images.
+# Modified 2019-06-26.
+
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 build="${script_dir} build-all-tags"

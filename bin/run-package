@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-set -Eeuxo pipefail
+set -Eeuo pipefail
 
 # Check an R package using a Docker image.
+# Modified 2019-06-26.
 
 repo="$1"
 version="$2"
