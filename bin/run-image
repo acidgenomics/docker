@@ -2,11 +2,16 @@
 set -Eeuo pipefail
 
 # Run Docker image locally.
-# Modified 2019-06-26.
+# Updated 2019-07-17.
 
 image="$1"
-tag="$2"
+tag="${2:-latest}"
+image="${image}:${tag}"
 
-image="acidgenomics/${image}:${tag}"
+wd_name="$(basename "$PWD")"
+
 docker pull "$image"
-docker run -ti "$image"
+docker run -ti \
+    --volume="${PWD}:/${wd_name}" \
+    --workdir="/${wd_name}" \
+    "$image"
