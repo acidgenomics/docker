@@ -2,28 +2,17 @@
 set -Eeuxo pipefail
 
 # Build Acid Genomics "acidverse" images.
-# Modified 2019-06-26.
+# Modified 2019-07-18.
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-
 build="${script_dir} build-all-tags"
 
 # Ensure we're working from a clean Docker installation.
-# docker system prune --all --force
+docker system prune --all --force
 
-# Build Bioconductor.
-# These images are static, so safe to skip here.
-# "${dir}/build-all-tags" bioconductor
-
-# Build basejump.
+"$build" bioconductor
 "$build" basejump
-
-# Build the bulk and single-cell RNA-seq images.
+"$build" r-bcbio
 "$build" rnaseq
 "$build" singlecell
-
-# Build the HBC bcbio R packages.
-"$build" r-bcbio
-
-# Build an interactive RStudio image.
 "$build" rstudio
