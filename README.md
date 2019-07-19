@@ -33,13 +33,6 @@ Here's how to tag a versioned build as `latest`:
 ./bin/tag-latest basejump bioc-3.9
 ```
 
-## Test R package using image
-
-```sh
-# [1] image  [2] tag  [3] package
-./bin/rcmdcheck rnaseq bioc-3.9 bcbioRNASeq
-```
-
 ## Clean up
 
 Delete all dangling data (recommended):
