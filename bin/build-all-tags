@@ -1,30 +1,33 @@
 #!/usr/bin/env -S Rscript --vanilla
-# Note that this shebang requires coreutils 8.30, which aren't on RHEL 7:
+## Note that this shebang requires coreutils 8.30, which aren't on RHEL 7:
 
-# Quit and return non-zero status code on error.
+## Build all tags for a specific image.
+## Updated 2019-07-24.
+
+## Quit and return non-zero status code on error.
 options(
     error = quote(quit(status = 1L)),
     mc.cores = 4L,
     verbose = TRUE
 )
 
-# Enable parallelization.
+## Enable parallelization.
 requireNamespace("BiocParallel")
 mapply <- BiocParallel::bpmapply
 
-# This will include the `--file` flag we want to match to get the script source.
+## This will include the `--file` flag we want to match for the script source.
 args <- commandArgs(trailingOnly = FALSE)
-# This will return only the positional arguments.
+## This will return only the positional arguments.
 posArgs <- commandArgs(trailingOnly = TRUE)
 
-# Get the script path from the command arguments.
+## Get the script path from the command arguments.
 fileFlag <- "--file="
 fileArg <- args[grep(fileFlag, args)]
 rscript <- sub(pattern = fileFlag, replacement = "", x = fileArg)
 scriptDir <- normalizePath(dirname(rscript))
 dockerDir <- dirname(scriptDir)
 
-# Specify the image name as a positional argument.
+## Specify the image name as a positional argument.
 image <- posArgs[[1L]]
 imageDir <- file.path(dockerDir, image)
 stopifnot(
@@ -34,7 +37,7 @@ stopifnot(
 tags <- sort(list.dirs(path = imageDir, full.names = FALSE, recursive = FALSE))
 stopifnot(length(tags) > 0L)
 
-# Build the versioned images, defined by `Dockerfile` in the subdirectories.
+## Build the versioned images, defined by `Dockerfile` in the subdirectories.
 mapply(
     tag = tags,
     MoreArgs = list(image = image),
@@ -48,9 +51,13 @@ mapply(
     SIMPLIFY = FALSE
 )
 
-# Tag the most recent version as "latest".
+## Tag the most recent version as "latest".
 tag <- tail(sort(tags), n = 1L)
 print(paste("Tagging", image, tag, "as latest."))
 command <- paste(file.path(scriptDir, "tag-latest"), image, tag)
 print(command)
 system(command = command)
+
+## Prune Docker.
+print("Pruning Docker installation.")
+system(command = "docker system prune --all --force")
