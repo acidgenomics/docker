@@ -4,13 +4,13 @@
 # Quit and return non-zero status code on error.
 options(
     error = quote(quit(status = 1L)),
-    mc.cores = 3L,
+    mc.cores = 4L,
     verbose = TRUE
 )
 
-# Parallelizing using `mcmapply()` below.
-# requireNamespace("parallel")
-# mapply <- parallel::mcmapply
+# Enable parallelization.
+requireNamespace("BiocParallel")
+mapply <- BiocParallel::bpmapply
 
 # This will include the `--file` flag we want to match to get the script source.
 args <- commandArgs(trailingOnly = FALSE)
