@@ -2,7 +2,7 @@
 ## Note that this shebang requires coreutils 8.30, which aren't on RHEL 7:
 
 ## Build all tags for a specific image.
-## Updated 2019-07-24.
+## Updated 2019-07-28.
 
 ## Quit and return non-zero status code on error.
 options(
@@ -42,7 +42,7 @@ mapply(
     tag = tags,
     MoreArgs = list(image = image),
     FUN = function(image, tag) {
-        command <- paste(file.path(scriptDir, "build-image"), image, tag)
+        command <- paste(file.path(scriptDir, "docker-build-image"), image, tag)
         print(command)
         system(command = command)
         print(paste(image, tag, "build was successful."))
@@ -54,7 +54,7 @@ mapply(
 ## Tag the most recent version as "latest".
 tag <- tail(sort(tags), n = 1L)
 print(paste("Tagging", image, tag, "as latest."))
-command <- paste(file.path(scriptDir, "tag-latest"), image, tag)
+command <- paste(file.path(scriptDir, "docker-tag-latest"), image, tag)
 print(command)
 system(command = command)
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-# Build Acid Genomics "acidverse" images.
-# Modified 2019-07-18.
+# Build all Acid Genomics images.
+# Updated 2019-07-28.
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-build="${script_dir} build-all-tags"
+build="${script_dir}/docker-build-all-tags"
 
 # Ensure we're working from a clean Docker installation.
 docker system prune --all --force
