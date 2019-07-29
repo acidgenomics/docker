@@ -2,7 +2,7 @@
 ## Note that this shebang requires coreutils 8.30, which aren't on RHEL 7:
 
 ## Build all tags for a specific image.
-## Updated 2019-07-28.
+## Updated 2019-07-29.
 
 ## Quit and return non-zero status code on error.
 options(
@@ -52,7 +52,9 @@ mapply(
 )
 
 ## Tag the most recent version as "latest".
-tag <- tail(sort(tags), n = 1L)
+## Don't tag "devel" recipes here.
+keep <- !grepl("devel", tags)
+tag <- tail(tags[keep], n = 1L)
 print(paste("Tagging", image, tag, "as latest."))
 command <- paste(file.path(scriptDir, "docker-tag-latest"), image, tag)
 print(command)
