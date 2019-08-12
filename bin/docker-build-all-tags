@@ -1,8 +1,7 @@
-#!/usr/bin/env -S Rscript --vanilla
-## Note that this shebang requires coreutils 8.30, which aren't on RHEL 7:
+#!/usr/bin/env Rscript
 
 ## Build all tags for a specific image.
-## Updated 2019-07-29.
+## Updated 2019-08-12.
 
 ## Quit and return non-zero status code on error.
 options(
