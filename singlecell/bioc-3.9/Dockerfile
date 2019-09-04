@@ -1,5 +1,5 @@
-## Install Acid Genomics single-cell packages on Bioconductor 3.9.
-## Updated 2019-09-04.
+# Install Acid Genomics single-cell packages on Bioconductor 3.9.
+# Updated 2019-09-04.
 
 FROM acidgenomics/rnaseq:bioc-3.9
 MAINTAINER mike@steinbaugh.com
