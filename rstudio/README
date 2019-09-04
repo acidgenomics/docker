@@ -1,0 +1,9 @@
+Based on:
+- bioc_docker/release_core2
+  https://hub.docker.com/r/bioconductor/release_core2
+  https://github.com/Bioconductor/bioc_docker
+  https://github.com/Bioconductor/bioc_docker/tree/master/out/release_core
+- rocker/rstudio
+  https://hub.docker.com/r/rocker/rstudio
+  https://github.com/rocker-org/rocker
+  https://github.com/rocker-org/rocker/tree/master/rstudio
