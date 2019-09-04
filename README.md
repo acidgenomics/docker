@@ -22,8 +22,6 @@ Here's how to build all versions of an image:
 ./bin/build-all-tags basejump
 ```
 
-That code will build basejump against bioc-3.7, bioc-3.8, etc.
-
 ## Tag build as latest
 
 Here's how to tag a versioned build as `latest`:
