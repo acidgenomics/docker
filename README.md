@@ -1,6 +1,6 @@
 # Docker recipes
 
-Dockerfile source scripts for [Acid Genomics Docker Hub images](https://cloud.docker.com/u/acidgenomics/).
+Dockerfile recipes for the [Acid Genomics Docker Hub images](https://cloud.docker.com/u/acidgenomics/).
 
 ## Build a specific image version
 
