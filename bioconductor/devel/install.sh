@@ -6,6 +6,8 @@ rm -f /var/lib/dpkg/available && \
     rm -rf /var/cache/apt/* &&
     rm -rf /var/lib/apt/lists/*
 
+# FIXME missing: libmariadb-client-lgpl-dev
+
 apt-get update && \
     DEBIAN_FRONTEND="noninteractive" \
     apt-get -qy install \
@@ -26,7 +28,6 @@ apt-get update && \
         libharfbuzz-dev \
         liblzma-dev \
         libmagick++-dev \
-        libmariadb-client-lgpl-dev \
         libpng-dev \
         libssh2-1-dev \
         libssl-dev \
