@@ -7,6 +7,7 @@ rm -f /var/lib/dpkg/available && \
     rm -rf /var/lib/apt/lists/*
 
 # FIXME missing: libmariadb-client-lgpl-dev
+# FIXME Consider nuking files in /root/.cache/pip
 
 apt-get update && \
     DEBIAN_FRONTEND="noninteractive" \
