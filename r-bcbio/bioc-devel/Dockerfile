@@ -1,5 +1,5 @@
 # Install bcbio R packages on Bioconductor Devel.
-# Updated 2019-09-04.
+# Updated 2019-09-18.
 
 FROM acidgenomics/basejump:bioc-devel
 MAINTAINER mike@steinbaugh.com
