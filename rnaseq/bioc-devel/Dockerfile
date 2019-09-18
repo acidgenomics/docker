@@ -1,5 +1,5 @@
 # Install Acid Genomics RNA-seq packages on Bioconductor Devel.
-# Updated 2019-09-04.
+# Updated 2019-09-18.
 
 FROM acidgenomics/r-bcbio:bioc-devel
 MAINTAINER mike@steinbaugh.com
