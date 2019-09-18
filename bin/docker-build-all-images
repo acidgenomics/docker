@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-set -Eeuxo pipefail
+set -Eeu -o pipefail
 
 # Build all Acid Genomics images.
-# Updated 2019-07-28.
+# Updated 2019-09-18.
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 build="${script_dir}/docker-build-all-tags"
@@ -15,4 +15,3 @@ docker system prune --all --force
 "$build" r-bcbio
 "$build" rnaseq
 "$build" singlecell
-"$build" rstudio
