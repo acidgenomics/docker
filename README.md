@@ -4,13 +4,13 @@ Dockerfile recipes for the [Acid Genomics Docker Hub images](https://cloud.docke
 
 ## Build a specific image version
 
-Here's how to build the basejump toolkit specifically against Bioconductor 3.9.
+Here's how to build the basejump toolkit against the current Bioconductor release.
 
-Note that this script calls the recipe defined in `basejump/bioc-3.9/`:
+Note that this script calls the recipe defined in `basejump/bioc-release/`:
 
 ```sh
 # [1] image  [2] tag
-./bin/docker-build-image basejump bioc-3.9
+./bin/docker-build-image basejump bioc-release
 ```
 
 ## Build all versions of an image
