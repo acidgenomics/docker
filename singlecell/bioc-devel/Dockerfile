@@ -1,5 +1,5 @@
 # Install Acid Genomics single-cell packages on Bioconductor Devel.
-# Updated 2019-09-04.
+# Updated 2019-09-18.
 
 FROM acidgenomics/rnaseq:bioc-devel
 MAINTAINER mike@steinbaugh.com
