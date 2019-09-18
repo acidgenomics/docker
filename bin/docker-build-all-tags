@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 ## Build all tags for a specific image.
-## Updated 2019-08-12.
+## Updated 2019-09-18.
 
 ## Quit and return non-zero status code on error.
 options(
@@ -50,12 +50,18 @@ mapply(
     SIMPLIFY = FALSE
 )
 
-## Tag the most recent version as "latest".
-## Don't tag "devel" recipes here.
-keep <- !grepl("devel", tags)
-tag <- tail(tags[keep], n = 1L)
-print(paste("Tagging", image, tag, "as latest."))
-command <- paste(file.path(scriptDir, "docker-tag-latest"), image, tag)
+## Tag Bioconductor release as "latest".
+sourceTag <- grep(pattern = "release", x = tags, value = TRUE)
+stopifnot(length(sourceTag) == 1L)
+destTag <- "latest"
+print(sprintf(
+    "Tagging %s '%s' as '%s'.",
+    image, sourceTag, destTag
+))
+command <- paste(
+    file.path(scriptDir, "docker-tag"),
+    image, sourceTag, destTag
+)
 print(command)
 system(command = command)
 
