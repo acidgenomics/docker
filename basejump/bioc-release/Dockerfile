@@ -1,7 +1,7 @@
-# Install basejump on Bioconductor 3.9.
-# Updated 2019-09-04.
+# Install basejump on Bioconductor Release.
+# Updated 2019-09-18.
 
-FROM acidgenomics/bioconductor:3.9
+FROM acidgenomics/bioconductor:release
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
