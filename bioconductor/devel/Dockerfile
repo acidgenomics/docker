@@ -1,7 +1,7 @@
 # Install Bioconductor Devel.
-# Updated 2019-08-20.
+# Updated 2019-09-18.
 
-FROM rocker/r-ver:devel
+FROM rocker/rstudio:devel
 MAINTAINER mike@steinbaugh.com
 
 # Improve R system configuration.

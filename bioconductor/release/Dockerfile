@@ -1,7 +1,7 @@
 # Install Bioconductor 3.9.
-# Updated 2019-08-20.
+# Updated 2019-09-18.
 
-FROM rocker/r-ver:3.6.1
+FROM rocker/rstudio:3.6.1
 MAINTAINER mike@steinbaugh.com
 
 # Improve R system configuration.
