@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-set -Eeuo pipefail
+set -Eeu -o pipefail
 
 # Tag latest release.
-# Modified 2019-06-27.
+# Modified 2019-09-18.
 
 repo="acidgenomics/$1"
 tag="${2:-}"
 
 if [[ -z "$tag" ]]
 then
-    tag="bioc-3.9"
+    tag="bioc-release"
 fi
 
 docker login
