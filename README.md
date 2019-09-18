@@ -10,7 +10,7 @@ Note that this script calls the recipe defined in `basejump/bioc-3.9/`:
 
 ```sh
 # [1] image  [2] tag
-./bin/build-image basejump bioc-3.9
+./bin/docker-build-image basejump bioc-3.9
 ```
 
 ## Build all versions of an image
@@ -19,7 +19,7 @@ Here's how to build all versions of an image:
 
 ```sh
 # [1] image
-./bin/build-all-tags basejump
+./bin/docker-build-all-tags basejump
 ```
 
 ## Tag build as latest
@@ -27,8 +27,8 @@ Here's how to build all versions of an image:
 Here's how to tag a versioned build as `latest`:
 
 ```sh
-# [1] image  [2] tag
-./bin/tag-latest basejump bioc-3.9
+# [1] image  [2] source_tag  [3] dest_tag
+./bin/docker-tag basejump bioc-release latest
 ```
 
 ## Clean up
