@@ -10,8 +10,7 @@ install_github(
             "brio",
             "freerange",
             "basejump",
-            "bb8",
-            "lintr"
+            "bb8"
         ),
         sep = "/"
     ),
