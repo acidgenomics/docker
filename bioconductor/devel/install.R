@@ -38,6 +38,7 @@ install(
         "ensembldb",
         "ggrepel",
         "knitr",
+        "lintr",
         "magrittr",
         "patrick",
         "pbapply",
