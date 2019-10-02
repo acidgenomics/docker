@@ -66,5 +66,6 @@ print(command)
 system(command = command)
 
 ## Prune Docker.
+## Note that this will remove bcbio-vm and other Docker images, if downloaded.
 print("Pruning Docker installation.")
 system(command = "docker system prune --all --force")
