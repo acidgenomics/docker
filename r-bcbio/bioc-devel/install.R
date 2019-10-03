@@ -1,13 +1,3 @@
-BiocManager::install("genefilter")
-library(remotes)
-install_github(
-    repo = paste(
-        "hbc",
-        c(
-            "bcbioBase",
-            "bcbioRNASeq",
-            "bcbioSingleCell"
-        ),
-        sep = "/"
-    )
-)
+library(BiocManager)
+install("hbc/bcbioRNASeq")
+install("hbc/bcbioSingleCell")
