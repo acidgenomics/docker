@@ -2,6 +2,8 @@ library(BiocManager)
 install(
     pkgs = c(
         "DelayedMatrixStats",
+        "Seurat",
+        "batchelor",
         "rgdal",
         "sf",
         "spatialreg"
@@ -9,14 +11,6 @@ install(
 )
 
 library(remotes)
-install_github(
-    repo = paste(
-        "acidgenomics",
-        c(
-            "Chromium",
-            "pointillism"
-        ),
-        sep = "/"
-    ),
-    dependencies = TRUE
-)
+install_github("cole-trapnell-lab/monocle3@0.2.0")
+install_github("acidgenomics/Chromium")
+install_github("acidgenomics/pointillism")
