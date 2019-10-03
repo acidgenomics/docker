@@ -1,7 +1,7 @@
 # Install Acid Genomics RNA-seq packages on Bioconductor Release.
-# Updated 2019-09-18.
+# Updated 2019-10-02.
 
-FROM acidgenomics/r-bcbio:bioc-release
+FROM acidgenomics/basejump:bioc-release
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
