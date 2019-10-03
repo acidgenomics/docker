@@ -1,3 +1,4 @@
+BiocManager::install("genefilter")
 library(remotes)
 install_github(
     repo = paste(
