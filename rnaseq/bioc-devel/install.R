@@ -14,14 +14,5 @@ install(
 )
 
 library(remotes)
-install_github(
-    repo = paste(
-        "acidgenomics",
-        c(
-            "DESeqAnalysis",
-            "pfgsea"
-        ),
-        sep = "/"
-    ),
-    dependencies = TRUE
-)
+install_github("acidgenomics/DESeqAnalysis")
+install_github("acidgenomics/pfgsea")
