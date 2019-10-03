@@ -1,6 +1,6 @@
-library(remotes)
-install_github(
-    repo = paste(
+library(BiocManager)
+install(
+    pkgs = paste(
         "acidgenomics",
         c(
             "bioverbs",
