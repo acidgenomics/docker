@@ -3,6 +3,7 @@ install(
     pkgs = c(
         "DESeq2",
         "apeglm",
+        "ashr",
         "edgeR",
         "hexbin",
         "limma",
