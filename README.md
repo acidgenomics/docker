@@ -68,3 +68,5 @@ Inspect current config with:
 ```sh
 docker info
 ```
+
+Important! Make sure "Docker Root Dir" is set outside of main partition for VMs with small local disks.
