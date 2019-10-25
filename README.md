@@ -64,3 +64,9 @@ docker info
 ```
 
 Important! Make sure "Docker Root Dir" is set outside of main partition for VMs with small local disks.
+
+Force remove an image:
+
+```sh
+docker image rm --force "<IMAGE ID>"
+```
