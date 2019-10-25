@@ -53,8 +53,6 @@ docker info
 
 Important! Make sure "Docker Root Dir" is set outside of main partition for VMs with small local disks.
 
-## Clean up
-
 Force remove an image:
 
 ```sh
