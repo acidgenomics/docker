@@ -1,4 +1,4 @@
-# Docker
+# Docker images
 
 Dockerfile recipes for the [Acid Genomics Docker Hub images](https://cloud.docker.com/u/acidgenomics/).
 
@@ -26,19 +26,7 @@ Note that this script calls the recipe defined in `./basejump/bioc-release/`:
 ./bin/docker-tag basejump bioc-release latest
 ```
 
-## Clean up
-
-Delete all dangling data (recommended):
-
-```sh
-docker system prune
-```
-
-Remove all images, not just dangling ones:
-
-```sh
-docker system prune --all --force
-```
+* * *
 
 ## Troubleshooting
 
@@ -65,8 +53,22 @@ docker info
 
 Important! Make sure "Docker Root Dir" is set outside of main partition for VMs with small local disks.
 
+## Clean up
+
 Force remove an image:
 
 ```sh
 docker image rm --force "<IMAGE ID>"
+```
+
+Delete all dangling data (recommended):
+
+```sh
+docker system prune
+```
+
+Remove all images, not just dangling ones:
+
+```sh
+docker system prune --all --force
 ```
