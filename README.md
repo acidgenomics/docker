@@ -30,6 +30,8 @@ Note that this script calls the recipe defined in `./basejump/bioc-release/`:
 
 ## Troubleshooting
 
+### Enable Docker
+
 Enable Docker to run at login (Linux).
 See [post-install instructions](https://docs.docker.com/install/linux/linux-postinstall/) for details.
 
@@ -37,13 +39,15 @@ See [post-install instructions](https://docs.docker.com/install/linux/linux-post
 sudo systemctl enable docker
 ```
 
-User needs to authenticate:
+### Login
 
 ```sh
 docker login
 ```
 
 Config will save to `~/.docker/config.json` by default.
+
+### Current config
 
 Inspect current config:
 
@@ -52,6 +56,8 @@ docker info
 ```
 
 Important! Make sure "Docker Root Dir" is set outside of main partition for VMs with small local disks.
+
+### Remove images
 
 Force remove an image:
 
