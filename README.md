@@ -44,3 +44,13 @@ Remove all images, not just dangling ones:
 ```sh
 docker system prune --all --force
 ```
+
+## Troubleshooting
+
+Enable Docker to run at login (Linux):
+
+```sh
+sudo systemctl enable docker
+```
+
+See [post-install instructions](https://docs.docker.com/install/linux/linux-postinstall/) for details.
