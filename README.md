@@ -54,3 +54,17 @@ sudo systemctl enable docker
 ```
 
 See [post-install instructions](https://docs.docker.com/install/linux/linux-postinstall/) for details.
+
+User needs to authenticate:
+
+```sh
+docker login
+```
+
+Config will save to `~/.docker/config.json` by default.
+
+Inspect current config with:
+
+```sh
+docker info
+```
