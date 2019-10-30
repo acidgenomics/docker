@@ -1,2 +1,2 @@
 library(BiocManager)
-install("hbc/bcbioRNASeq")
+install("hbc/bcbioRNASeq", dependencies = TRUE)

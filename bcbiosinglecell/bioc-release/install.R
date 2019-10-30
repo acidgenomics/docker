@@ -1,2 +1,2 @@
 library(BiocManager)
-install("hbc/bcbioSingleCell")
+install("hbc/bcbioSingleCell", dependencies = TRUE)
