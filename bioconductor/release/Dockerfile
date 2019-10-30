@@ -1,5 +1,5 @@
-# Install Bioconductor 3.9.
-# Updated 2019-09-18.
+# Install Bioconductor Release.
+# Updated 2019-10-30.
 
 FROM rocker/rstudio:3.6.1
 MAINTAINER mike@steinbaugh.com
@@ -15,7 +15,7 @@ ADD install.sh .
 RUN ./install.sh
 
 # Install Bioconductor.
-ARG BIOC_VERSION="3.9"
+ARG BIOC_VERSION="3.10"
 ADD install.R .
 RUN R -f install.R
 
