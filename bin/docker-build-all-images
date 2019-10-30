@@ -2,7 +2,7 @@
 set -Eeu -o pipefail
 
 # Build all Acid Genomics images.
-# Updated 2019-09-18.
+# Updated 2019-10-30.
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 build="${script_dir}/docker-build-all-tags"
@@ -12,6 +12,7 @@ docker system prune --all --force
 
 "$build" bioconductor
 "$build" basejump
-"$build" r-bcbio
+"$build" bcbiornaseq
+"$build" bcbiosinglecell
 "$build" rnaseq
 "$build" singlecell
