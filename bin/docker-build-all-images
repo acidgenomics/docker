@@ -16,3 +16,5 @@ docker system prune --all --force
 "$build" bcbiosinglecell
 "$build" rnaseq
 "$build" singlecell
+
+# > "$build" rnaeditingindexer
