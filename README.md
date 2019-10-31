@@ -30,9 +30,16 @@ Note that this script calls the recipe defined in `./basejump/bioc-release/`:
 
 ## Troubleshooting
 
-### Enable Docker
+### Start or stop the daemon
 
-Enable Docker to run at login (Linux).
+```sh
+sudo systemctl stop docker
+sudo systemctl start docker
+sudo systemctl restart docker
+```
+
+### Enable Docker to run at login
+
 See [post-install instructions](https://docs.docker.com/install/linux/linux-postinstall/) for details.
 
 ```sh
