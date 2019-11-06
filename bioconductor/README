@@ -3,8 +3,6 @@ Bioconductor images
 Based on rocker/r-ver, with additional dependencies installed.
 Alternatively, bioconductor/release_core2 is a good base image option.
 
-
-
 See also:
 
 - Bioconductor release notes
@@ -16,8 +14,6 @@ See also:
 - Bioconductor Dockerfile
   https://github.com/Bioconductor/bioc_docker/blob/master/out/release_base/Dockerfile
 
-
-
 Consider adding:
 
 - AnnotationHub
@@ -25,8 +21,6 @@ Consider adding:
 - GenomicRanges
 - IRanges
 - ensembldb
-
-
 
 libcurl4 conflict:
 
