@@ -1,7 +1,10 @@
 Bioconductor images
 
 Based on rocker/r-ver, with additional dependencies installed.
-Alternatively, bioconductor/release_core2 is a good base image option.
+
+Alternate options from Bioconductor:
+- bioconductor/release_core2
+- bbioconductor/devel_core2
 
 See also:
 
