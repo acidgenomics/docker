@@ -6,8 +6,8 @@ rm -f /var/lib/dpkg/available && \
     rm -rf /var/cache/apt/* &&
     rm -rf /var/lib/apt/lists/*
 
-# FIXME missing: libmariadb-client-lgpl-dev
-# FIXME Consider nuking files in /root/.cache/pip
+# Consider nuking files in /root/.cache/pip
+# Missing: libmariadb-client-lgpl-dev
 
 apt-get update && \
     DEBIAN_FRONTEND="noninteractive" \
@@ -49,10 +49,13 @@ apt-get update && \
         xorg
 
 python3 -m pip install --upgrade --user virtualenv
-python3 -m venv ~/.virtualenvs/default
-python3 -m venv ~/.virtualenvs/reticulate
+python3 -m venv ~/.virtualenvs/base
+python3 -m venv ~/.virtualenvs/r-reticulate
 
-source ~/.virtualenvs/reticulate/bin/activate
-pip install --upgrade pip setuptools wheel
-pip install louvain umap-learn
-deactivate
+(
+    # shellcheck source=/dev/null
+    source ~/.virtualenvs/r-reticulate/bin/activate
+    python3 -m pip install --upgrade pip setuptools wheel
+    python3 -m pip install louvain umap-learn
+    deactivate
+)

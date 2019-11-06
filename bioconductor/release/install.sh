@@ -6,6 +6,7 @@ rm -f /var/lib/dpkg/available && \
     rm -rf /var/cache/apt/* &&
     rm -rf /var/lib/apt/lists/*
 
+# Consider nuking files in /root/.cache/pip
 # Missing: libmariadb-client-lgpl-dev
 
 apt-get update && \
@@ -52,6 +53,7 @@ python3 -m venv ~/.virtualenvs/base
 python3 -m venv ~/.virtualenvs/r-reticulate
 
 (
+    # shellcheck source=/dev/null
     source ~/.virtualenvs/r-reticulate/bin/activate
     python3 -m pip install --upgrade pip setuptools wheel
     python3 -m pip install louvain umap-learn
