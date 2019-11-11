@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
-set -Eex -o pipefail
-
-# Nuke cache dirs before installing packages.
-rm -f /var/lib/dpkg/available && \
-    rm -rf /var/cache/apt/* &&
-    rm -rf /var/lib/apt/lists/*
-
-# Consider nuking files in /root/.cache/pip
-# Missing: libmariadb-client-lgpl-dev
+set -Ee -o pipefail
 
 apt-get update && \
     DEBIAN_FRONTEND="noninteractive" \
@@ -48,7 +40,6 @@ apt-get update && \
         wget \
         xorg
 
-python3 -m pip install --upgrade --user virtualenv
 python3 -m venv ~/.virtualenvs/base
 python3 -m venv ~/.virtualenvs/r-reticulate
 

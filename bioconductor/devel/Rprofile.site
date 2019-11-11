@@ -1,4 +1,5 @@
 options(
-    repos = c(CRAN = "https://cran.rstudio.com/"),
-    download.file.method = "libcurl"
+    defaultPackages = c(getOption("defaultPackages"), "BiocManager"),
+    download.file.method = "libcurl",
+    repos = c(CRAN = "https://cran.rstudio.com")
 )
