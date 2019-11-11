@@ -1,21 +1,17 @@
 Bioconductor images
 
-Based on rocker/r-ver, with additional dependencies installed.
-
-Alternate options from Bioconductor:
-- bioconductor/release_core2
-- bbioconductor/devel_core2
-
 See also:
 
-- Bioconductor release notes
-  https://bioconductor.org/news/bioc_3_8_release/
-- rocker Dockerfile
-  https://github.com/rocker-org/rocker/blob/master/r-base/Dockerfile
-- rstudio Dockerfile
-  https://hub.docker.com/r/rocker/rstudio/dockerfile
-- Bioconductor Dockerfile
-  https://github.com/Bioconductor/bioc_docker/blob/master/out/release_base/Dockerfile
+- [Bioconductor Docker help](https://www.bioconductor.org/help/docker/)
+
+Dockerfiles:
+
+- [bioconductor/release_base2](https://github.com/Bioconductor/bioc_docker/blob/master/out/release_base/Dockerfile)
+- [bioconductor/release_core2](https://github.com/Bioconductor/bioc_docker/blob/master/out/release_core/Dockerfile)
+- [bioconductor/devel_base2](https://github.com/Bioconductor/bioc_docker/blob/master/out/devel_base/Dockerfile)
+- [bioconductor/devel_core2](https://github.com/Bioconductor/bioc_docker/blob/master/out/devel_core/Dockerfile)
+- [rocker/r-base](https://github.com/rocker-org/rocker/blob/master/r-base/Dockerfile)
+- [rocker/rstudio](https://hub.docker.com/r/rocker/rstudio/dockerfile)
 
 Consider adding:
 
