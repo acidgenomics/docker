@@ -1,10 +1,10 @@
-install.packages("BiocManager")
+# > install.packages("BiocManager")
 library(BiocManager)
-install(
-    update = TRUE,
-    ask = FALSE,
-    version = Sys.getenv("BIOC_VERSION")
-)
+# > install(
+# >     update = TRUE,
+# >     ask = FALSE,
+# >     version = Sys.getenv("BIOC_VERSION")
+# > )
 install(
     pkgs = c(
         "AnnotationDbi",
