@@ -1,12 +1,11 @@
 #!/usr/bin/env Rscript
 
 ## Build all tags for a specific image.
-## Updated 2019-09-18.
+## Updated 2019-11-14.
 
 ## Quit and return non-zero status code on error.
 options(
     error = quote(quit(status = 1L)),
-    mc.cores = 4L,
     verbose = TRUE
 )
 
@@ -41,31 +40,32 @@ mapply(
     tag = tags,
     MoreArgs = list(image = image),
     FUN = function(image, tag) {
-        command <- paste(file.path(scriptDir, "docker-build-image"), image, tag)
-        print(command)
-        system(command = command)
-        print(paste(image, tag, "build was successful."))
+        system2(
+            command = file.path(scriptDir, "docker-build-image"),
+            args = c(image, tag)
+        )
     },
     USE.NAMES = FALSE,
     SIMPLIFY = FALSE
 )
 
-## Tag Bioconductor release as "latest".
+## Automatically tag Bioconductor release as "latest".
 sourceTag <- grep(pattern = "release", x = tags, value = TRUE)
-stopifnot(length(sourceTag) == 1L)
-destTag <- "latest"
-print(sprintf(
-    "Tagging %s '%s' as '%s'.",
-    image, sourceTag, destTag
-))
-command <- paste(
-    file.path(scriptDir, "docker-tag"),
-    image, sourceTag, destTag
-)
-print(command)
-system(command = command)
+if (identical(length(sourceTag), 1L)) {
+    destTag <- "latest"
+    print(sprintf(
+        "Tagging %s '%s' as '%s'.",
+        image, sourceTag, destTag
+    ))
+    system2(
+        command = file.path(scriptDir, "docker-tag"),
+        args = c(image, sourceTag, destTag)
+    )
+}
 
-## Prune Docker.
-## Note that this will remove bcbio-vm and other Docker images, if downloaded.
-# > print("Pruning Docker installation.")
-# > system(command = "docker system prune --all --force")
+## Prune Docker images.
+# > print("Pruning Docker images.")
+# > system2(
+# >     command = "docker",
+# >     args = c("system", "prune", "--all", "--force")
+# > )
