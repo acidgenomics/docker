@@ -10,11 +10,13 @@ conda install -c cyclus java-jdk=8.0.92
 conda install -c anaconda git
 
 mkdir -p /bin/AEI
-git clone https://github.com/shalomhillelroth/RNAEditingIndexer /bin/AEI
+git clone \
+    https://github.com/shalomhillelroth/RNAEditingIndexer \
+    /bin/AEI/RNAEditingIndexer
 
 (
     cd /bin/AEI/RNAEditingIndexer || exit 1
     make
 )
 
-samtools faidx /bin/AEI/RNAEditingIndexer/Resources/Genomes/{HomoSapiens,MusMusculus}/*.fa
+samtools faidx /bin/AEI/RNAEditingIndexer/Resources/Genomes/*/*.fa
