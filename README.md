@@ -1,6 +1,6 @@
 # Docker images
 
-Dockerfile recipes for the [Acid Genomics Docker Hub images](https://cloud.docker.com/u/acidgenomics/).
+Dockerfile recipes for the [Acid Genomics Docker Hub images](https://hub.docker.com/repositories?namespace=acidgenomics).
 
 ## Build a specific image version
 
