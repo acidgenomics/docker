@@ -1,25 +1,23 @@
 #!/usr/bin/env bash
 set -Eeu -o pipefail
 
-# What's up with this:
-# sudo: setrlimit(RLIMIT_CORE): Operation not permitted
-
-# Missing: top, uptime
-
 yum -y update
 yum -y install \
-    R \
     curl \
     fish \
     git \
     hostname \
     man \
     parallel \
+    sudo \
     tree \
     util-linux-user \
     wget \
     which \
     zsh
+# Need to enable EPEL release before we can install R here.
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum -y install R
 
 rm -fr /usr/local/koopa
 
