@@ -4,9 +4,9 @@
 FROM fedora:latest
 MAINTAINER mike@steinbaugh.com
 
-WORKDIR /tmp
+ARG TERM=xterm-256color
 
+WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
-
 WORKDIR /

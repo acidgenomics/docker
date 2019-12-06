@@ -2,18 +2,18 @@
 set -Eeu -o pipefail
 
 yum -y update
+    # chsh \
+    # top \
+    # uptime \
 yum -y install \
     R \
-    chsh \
     curl \
     fish \
     git \
     hostname \
     man \
     parallel \
-    top \
     tree \
-    uptime \
     wget \
     which \
     zsh
