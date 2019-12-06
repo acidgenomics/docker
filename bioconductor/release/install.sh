@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -Ee -o pipefail
 
-apt-get update && \
-    DEBIAN_FRONTEND="noninteractive" \
+apt-get update
+DEBIAN_FRONTEND="noninteractive" \
     apt-get -qy install \
         autoconf \
         automake \
