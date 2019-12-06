@@ -5,7 +5,7 @@ set -Eeu -o pipefail
 # For some reason, scripts in '/etc/profile.d/' are currently ignored for root.
 #
 # > su -
-# # Now koopa is accessible. However, the prompt doesn't change.
+# Now koopa is accessible. However, the prompt doesn't change.
 
 apt-get update
 apt-get -y dist-upgrade
