@@ -1,5 +1,8 @@
-#!/usr/bin/env bash
-set -Eeu -o pipefail
+#!/bin/sh
+
+apk update
+apk upgrade
+apk add R bash curl fish git sudo zsh
 
 rm -fr /usr/local/koopa
 
