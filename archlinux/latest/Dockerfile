@@ -1,6 +1,12 @@
 # Install Arch Linux.
 # Updated 2019-12-06.
 
+# Optional dependencies for r
+#     tk: tcl/tk interface
+#     texlive-bin: latex sty files
+#     gcc-fortran: needed to compile some CRAN packages
+#     openblas: faster linear algebra
+
 FROM archlinux:latest
 MAINTAINER mike@steinbaugh.com
 
