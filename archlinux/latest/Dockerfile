@@ -7,6 +7,8 @@
 #     gcc-fortran: needed to compile some CRAN packages
 #     openblas: faster linear algebra
 
+# Note that Arch is currently overwriting PS1 for root.
+
 FROM archlinux:latest
 MAINTAINER mike@steinbaugh.com
 
