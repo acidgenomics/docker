@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -Eeu -o pipefail
 
+# Note that koopa currently doesn't activate at login for root user.
+# For some reason, scripts in '/etc/profile.d/' are currently ignored for root.
+
 apt-get update
 apt-get -y dist-upgrade
 DEBIAN_FRONTEND=noninteractive \
