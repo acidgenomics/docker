@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 set -Eeu -o pipefail
 
+# What's up with this:
+# sudo: setrlimit(RLIMIT_CORE): Operation not permitted
+
+# Missing: top, uptime
+
 yum -y update
-    # chsh \
-    # top \
-    # uptime \
 yum -y install \
     R \
     curl \
@@ -14,6 +16,7 @@ yum -y install \
     man \
     parallel \
     tree \
+    util-linux-user \
     wget \
     which \
     zsh
