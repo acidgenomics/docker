@@ -13,7 +13,10 @@ RUN pacman -Syyu --noconfirm && \
         git \
         grep \
         man \
+        parallel \
+        r \
         sudo \
+        tree \
         which \
         zsh
 
