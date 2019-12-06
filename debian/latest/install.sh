@@ -3,6 +3,10 @@ set -Eeu -o pipefail
 
 # Note that koopa currently doesn't activate at login for root user.
 # For some reason, scripts in '/etc/profile.d/' are currently ignored for root.
+#
+# See also:
+# - https://serverfault.com/questions/434321
+# - http://www.linuxfromscratch.org/blfs/view/6.3/postlfs/profile.html
 
 apt-get update
 apt-get -y dist-upgrade
