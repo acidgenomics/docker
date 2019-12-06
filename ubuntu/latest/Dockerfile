@@ -4,8 +4,6 @@
 FROM ubuntu:latest
 MAINTAINER mike@steinbaugh.com
 
-ARG TERM=xterm-256color
-
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
