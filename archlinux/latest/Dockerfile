@@ -25,6 +25,7 @@ RUN pacman -Syyu --noconfirm && \
         r \
         sudo \
         tree \
+        wget \
         which \
         zsh
 
