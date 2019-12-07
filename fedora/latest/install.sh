@@ -6,8 +6,8 @@ set -Eeu -o pipefail
 
 # Missing: top, uptime
 
-yum -y update
-yum -y install \
+dnf -y update
+dnf -y install \
     R \
     curl \
     fish \
