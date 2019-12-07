@@ -1,31 +1,35 @@
 #!/usr/bin/env bash
 set -Eeu -o pipefail
 
-# missing: R, parallel, fish
-# How to install R?
+# fish isn't currently available.
 
-# Need to install PowerTools to fix this.
-# Error:
-#  Problem: package R-3.6.1-1.el8.x86_64 requires R-devel = 3.6.1-1.el8, but none of the providers can be installed
-#    - package R-devel-3.6.1-1.el8.x86_64 requires R-core-devel = 3.6.1-1.el8, but none of the providers can be installed
-#      - conflicting requests
-#        - nothing provides texinfo-tex needed by R-core-devel-3.6.1-1.el8.x86_64
+# Need to fix this warning:
+# Failed to set locale, defaulting to C.
 
-yum -y update
-yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-# yum config-manager --set-enabled PowerTools
-yum -y install \
+# Koopa check warnings:
+# Setting LC_* failed, using "C"
+
+# Run this to enable EPEL 8, if necessary:
+# > dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+dnf -y install \
+    dnf-plugins-core \
+    epel-release
+dnf -y config-manager --set-enabled PowerTools
+dnf -y update
+dnf -y install \
+    R \
     curl \
     git \
     hostname \
     man \
+    parallel \
     sudo \
     tree \
     util-linux-user \
     wget \
     which \
     zsh
-yum -y install R
 
 rm -fr /usr/local/koopa
 
