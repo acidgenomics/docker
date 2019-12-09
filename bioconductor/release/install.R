@@ -17,6 +17,7 @@ install(
         "Biostrings",
         "DT",
         "DelayedArray",
+        "DropletUtils",
         "GSEABase",
         "GenomeInfoDb",
         "GenomeInfoDbData",
