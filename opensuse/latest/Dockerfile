@@ -1,5 +1,5 @@
 # Install openSUSE Leap.
-# Updated 2019-11-27.
+# Updated 2019-12-07.
 
 FROM opensuse/leap:latest
 MAINTAINER mike@steinbaugh.com
