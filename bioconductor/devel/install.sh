@@ -55,3 +55,5 @@ python3 -m venv ~/.virtualenvs/r-reticulate
     python3 -m pip install louvain umap-learn
     deactivate
 )
+
+rm -fr /root/.cache

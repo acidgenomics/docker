@@ -56,3 +56,4 @@ python3 -m venv ~/.virtualenvs/r-reticulate
     deactivate
 )
 
+rm -fr /root/.cache
