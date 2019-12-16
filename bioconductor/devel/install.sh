@@ -40,6 +40,11 @@ DEBIAN_FRONTEND="noninteractive" \
         wget \
         xorg
 
+rm -fr /var/lib/apt/lists/*
+rm -fr /usr/local/koopa
+
+curl -sSL https://koopa.acidgenomics.com/install | bash -s -- --shared
+
 python3 -m venv ~/.virtualenvs/base
 python3 -m venv ~/.virtualenvs/r-reticulate
 
