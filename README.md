@@ -2,6 +2,8 @@
 
 Dockerfile recipes for the [Acid Genomics Docker Hub images](https://hub.docker.com/repositories?namespace=acidgenomics).
 
+Most images come preloaded with [koopa](https://koopa.acidgenomics.com/) for shell configuration.
+
 ## Build a specific image version
 
 For example, build the basejump toolkit against the current Bioconductor release.
@@ -73,7 +75,9 @@ docker info &>2 > /dev/null | grep 'Base Device Size:'
 docker info &>2 > /dev/null | grep 'Storage Driver:'
 ```
 
-You can fix this by setting the default `storage-opts` for the Docker daemon. I recommend doing this with a JSON config file on Linux, which can be saved at `/etc/docker/daemon.json`. Here's a minimal configuration for the `devicemapper` storage driver, increasing the default limit to 20 GB.
+You can fix this by setting the default `storage-opts` for the Docker daemon. I recommend doing this with a JSON config file on Linux, which can be saved at `/etc/docker/daemon.json`.
+
+Here's a minimal configuration for the now deprecated `devicemapper` storage driver (still default on RHEL systems), increasing the default limit to 20 GB.
 
 ```
 {
