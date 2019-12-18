@@ -17,4 +17,8 @@ build="${script_dir}/docker-build-all-tags"
 "$build" rnaseq
 "$build" singlecell
 
+# > "$build" debian
+# > "$build" fedora
+# > "$build" ubuntu
+
 # > "$build" rnaeditingindexer
