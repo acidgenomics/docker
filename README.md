@@ -2,6 +2,8 @@
 
 Dockerfile recipes for the [Acid Genomics Docker Hub images](https://hub.docker.com/repositories?namespace=acidgenomics).
 
+Most images come preloaded with [koopa](https://koopa.acidgenomics.com/) for shell configuration.
+
 ## Build a specific image version
 
 For example, build the basejump toolkit against the current Bioconductor release.
