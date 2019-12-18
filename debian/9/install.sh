@@ -13,6 +13,8 @@ apt-get -y install \
     gnupg \
     less \
     parallel \
+    r-base \
+    r-base-dev \
     sudo \
     tree \
     wget \

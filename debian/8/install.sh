@@ -8,11 +8,12 @@ apt-get -y dist-upgrade
 apt-get -y install \
     bc \
     curl \
-    fish \
     git \
     gnupg \
     less \
     parallel \
+    r-base \
+    r-base-dev \
     sudo \
     tree \
     wget \
