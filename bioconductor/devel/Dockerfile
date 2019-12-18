@@ -21,3 +21,5 @@ ADD install.R .
 RUN R -f install.R
 
 WORKDIR /
+
+CMD ["bash", "-il"]
