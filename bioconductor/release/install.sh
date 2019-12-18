@@ -1,45 +1,48 @@
 #!/usr/bin/env bash
 set -Ee -o pipefail
 
+export DEBIAN_FRONTEND="noninteractive"
+
 apt-get update
-DEBIAN_FRONTEND="noninteractive" \
-    apt-get -qy install \
-        autoconf \
-        automake \
-        cargo \
-        curl \
-        gdb \
-        git \
-        gtk-doc-tools \
-        less \
-        libbz2-dev \
-        libcairo2-dev \
-        libcurl4-openssl-dev \
-        libfreetype6-dev \
-        libgdal-dev \
-        libglu1-mesa-dev \
-        libharfbuzz-dev \
-        liblzma-dev \
-        libmagick++-dev \
-        libmariadb-dev \
-        libpng-dev \
-        libssh2-1-dev \
-        libssl-dev \
-        libtool \
-        libudunits2-dev \
-        libx11-dev \
-        libxml2-dev \
-        libz-dev \
-        nano \
-        pandoc \
-        pandoc-citeproc \
-        pkg-config \
-        python3-pip \
-        python3-venv \
-        texlive \
-        vim \
-        wget \
-        xorg
+apt-get -y dist-upgrade
+# > apt-get -y --no-install-recommends install --fix-missing
+apt-get -qy install \
+    autoconf \
+    automake \
+    cargo \
+    curl \
+    gdb \
+    git \
+    gtk-doc-tools \
+    less \
+    libbz2-dev \
+    libcairo2-dev \
+    libcurl4-openssl-dev \
+    libfreetype6-dev \
+    libgdal-dev \
+    libglu1-mesa-dev \
+    libharfbuzz-dev \
+    liblzma-dev \
+    libmagick++-dev \
+    libmariadb-dev \
+    libpng-dev \
+    libssh2-1-dev \
+    libssl-dev \
+    libtool \
+    libudunits2-dev \
+    libx11-dev \
+    libxml2-dev \
+    libz-dev \
+    nano \
+    pandoc \
+    pandoc-citeproc \
+    pkg-config \
+    python3-pip \
+    python3-venv \
+    texlive \
+    vim \
+    wget \
+    xorg
 
 rm -fr /var/lib/apt/lists/*
 rm -fr /usr/local/koopa
