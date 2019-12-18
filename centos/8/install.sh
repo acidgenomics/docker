@@ -33,4 +33,5 @@ dnf -y install \
 
 rm -fr /usr/local/koopa
 
-curl -sSL https://koopa.acidgenomics.com/install | bash -s -- --shared
+curl -sSL https://koopa.acidgenomics.com/install \
+    | bash -s -- --shared --test
