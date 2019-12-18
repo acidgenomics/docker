@@ -15,21 +15,22 @@ set -Eeu -o pipefail
 # - https://serverfault.com/questions/434321
 # - http://www.linuxfromscratch.org/blfs/view/6.3/postlfs/profile.html
 
+export DEBIAN_FRONTEND="noninteractive"
+
 apt-get update
 apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive \
-    apt-get -y install \
-        bc \
-        curl \
-        fish \
-        git \
-        gnupg \
-        less \
-        parallel \
-        sudo \
-        tree \
-        wget \
-        zsh
+apt-get -y install \
+    bc \
+    curl \
+    fish \
+    git \
+    gnupg \
+    less \
+    parallel \
+    sudo \
+    tree \
+    wget \
+    zsh
 
 # Install latest version of R.
 # https://cran.r-project.org/bin/linux/debian/
@@ -43,10 +44,10 @@ then
     echo 'deb https://cloud.r-project.org/bin/linux/debian buster-cran35/' >> /etc/apt/sources.list
 fi
 apt-get update
-DEBIAN_FRONTEND=noninteractive \
-    apt-get -y install r-base r-base-dev
+apt-get -y install r-base r-base-dev
 
 rm -fr /var/lib/apt/lists/*
 rm -fr /usr/local/koopa
 
-curl -sSL https://koopa.acidgenomics.com/install | bash -s -- --shared
+curl -sSL https://koopa.acidgenomics.com/install \
+    | bash -s -- --shared --test
