@@ -1,9 +1,7 @@
-# Install Ubuntu.
-# Updated 2019-12-06.
+# Install Ubuntu 16.04 LTS.
+# Updated 2019-12-18.
 
-# Bash config overwrites PS1 for root user.
-
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
