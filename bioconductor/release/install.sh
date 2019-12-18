@@ -21,6 +21,7 @@ DEBIAN_FRONTEND="noninteractive" \
         libharfbuzz-dev \
         liblzma-dev \
         libmagick++-dev \
+        libmariadb-dev \
         libpng-dev \
         libssh2-1-dev \
         libssl-dev \
