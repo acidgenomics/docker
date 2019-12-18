@@ -7,12 +7,9 @@ yum -y install \
     R \
     curl \
     git \
-    hostname \
     man \
-    parallel \
     sudo \
     tree \
-    util-linux-user \
     wget \
     which \
     zsh
