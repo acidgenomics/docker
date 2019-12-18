@@ -22,6 +22,14 @@ build="${script_dir}/docker-build-all-tags"
 # > "$build" debian
 # > "$build" fedora
 # > "$build" ubuntu
+# alpine
+# amazonlinux
+# archlinux
+# centos
+# kali
+# opensuse
+
 
 # Bioinformatics software
 # > "$build" rnaeditingindexer
+# maestro
