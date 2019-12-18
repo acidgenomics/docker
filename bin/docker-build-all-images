@@ -10,6 +10,7 @@ build="${script_dir}/docker-build-all-tags"
 # Ensure we're working from a clean Docker installation.
 # > docker system prune --all --force
 
+# R images
 "$build" bioconductor
 "$build" basejump
 "$build" bcbiornaseq
@@ -17,8 +18,10 @@ build="${script_dir}/docker-build-all-tags"
 "$build" rnaseq
 "$build" singlecell
 
+# Linux images
 # > "$build" debian
 # > "$build" fedora
 # > "$build" ubuntu
 
+# Bioinformatics software
 # > "$build" rnaeditingindexer
