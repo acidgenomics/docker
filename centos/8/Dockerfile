@@ -1,7 +1,7 @@
-# Install CentOS.
-# Updated 2019-12-06.
+# Install CentOS 8.
+# Updated 2019-12-18.
 
-FROM centos:latest
+FROM centos:8
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
