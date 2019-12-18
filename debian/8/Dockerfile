@@ -1,7 +1,7 @@
-# Install Debian.
-# Updated 2019-12-06.
+# Install Debian 8.
+# Updated 2019-12-18.
 
-FROM debian:latest
+FROM debian:8
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
