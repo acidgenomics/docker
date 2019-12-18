@@ -11,6 +11,7 @@ apt-get update
 apt-get -y dist-upgrade
 DEBIAN_FRONTEND=noninteractive \
     apt-get -y install \
+        bc \
         curl \
         fish \
         git \
