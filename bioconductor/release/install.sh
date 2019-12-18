@@ -9,6 +9,7 @@ apt-get -y dist-upgrade
 apt-get -qy install \
     autoconf \
     automake \
+    bc \
     cargo \
     curl \
     gdb \
@@ -47,7 +48,8 @@ apt-get -qy install \
 rm -fr /var/lib/apt/lists/*
 rm -fr /usr/local/koopa
 
-curl -sSL https://koopa.acidgenomics.com/install | bash -s -- --shared
+curl -sSL https://koopa.acidgenomics.com/install \
+    | bash -s -- --shared --test
 
 python3 -m venv ~/.virtualenvs/base
 python3 -m venv ~/.virtualenvs/r-reticulate
