@@ -1,4 +1,4 @@
-# Bioconductor images
+# Bioconductor
 
 See also:
 
