@@ -6,7 +6,8 @@ install(
         "batchelor",
         "rgdal",
         "sf",
-        "spatialreg"
+        "spatialreg",
+        "splatter"
     )
 )
 install("cole-trapnell-lab/monocle3@0.2.0")
