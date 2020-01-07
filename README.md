@@ -107,3 +107,7 @@ Remove all images, not just dangling ones:
 ```sh
 docker system prune --all --force
 ```
+
+# See also
+
+- http://erick.matsen.org/2018/04/19/docker.html
