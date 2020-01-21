@@ -3,12 +3,9 @@ install(
     pkgs = paste(
         "acidgenomics",
         c(
-            "bioverbs",
             "goalie",
             "syntactic",
-            "transformer",
-            "brio",
-            "freerange",
+            "pipette",
             "basejump",
             "bb8"
         ),
