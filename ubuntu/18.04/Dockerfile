@@ -4,9 +4,10 @@
 FROM ubuntu:18.04
 MAINTAINER mike@steinbaugh.com
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && \
-    DEBIAN_FRONTEND="noninteractive" \
-        apt-get -y install bc curl git sudo
+    apt-get -y install bc curl git sudo
 
 WORKDIR /tmp
 ADD install.sh .
