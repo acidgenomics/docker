@@ -5,6 +5,7 @@ FROM ubuntu:18.04
 MAINTAINER mike@steinbaugh.com
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update && \
     apt-get -y install bc curl git sudo
