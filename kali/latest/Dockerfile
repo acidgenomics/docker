@@ -1,11 +1,13 @@
-# Install Kali Linux
-# Updated 2019-12-16.
+# Install Kali Linux.
+# Updated 2020-01-22.
 
 FROM kalilinux/kali-rolling:latest
 MAINTAINER mike@steinbaugh.com
 
-# RUN apt-get update && \
-#     apt-get -y install less
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get -y install bc curl git sudo
 
 WORKDIR /tmp
 ADD install.sh .
