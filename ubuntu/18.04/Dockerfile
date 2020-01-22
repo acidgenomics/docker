@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # > apt-get -y install tzdata keyboard-configuration
 
 RUN apt-get update && \
-    apt-get -y install bc curl git sudo && \
+    apt-get -y install bc curl git sudo
 
 WORKDIR /tmp
 ADD install.sh .
