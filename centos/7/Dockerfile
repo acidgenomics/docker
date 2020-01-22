@@ -1,8 +1,10 @@
 # Install CentOS 7.
-# Updated 2019-12-18.
+# Updated 2020-01-22.
 
 FROM centos:7
 MAINTAINER mike@steinbaugh.com
+
+RUN yum -y install bc curl git sudo
 
 WORKDIR /tmp
 ADD install.sh .
