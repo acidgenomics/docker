@@ -1,5 +1,5 @@
 # Install Alpine Linux.
-# Updated 2019-12-06.
+# Updated 2020-01-22.
 #
 # Alpine uses ash (Almquist shell) by default.
 
@@ -7,8 +7,7 @@ FROM alpine:latest
 MAINTAINER mike@steinbaugh.com
 
 RUN apk update && \
-    apk upgrade && \
-    apk add R bash curl fish git sudo zsh
+    apk add bash curl git sudo
 
 WORKDIR /tmp
 ADD install.sh .
