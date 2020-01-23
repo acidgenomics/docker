@@ -8,7 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
     FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update && \
-    apt-get -y install bc curl git sudo && \
+    apt-get --no-install-recommends --yes install apt-utils && \
+    apt-get --no-install-recommends --yes install bc curl git sudo && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
