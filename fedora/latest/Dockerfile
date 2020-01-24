@@ -1,10 +1,11 @@
 # Install Fedora.
-# Updated 2020-01-22.
+# Updated 2020-01-24.
 
 FROM fedora:latest
 MAINTAINER mike@steinbaugh.com
 
-# findutils
+ENV FORCE_UNSAFE_CONFIGURE=1
+
 RUN dnf -y install bc curl git sudo
 
 WORKDIR /tmp
