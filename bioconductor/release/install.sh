@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 set -Eeux -o pipefail
 
-apt-get -y dist-upgrade
-# > apt-get -y --no-install-recommends install --fix-missing
-apt-get -qy install \
-
 rm -fr /usr/local/koopa
 curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- --shared --test
@@ -13,6 +9,7 @@ curl -sSL https://koopa.acidgenomics.com/install \
 source /usr/local/koopa/activate
 
 install-debian-base
+install-python
 venv-create-r-reticulate
 install-bioconductor-packages
 

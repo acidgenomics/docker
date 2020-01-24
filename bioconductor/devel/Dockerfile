@@ -1,5 +1,5 @@
 # Install Bioconductor Devel.
-# Updated 2019-01-24.
+# Updated 2020-01-24.
 
 # > FROM rocker/rstudio:devel
 FROM bioconductor/devel_core2
