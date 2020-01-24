@@ -1,6 +1,16 @@
 # Install Bioconductor Release.
 # Updated 2020-01-24.
 
+# New error:
+# Running mktexlsr /var/lib/texmf ... done.
+# Building format(s) --all.
+#         This may take some time... done.
+# Processing triggers for libc-bin (2.28-10) ...
+#    -->  Installing recommended dependencies via 'apt-get build-dep'.
+# Reading package lists...
+# E: You must put some 'source' URIs in your sources.list
+# The command '/bin/sh -c ./install.sh' returned a non-zero code: 100
+
 # > FROM rocker/rstudio:latest
 FROM bioconductor/release_core2
 MAINTAINER mike@steinbaugh.com
