@@ -4,7 +4,7 @@
 FROM centos:8
 MAINTAINER mike@steinbaugh.com
 
-ENV FORCE_UNSAFE_CONFIG=1
+ENV FORCE_UNSAFE_CONFIGURE=1
 
 RUN dnf -y install bc curl git sudo
 
