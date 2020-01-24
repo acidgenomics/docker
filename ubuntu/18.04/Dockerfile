@@ -1,5 +1,5 @@
 # Install Ubuntu 18.04 LTS.
-# Updated 2020-01-22.
+# Updated 2020-01-24.
 
 FROM ubuntu:18.04
 MAINTAINER mike@steinbaugh.com
@@ -14,7 +14,7 @@ RUN apt-get update \
         curl \
         git \
         sudo \
- && rm -rf /var/lib/apt/lists/*
+ && rm -fr /var/lib/apt/lists/*
 
 WORKDIR /tmp
 ADD install.sh .
