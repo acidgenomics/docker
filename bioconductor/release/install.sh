@@ -1,65 +1,17 @@
 #!/usr/bin/env bash
-set -Ee -o pipefail
+set -Eeux -o pipefail
 
-export DEBIAN_FRONTEND="noninteractive"
-
-apt-get update
-apt-get -y dist-upgrade
-# > apt-get -y --no-install-recommends install --fix-missing
-apt-get -qy install \
-    autoconf \
-    automake \
-    bc \
-    cargo \
-    curl \
-    gdb \
-    git \
-    gtk-doc-tools \
-    less \
-    libbz2-dev \
-    libcairo2-dev \
-    libcurl4-openssl-dev \
-    libfreetype6-dev \
-    libgdal-dev \
-    libglu1-mesa-dev \
-    libharfbuzz-dev \
-    liblzma-dev \
-    libmagick++-dev \
-    libmariadb-dev \
-    libpng-dev \
-    libssh2-1-dev \
-    libssl-dev \
-    libtool \
-    libudunits2-dev \
-    libx11-dev \
-    libxml2-dev \
-    libz-dev \
-    nano \
-    pandoc \
-    pandoc-citeproc \
-    pkg-config \
-    python3-pip \
-    python3-venv \
-    texlive \
-    vim \
-    wget \
-    xorg
-
-rm -fr /var/lib/apt/lists/*
 rm -fr /usr/local/koopa
-
 curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- --shared --test
 
-python3 -m venv ~/.virtualenvs/base
-python3 -m venv ~/.virtualenvs/r-reticulate
+# shellcheck disable=SC1091
+source /usr/local/koopa/activate
 
-(
-    # shellcheck source=/dev/null
-    source ~/.virtualenvs/r-reticulate/bin/activate
-    python3 -m pip install --upgrade pip setuptools wheel
-    python3 -m pip install louvain umap-learn
-    deactivate
-)
+install-debian-base
+install-python
+venv-create-r-reticulate
+install-bioconductor-packages
 
 rm -fr /root/.cache
+rm -fr /var/lib/apt/lists/*

@@ -1,13 +1,20 @@
 # Install Debian 9.
-# Updated 2020-01-22.
+# Updated 2020-01-24.
 
 FROM debian:9
 MAINTAINER mike@steinbaugh.com
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive \
+    FORCE_UNSAFE_CONFIGURE=1
 
-RUN apt-get update && \
-    apt-get -y install bc curl git sudo
+RUN apt-get update \
+ && apt-get --no-install-recommends --yes install \
+        bc \
+        ca-certificates \
+        curl \
+        git \
+        sudo \
+ && rm -fr /var/lib/apt/lists/*
 
 WORKDIR /tmp
 ADD install.sh .

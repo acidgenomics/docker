@@ -1,40 +1,45 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-# Build and push a docker image
-# Modified 2019-06-26.
-
+# """
+# Build and push a docker image.
+# Updated 2020-01-24.
+#
+# Use '--no-cache' flag to disable build cache.
+#
+# Examples:
+# docker-build-image bioconductor release
+# docker-build fedora
+#
 # See also:
 # - docker build --help
 # - https://docs.docker.com/engine/reference/builder/#arg
+# """
 
-# Use `--no-cache` flag to disable build cache.
-
-image="$1"
-version="$2"
+org="acidgenomics"
+image_name="${1:?}"
+version="${2:-latest}"
+tag="${image_name}:${version}"
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 docker_dir="$(dirname "$script_dir")"
-
-today=$(date "+%Y%m%d")
-tag="${image}:${version}"
-tag_today="${tag}-${today}"
 
 # Build a local copy of the image.
 docker build \
     --no-cache \
     --tag="$tag" \
     --build-arg "GITHUB_PAT=${DOCKER_GITHUB_PAT}" \
-    "${docker_dir}/${image}/${version}"
+    "${docker_dir}/${image_name}/${version}"
 
 # Log in to Docker Hub.
 docker login
 
 # Stable, version-specific tag (e.g. basejump:bioc-3.8).
-docker tag "$tag" "acidgenomics/${tag}"
-docker push "acidgenomics/${tag}"
+docker tag "$tag" "${org}/${tag}"
+docker push "${org}/${tag}"
 
 # Tag with date (e.g. basejump:bioc-3.8-20190101).
-docker tag "$tag" "acidgenomics/${tag_today}"
-docker push "acidgenomics/${tag_today}"
-
+today=$(date "+%Y%m%d")
+tag_today="${tag}-${today}"
+docker tag "$tag" "${org}/${tag_today}"
+docker push "${org}/${tag_today}"
