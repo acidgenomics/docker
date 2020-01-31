@@ -6,7 +6,8 @@ install(
             "goalie",
             "syntactic",
             "pipette",
-            "basejump"
+            "basejump",
+            "bb8"
         ),
         sep = "/"
     ),
