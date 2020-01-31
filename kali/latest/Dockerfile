@@ -1,10 +1,10 @@
 # Install Kali Linux.
-# Updated 2020-01-22.
+# Updated 2020-01-31.
 
 FROM kalilinux/kali-rolling:latest
 MAINTAINER mike@steinbaugh.com
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get -y install bc curl git sudo

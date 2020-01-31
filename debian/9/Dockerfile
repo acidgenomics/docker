@@ -1,10 +1,10 @@
 # Install Debian 9.
-# Updated 2020-01-24.
+# Updated 2020-01-31.
 
 FROM debian:9
 MAINTAINER mike@steinbaugh.com
 
-ENV DEBIAN_FRONTEND=noninteractive \
+ARG DEBIAN_FRONTEND=noninteractive \
     FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update \

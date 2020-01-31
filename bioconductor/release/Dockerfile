@@ -1,11 +1,11 @@
 # Install Bioconductor Release.
-# Updated 2020-01-24.
+# Updated 2020-01-31.
 
 # > FROM rocker/rstudio:latest
 FROM bioconductor/release_core2
 MAINTAINER mike@steinbaugh.com
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
  && apt-get \

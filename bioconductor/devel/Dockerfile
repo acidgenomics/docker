@@ -5,7 +5,7 @@
 FROM bioconductor/devel_core2
 MAINTAINER mike@steinbaugh.com
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
  && apt-get \
