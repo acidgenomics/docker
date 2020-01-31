@@ -8,12 +8,16 @@ ARG DEBIAN_FRONTEND=noninteractive \
     FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update \
- && apt-get --no-install-recommends --yes install \
-        bc \
-        ca-certificates \
-        curl \
-        git \
-        sudo \
+ && apt-get \
+        --no-install-recommends \
+        --quiet \
+        --yes \
+        install \
+            bc \
+            ca-certificates \
+            curl \
+            git \
+            sudo \
  && rm -fr /var/lib/apt/lists/*
 
 WORKDIR /tmp
