@@ -11,7 +11,7 @@ source /usr/local/koopa/activate
 install-debian-base
 install-python
 venv-create-r-reticulate
-install-bioconductor-packages
+install-r-packages
 
 rm -fr /root/.cache
 rm -fr /var/lib/apt/lists/*
