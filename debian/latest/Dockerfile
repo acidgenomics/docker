@@ -1,7 +1,7 @@
-# Install Debian 10.
+# Install Debian.
 # Updated 2020-02-13.
 
-FROM debian:10
+FROM debian:latest
 MAINTAINER mike@steinbaugh.com
 
 ARG DEBIAN_FRONTEND=noninteractive
