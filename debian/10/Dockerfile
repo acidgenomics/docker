@@ -1,11 +1,11 @@
 # Install Debian 10.
-# Updated 2020-01-31.
+# Updated 2020-02-13.
 
 FROM debian:10
 MAINTAINER mike@steinbaugh.com
 
-ARG DEBIAN_FRONTEND=noninteractive \
-    FORCE_UNSAFE_CONFIGURE=1
+ARG DEBIAN_FRONTEND=noninteractive
+ARG FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update \
  && apt-get \
@@ -17,8 +17,8 @@ RUN apt-get update \
             ca-certificates \
             curl \
             git \
-            sudo \
- && rm -fr /var/lib/apt/lists/*
+            gnupg \
+            sudo
 
 WORKDIR /tmp
 ADD install.sh .
