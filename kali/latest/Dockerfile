@@ -1,5 +1,7 @@
+# """
 # Install Kali Linux.
-# Updated 2020-01-31.
+# Updated 2020-02-14.
+# """
 
 FROM kalilinux/kali-rolling:latest
 MAINTAINER mike@steinbaugh.com

@@ -1,5 +1,7 @@
+# """
 # Install Arch Linux.
-# Updated 2020-01-22.
+# Updated 2020-02-14.
+# """
 
 FROM archlinux:latest
 MAINTAINER mike@steinbaugh.com

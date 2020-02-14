@@ -1,13 +1,10 @@
 # """
-# Install openSUSE Leap.
+# Install Biocontainers.
 # Updated 2020-02-14.
 # """
 
-FROM opensuse/leap:latest
+FROM biocontainers/biocontainers:latest
 MAINTAINER mike@steinbaugh.com
-
-RUN zypper refresh && \
-    zypper --non-interactive install bc curl git sudo
 
 WORKDIR /tmp
 ADD install.sh .
