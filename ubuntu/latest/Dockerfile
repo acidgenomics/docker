@@ -15,6 +15,7 @@ RUN apt-get update \
         ca-certificates \
         curl \
         git \
+        gnupg \
         sudo
 
 WORKDIR /tmp
