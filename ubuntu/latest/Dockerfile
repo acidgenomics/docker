@@ -1,11 +1,13 @@
-# Install Ubuntu 18.04 LTS.
-# Updated 2020-01-31.
+# """
+# Install Ubuntu.
+# Updated 2020-02-14.
+# """
 
-FROM ubuntu:18.04
+FROM ubuntu:latest
 MAINTAINER mike@steinbaugh.com
 
-ARG DEBIAN_FRONTEND=noninteractive \
-    FORCE_UNSAFE_CONFIGURE=1
+ARG DEBIAN_FRONTEND=noninteractive
+ARG FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update \
  && apt-get --no-install-recommends --yes install \
@@ -13,8 +15,7 @@ RUN apt-get update \
         ca-certificates \
         curl \
         git \
-        sudo \
- && rm -fr /var/lib/apt/lists/*
+        sudo
 
 WORKDIR /tmp
 ADD install.sh .
