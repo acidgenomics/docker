@@ -1,7 +1,9 @@
+# """
 # Install Alpine Linux.
-# Updated 2020-01-22.
+# Updated 2020-02-14.
 #
 # Alpine uses ash (Almquist shell) by default.
+# """
 
 FROM alpine:latest
 MAINTAINER mike@steinbaugh.com

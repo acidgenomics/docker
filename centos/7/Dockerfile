@@ -1,5 +1,7 @@
+# """
 # Install CentOS 7.
-# Updated 2020-01-31.
+# Updated 2020-02-14.
+# """
 
 FROM centos:7
 MAINTAINER mike@steinbaugh.com

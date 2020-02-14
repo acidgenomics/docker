@@ -1,5 +1,7 @@
+# """
 # Install Amazon Linux.
-# Updated 2020-01-31.
+# Updated 2020-02-14.
+# """
 
 FROM amazonlinux:latest
 MAINTAINER mike@steinbaugh.com
