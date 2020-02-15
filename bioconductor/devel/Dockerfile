@@ -1,5 +1,7 @@
+# """
 # Install Bioconductor Devel.
 # Updated 2020-01-24.
+# """
 
 # > FROM rocker/rstudio:devel
 FROM bioconductor/devel_core2
@@ -16,8 +18,7 @@ RUN apt-get update \
             ca-certificates \
             curl \
             git \
-            sudo \
- && rm -fr /var/lib/apt/lists/*
+            sudo
 
 # Improve R system configuration.
 ADD Renviron.site /usr/local/lib/R/etc/
