@@ -1,0 +1,12 @@
+org="acidgenomics"
+image="${1:?}"
+tag="latest"
+date="XXX"
+
+docker images --filter reference="${org}/${image}"
+
+docker push "${org}/${image}:latest-20200216"
+docker push "acidgenomics/debian:latest"
+
+
+
