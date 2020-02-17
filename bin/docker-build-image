@@ -23,19 +23,19 @@ koopa="$(realpath "${docker_dir}/../home/bin/koopa")"
 # shellcheck disable=SC1090
 source "$("$koopa" header bash)"
 
-host="docker.io"
+server="docker.io"
 tag="latest"
 
 pos=()
 while (("$#"))
 do
     case "$1" in
-        --host=*)
-            host="${1#*=}"
+        --server=*)
+            server="${1#*=}"
             shift 1
             ;;
-        --host)
-            host="$2"
+        --server)
+            server="$2"
             shift 2
             ;;
         --tag=*)
@@ -73,8 +73,7 @@ today=$(date "+%Y%m%d")
 # e.g. acidgenomics/debian:latest-20200101
 tagged_image_today="${tagged_image}-${today}"
 
-# Log in to Docker Hub.
-docker login
+docker login "$server"
 
 # Force remove existing local images.
 # > docker image ls --help
@@ -99,8 +98,8 @@ docker build \
 
 docker tag "$tagged_image_today" "$tagged_image"
 
-docker push "${host}/${tagged_image_today}"
-docker push "${host}/${tagged_image}"
+docker push "${server}/${tagged_image_today}"
+docker push "${server}/${tagged_image}"
 
 docker image ls \
     --filter reference="$tagged_image"

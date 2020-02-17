@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 set -Eeu -o pipefail
 
+# """
 # Add Docker tag.
-# Modified 2019-11-14.
+# Updated 2020-02-16.
+# """
 
-repo="acidgenomics/$1"
+image="${1:?}"
 source_tag="${2:-bioc-release}"
 dest_tag="${3:-latest}"
+server="docker.io"
 
 if [[ "$source_tag" == "$dest_tag" ]]
 then
@@ -14,8 +17,7 @@ then
     exit 0
 fi
 
-docker login
-docker pull "${repo}:${source_tag}"
-docker tag "${repo}:${source_tag}" "${repo}:${dest_tag}"
-docker push "${repo}:${dest_tag}"
-
+docker login "$server"
+docker pull "${server}/${image}:${source_tag}"
+docker tag "${server}:${source_tag}" "${image}:${dest_tag}"
+docker push "${server}/${image}:${dest_tag}"
