@@ -1,17 +1,20 @@
 #!/usr/bin/env Rscript
 
+## """
 ## Build all tags for a specific image.
-## Updated 2019-11-14.
+## Updated 2020-02-16.
+## """
 
-## Quit and return non-zero status code on error.
 options(
-    error = quote(quit(status = 1L)),
-    verbose = TRUE
+    "error" = quote(quit(status = 1L)),
+    "verbose" = TRUE,
+    "warning" = quote(quit(status = 1L))
 )
 
-## Enable parallelization.
-requireNamespace("BiocParallel")
-mapply <- BiocParallel::bpmapply
+## Enable parallelization if possible.
+if (isTRUE(requireNamespace("BiocParallel", quietly = TRUE))) {
+    mapply <- BiocParallel::bpmapply
+}
 
 ## This will include the `--file` flag we want to match for the script source.
 args <- commandArgs(trailingOnly = FALSE)
@@ -42,7 +45,10 @@ mapply(
     FUN = function(image, tag) {
         system2(
             command = file.path(scriptDir, "docker-build-image"),
-            args = c(image, tag)
+            args = c(
+                paste0("--tag=", tag),
+                image
+            )
         )
     },
     USE.NAMES = FALSE,
@@ -62,10 +68,3 @@ if (identical(length(sourceTag), 1L)) {
         args = c(image, sourceTag, destTag)
     )
 }
-
-## Prune Docker images.
-# > print("Pruning Docker images.")
-# > system2(
-# >     command = "docker",
-# >     args = c("system", "prune", "--all", "--force")
-# > )

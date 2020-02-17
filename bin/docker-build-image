@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-# shellcheck disable=SC1090
-source "$(koopa header bash)"
-
 # """
 # Build and push a docker image.
 # Updated 2020-02-16.
@@ -21,6 +18,10 @@ source "$(koopa header bash)"
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 docker_dir="$(dirname "$script_dir")"
+# Assuming install at '~/.config/koopa/docker'.
+koopa="$(realpath "${docker_dir}/../home/bin/koopa")"
+# shellcheck disable=SC1090
+source "$("$koopa" header bash)"
 
 host="docker.io"
 tag="latest"
