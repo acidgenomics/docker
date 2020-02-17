@@ -1,12 +1,19 @@
-org="acidgenomics"
+#!/usr/bin/env bash
+set -Eeu -o pipefail
+
+# """
+# Push a local build.
+# Updated 2020-02-16.
+#
+# Useful if GPG agent causes push failure.
+#
+# @examples
+# docker-push acidgenomics/debian:latest
+# """
+
 image="${1:?}"
-tag="latest"
-date="XXX"
+server="docker.io"
+today=$(date "+%Y%m%d")
 
-docker images --filter reference="${org}/${image}"
-
-docker push "${org}/${image}:latest-20200216"
-docker push "acidgenomics/debian:latest"
-
-
-
+docker push "${server}/${image}-${today}"
+docker push "${server}/${image}"
