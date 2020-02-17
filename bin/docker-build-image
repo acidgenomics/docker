@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
+# shellcheck disable=SC1090
+source "$(koopa header bash)"
+
 # """
 # Build and push a docker image.
-# Updated 2020-01-24.
+# Updated 2020-02-16.
 #
 # Use '--no-cache' flag to disable build cache.
 #
@@ -16,30 +19,87 @@ set -Eeuo pipefail
 # - https://docs.docker.com/engine/reference/builder/#arg
 # """
 
-org="acidgenomics"
-image_name="${1:?}"
-version="${2:-latest}"
-tag="${image_name}:${version}"
-
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 docker_dir="$(dirname "$script_dir")"
 
-# Build a local copy of the image.
-docker build \
-    --no-cache \
-    --tag="$tag" \
-    --build-arg "GITHUB_PAT=${DOCKER_GITHUB_PAT}" \
-    "${docker_dir}/${image_name}/${version}"
+host="docker.io"
+tag="latest"
+
+pos=()
+while (("$#"))
+do
+    case "$1" in
+        --host=*)
+            host="${1#*=}"
+            shift 1
+            ;;
+        --host)
+            host="$2"
+            shift 2
+            ;;
+        --tag=*)
+            tag="${1#*=}"
+            shift 1
+            ;;
+        --tag)
+            tag="$2"
+            shift 2
+            ;;
+        --)
+            shift 1
+            break
+            ;;
+        --*|-*)
+            _koopa_invalid_arg "$1"
+            ;;
+        *)
+            pos+=("$1")
+            shift 1
+            ;;
+    esac
+done
+set -- "${pos[@]}"
+
+# e.g. acidgenomics/debian
+image="${1:?}"
+# e.g. ~/.config/koopa/docker/acidgenomics/debian/latest
+source_image="${docker_dir}/${image}/${tag}"
+_koopa_assert_is_dir "$source_image"
+# e.g. acidgenomics/debian:latest
+tagged_image="${image}:${tag}"
+# e.g. 20200101
+today=$(date "+%Y%m%d")
+# e.g. acidgenomics/debian:latest-20200101
+tagged_image_today="${tagged_image}-${today}"
 
 # Log in to Docker Hub.
 docker login
 
-# Stable, version-specific tag (e.g. basejump:bioc-3.8).
-docker tag "$tag" "${org}/${tag}"
-docker push "${org}/${tag}"
+# Force remove existing local images.
+# > docker image ls --help
+# > docker image rm --help
+mapfile -t image_ids < <( \
+    docker image ls \
+        --filter reference="$tagged_image" \
+        --quiet \
+)
+if _koopa_is_array_non_empty "${image_ids[@]}"
+then
+    _koopa_note "Existing local build detected. Removing."
+    docker image rm --force "${image_ids[@]}"
+fi
 
-# Tag with date (e.g. basejump:bioc-3.8-20190101).
-today=$(date "+%Y%m%d")
-tag_today="${tag}-${today}"
-docker tag "$tag" "${org}/${tag_today}"
-docker push "${org}/${tag_today}"
+# Build a local copy of the image.
+docker build \
+    --build-arg "GITHUB_PAT=${DOCKER_GITHUB_PAT:?}" \
+    --no-cache \
+    --tag="$tagged_image_today" \
+    "$source_image"
+
+docker tag "$tagged_image_today" "$tagged_image"
+
+docker push "${host}/${tagged_image_today}"
+docker push "${host}/${tagged_image}"
+
+docker image ls \
+    --filter reference="$tagged_image"
