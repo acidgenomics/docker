@@ -2,7 +2,7 @@
 
 ## """
 ## Build all tags for a specific image.
-## Updated 2020-02-16.
+## Updated 2020-02-18.
 ## """
 
 options(
@@ -10,11 +10,6 @@ options(
     "verbose" = TRUE,
     "warning" = quote(quit(status = 1L))
 )
-
-## Enable parallelization if possible.
-if (isTRUE(requireNamespace("BiocParallel", quietly = TRUE))) {
-    mapply <- BiocParallel::bpmapply
-}
 
 ## This will include the `--file` flag we want to match for the script source.
 args <- commandArgs(trailingOnly = FALSE)
@@ -37,6 +32,11 @@ stopifnot(
 )
 tags <- sort(list.dirs(path = imageDir, full.names = FALSE, recursive = FALSE))
 stopifnot(length(tags) > 0L)
+
+## Enable parallelization if possible.
+if (isTRUE(requireNamespace("BiocParallel", quietly = TRUE))) {
+    mapply <- BiocParallel::bpmapply
+}
 
 ## Build the versioned images, defined by `Dockerfile` in the subdirectories.
 mapply(

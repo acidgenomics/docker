@@ -13,24 +13,24 @@ build="${script_dir}/docker-build-all-tags"
 # > docker system prune --all --force
 
 # R images
-"$build" bioconductor
-"$build" basejump
-"$build" bcbiornaseq
-"$build" bcbiosinglecell
-"$build" rnaseq
-"$build" singlecell
+"$build" acidgenomics/bioconductor
+"$build" acidgenomics/basejump
+"$build" acidgenomics/bcbiornaseq
+"$build" acidgenomics/bcbiosinglecell
+"$build" acidgenomics/rnaseq
+"$build" acidgenomics/singlecell
 
 # Linux images
-# > "$build" debian
-# > "$build" fedora
-# > "$build" ubuntu
-# alpine
-# amazonlinux
-# archlinux
-# centos
-# kali
-# opensuse
+# > "$build" acidgenomics/debian
+# > "$build" acidgenomics/fedora
+# > "$build" acidgenomics/ubuntu
+# > "$build" acidgenomics/alpine
+# > "$build" acidgenomics/amazonlinux
+# > "$build" acidgenomics/archlinux
+# > "$build" acidgenomics/centos
+# > "$build" acidgenomics/kali
+# > "$build" acidgenomics/opensuse
 
 # Bioinformatics software
-# > "$build" rnaeditingindexer
-# maestro
+# > "$build" acidgenomics/rnaeditingindexer
+# > "$build" acidgenomics/maestro

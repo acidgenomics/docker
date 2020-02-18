@@ -3,7 +3,7 @@ set -Eeu -o pipefail
 
 # """
 # Add Docker tag.
-# Updated 2020-02-16.
+# Updated 2020-02-18.
 # """
 
 image="${1:?}"
@@ -19,5 +19,5 @@ fi
 
 docker login "$server"
 docker pull "${server}/${image}:${source_tag}"
-docker tag "${server}:${source_tag}" "${image}:${dest_tag}"
+docker tag "${image}:${source_tag}" "${image}:${dest_tag}"
 docker push "${server}/${image}:${dest_tag}"
