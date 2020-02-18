@@ -1,6 +1,6 @@
 # """
 # Install Bioconductor Devel.
-# Updated 2020-01-24.
+# Updated 2020-02-18.
 # """
 
 # > FROM rocker/rstudio:devel
@@ -18,6 +18,7 @@ RUN apt-get update \
             ca-certificates \
             curl \
             git \
+            gnupg \
             sudo
 
 # Improve R system configuration.

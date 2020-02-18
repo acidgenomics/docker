@@ -1,6 +1,6 @@
 # """
 # Install Bioconductor Release.
-# Updated 2020-01-31.
+# Updated 2020-02-18.
 # """
 
 # > FROM rocker/rstudio:latest
@@ -19,6 +19,7 @@ RUN apt-get update \
             ca-certificates \
             curl \
             git \
+            gnupg \
             sudo
 
 # Improve R system configuration.
