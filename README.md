@@ -10,7 +10,7 @@ For example, build the basejump toolkit against the current Bioconductor release
 Note that this script calls the recipe defined in `./acidgenomics/basejump/bioc-release/`:
 
 ```sh
-./bin/docker-build-image \
+docker-build-image \
     --tag="bioc-release"
     "acidgenomics/basejump"
 ```
@@ -18,14 +18,14 @@ Note that this script calls the recipe defined in `./acidgenomics/basejump/bioc-
 ## Build all versions of an image
 
 ```sh
-./bin/docker-build-all-tags "acidgenomics/basejump"
+docker-build-all-tags "acidgenomics/basejump"
 ```
 
 ## Tag build as latest
 
 ```sh
 # [1] image  [2] source_tag  [3] dest_tag
-./bin/docker-tag \
+docker-tag \
     "acidgenomics/basejump" \
     "bioc-release" \
     "latest"
