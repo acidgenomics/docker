@@ -1,6 +1,6 @@
 # Docker images
 
-Dockerfile recipes for the [Acid Genomics Docker Hub images](https://hub.docker.com/repositories?namespace=acidgenomics).
+Dockerfile recipes for our [Docker Hub](https://hub.docker.com/repositories?namespace=acidgenomics) images.
 
 Images come preloaded with [koopa](https://koopa.acidgenomics.com/) for shell configuration.
 
