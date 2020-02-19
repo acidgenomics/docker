@@ -7,5 +7,3 @@ curl -sSL https://koopa.acidgenomics.com/install \
 
 # shellcheck disable=SC1090
 source ~/.config/koopa/activate
-
-~/.config/koopa/dotfiles/INSTALL.sh
