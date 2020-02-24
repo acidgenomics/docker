@@ -1,6 +1,6 @@
 # """
 # Install miniconda3.
-# Updated 2020-02-15.
+# Updated 2020-02-24.
 # """
 
 FROM continuumio/miniconda3:latest
@@ -20,6 +20,7 @@ RUN apt-get update \
             curl \
             git \
             gnupg \
+            lsb-release \
             sudo
 
 WORKDIR /tmp

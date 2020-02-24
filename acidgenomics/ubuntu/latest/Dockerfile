@@ -1,6 +1,6 @@
 # """
 # Install Ubuntu.
-# Updated 2020-02-14.
+# Updated 2020-02-24.
 # """
 
 FROM ubuntu:latest
@@ -10,13 +10,18 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update \
- && apt-get --no-install-recommends --yes install \
-        bc \
-        ca-certificates \
-        curl \
-        git \
-        gnupg \
-        sudo
+ && apt-get \
+        --no-install-recommends \
+        --quiet \
+        --yes \
+        install \
+            bc \
+            ca-certificates \
+            curl \
+            git \
+            gnupg \
+            lsb-release \
+            sudo
 
 WORKDIR /tmp
 ADD install.sh .

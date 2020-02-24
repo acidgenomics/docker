@@ -1,6 +1,6 @@
 # """
 # Install Debian.
-# Updated 2020-02-14.
+# Updated 2020-02-24.
 # """
 
 FROM debian:latest
@@ -20,6 +20,7 @@ RUN apt-get update \
             curl \
             git \
             gnupg \
+            lsb-release \
             sudo
 
 WORKDIR /tmp
