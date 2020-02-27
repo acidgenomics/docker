@@ -9,3 +9,5 @@ curl -sSL https://koopa.acidgenomics.com/install \
 source /usr/local/koopa/activate
 
 configure-vm
+
+rm -fr /tmp/*
