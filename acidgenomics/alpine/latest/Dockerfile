@@ -8,6 +8,8 @@
 FROM alpine:latest
 MAINTAINER mike@steinbaugh.com
 
+ENV PYTHONDONTWRITEBYTECODE=true
+
 RUN apk update && \
     apk add \
         bash \
