@@ -8,7 +8,8 @@
 FROM alpine:latest
 MAINTAINER mike@steinbaugh.com
 
-ENV PYTHONDONTWRITEBYTECODE=true
+ARG FORCE_UNSAFE_CONFIGURE=1
+ARG PYTHONDONTWRITEBYTECODE=true
 
 RUN apk update && \
     apk add \
