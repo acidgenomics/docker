@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -Eeu -o pipefail
+set -Eeux -o pipefail
 
 rm -fr /usr/local/koopa
 curl -sSL https://koopa.acidgenomics.com/install \
@@ -8,6 +8,6 @@ curl -sSL https://koopa.acidgenomics.com/install \
 # shellcheck disable=SC1091
 source /usr/local/koopa/activate
 
-# > configure-vm
+configure-vm
 
 rm -fr /tmp/*
