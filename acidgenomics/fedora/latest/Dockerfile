@@ -1,12 +1,10 @@
 # """
 # Install Fedora.
-# Updated 2020-01-31.
+# Updated 2020-02-28.
 # """
 
 FROM fedora:latest
 MAINTAINER mike@steinbaugh.com
-
-ARG FORCE_UNSAFE_CONFIGURE=1
 
 RUN dnf -y install bc curl git sudo
 

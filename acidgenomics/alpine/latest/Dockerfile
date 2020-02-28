@@ -1,15 +1,12 @@
 # """
 # Install Alpine Linux.
-# Updated 2020-02-27.
+# Updated 2020-02-28.
 #
 # Alpine uses ash (Almquist shell) by default.
 # """
 
 FROM alpine:latest
 MAINTAINER mike@steinbaugh.com
-
-ARG FORCE_UNSAFE_CONFIGURE=1
-ARG PYTHONDONTWRITEBYTECODE=true
 
 RUN apk update && \
     apk add \

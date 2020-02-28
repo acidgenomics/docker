@@ -1,13 +1,12 @@
 # """
 # Install Debian.
-# Updated 2020-02-24.
+# Updated 2020-02-28.
 # """
 
 FROM debian:latest
 MAINTAINER mike@steinbaugh.com
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG FORCE_UNSAFE_CONFIGURE=1
 
 RUN apt-get update \
  && apt-get \
