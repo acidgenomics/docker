@@ -11,5 +11,10 @@ install(
     )
 )
 ## > install("cole-trapnell-lab/monocle3@0.2.0")
-install("acidgenomics/Chromium")
-install("acidgenomics/pointillism")
+install(
+    pkgs = c(
+        "hbc/bcbioSingleCell",
+        "acidgenomics/Chromium",
+        "acidgenomics/pointillism"
+    )
+)
