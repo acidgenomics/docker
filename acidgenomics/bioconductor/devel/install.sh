@@ -10,6 +10,7 @@ source /usr/local/koopa/activate
 
 install-debian-base
 install-openjdk
+r-javareconf
 install-r-packages
 install-python
 venv-create-r-reticulate
