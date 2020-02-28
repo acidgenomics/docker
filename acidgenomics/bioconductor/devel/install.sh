@@ -9,9 +9,9 @@ curl -sSL https://koopa.acidgenomics.com/install \
 source /usr/local/koopa/activate
 
 install-debian-base
+install-r-packages
 install-python
 venv-create-r-reticulate
-install-r-packages
 
 rm -fr /root/.cache
 rm -fr /var/lib/apt/lists/*
