@@ -1,20 +1,51 @@
+options(warn = 2L)
+
+library(utils)
+library(remotes)
 library(BiocManager)
+
+## Fix for BiocNeighbors
+install.packages(
+    pkgs = paste(
+        "https://cran.r-project.org",
+        "src",
+        "contrib",
+        "Archive",
+        "RcppAnnoy",
+        "RcppAnnoy_0.0.14.tar.gz",
+        sep = "/"
+    ),
+    repos = NULL,
+    type = "source"
+)
+## CRAN
 install(
     pkgs = c(
-        "DelayedMatrixStats",
         "Seurat",
-        "batchelor",
         "rgdal",
+        "sctransform",
         "sf",
-        "spatialreg",
+        "spatialreg"
+    )
+)
+## Bioconductor
+install(
+    pkgs = c(
+        "BiocNeighbors",
+        "BiocSingular",
+        "DelayedMatrixStats",
+        "batchelor",
+        "scater",
+        "scran",
         "splatter"
     )
 )
-## > install("cole-trapnell-lab/monocle3@0.2.0")
-install(
-    pkgs = c(
+## GitHub
+install_gitub(
+    repo = c(
         "hbc/bcbioSingleCell",
         "acidgenomics/Chromium",
         "acidgenomics/pointillism"
-    )
+    ),
+    upgrade = "never"
 )

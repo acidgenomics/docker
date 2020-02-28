@@ -1,3 +1,4 @@
+options(warn = 2L)
 library(BiocManager)
 install(
     pkgs = c(
