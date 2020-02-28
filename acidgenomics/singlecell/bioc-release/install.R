@@ -10,6 +10,6 @@ install(
         "splatter"
     )
 )
-install("cole-trapnell-lab/monocle3@0.2.0")
+## > install("cole-trapnell-lab/monocle3@0.2.0")
 install("acidgenomics/Chromium")
 install("acidgenomics/pointillism")
