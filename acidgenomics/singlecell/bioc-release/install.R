@@ -4,36 +4,16 @@ library(utils)
 library(remotes)
 library(BiocManager)
 
-## Fix for BiocNeighbors
-install.packages(
-    pkgs = paste(
-        "https://cran.r-project.org",
-        "src",
-        "contrib",
-        "Archive",
-        "RcppAnnoy",
-        "RcppAnnoy_0.0.14.tar.gz",
-        sep = "/"
-    ),
-    repos = NULL,
-    type = "source"
-)
 ## CRAN
 install(
     pkgs = c(
         "Seurat",
-        "rgdal",
-        "sctransform",
-        "sf",
-        "spatialreg"
+        "sctransform"
     )
 )
 ## Bioconductor
 install(
     pkgs = c(
-        "BiocNeighbors",
-        "BiocSingular",
-        "DelayedMatrixStats",
         "batchelor",
         "scater",
         "scran",
