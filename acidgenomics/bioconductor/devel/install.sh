@@ -10,6 +10,8 @@ source /usr/local/koopa/activate
 
 install-debian-base
 install-openjdk
+install-proj
+install-gdal
 r-javareconf
 install-r-packages
 install-python
