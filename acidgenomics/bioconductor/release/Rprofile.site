@@ -1,4 +1,0 @@
-options(
-    download.file.method = "libcurl",
-    repos = c(CRAN = "https://cran.rstudio.com")
-)
