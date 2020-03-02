@@ -1,12 +1,10 @@
 # """
 # Install Bioconductor Devel.
-# Updated 2020-03-01.
+# Updated 2020-03-02.
 # """
 
 FROM bioconductor/bioconductor_docker:devel
 MAINTAINER mike@steinbaugh.com
-
-ARG DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /tmp
 ADD install.sh .

@@ -1,12 +1,10 @@
 # """
 # Install Bioconductor Release.
-# Updated 2020-03-01.
+# Updated 2020-03-02.
 # """
 
-FROM bioconductor/bioconductor_docker:latest
+FROM acidgenomics/debian:latest
 MAINTAINER mike@steinbaugh.com
-
-ARG DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /tmp
 ADD install.sh .
