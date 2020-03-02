@@ -10,7 +10,6 @@ source /usr/local/koopa/activate
 
 configure-vm
 venv-create-r-reticulate
-install-r-packages
 
 rm -fr /root/.cache
 rm -fr /var/lib/apt/lists/*
