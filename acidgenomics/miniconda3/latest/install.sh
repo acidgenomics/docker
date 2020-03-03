@@ -7,3 +7,8 @@ curl -sSL https://koopa.acidgenomics.com/install \
 
 # shellcheck disable=SC1090
 source ~/.config/koopa/activate
+
+update-conda
+install-aws-cli
+install-azure-cli
+install-google-cloud-sdk

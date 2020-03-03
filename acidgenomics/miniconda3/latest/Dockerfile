@@ -20,7 +20,8 @@ RUN apt-get update \
             git \
             gnupg \
             lsb-release \
-            sudo
+            sudo \
+            unzip
 
 WORKDIR /tmp
 ADD install.sh .

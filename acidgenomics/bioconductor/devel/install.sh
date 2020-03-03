@@ -11,5 +11,4 @@ source /usr/local/koopa/activate
 configure-vm
 venv-create-r-reticulate
 
-rm -fr /root/.cache
-rm -fr /var/lib/apt/lists/*
+rm -fr /tmp/*
