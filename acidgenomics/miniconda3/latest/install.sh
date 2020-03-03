@@ -12,3 +12,5 @@ update-conda
 install-aws-cli
 install-azure-cli
 install-google-cloud-sdk
+
+rm -fr /tmp/*
