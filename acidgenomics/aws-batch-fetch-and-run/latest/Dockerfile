@@ -9,8 +9,8 @@ FROM amazonlinux:latest
 MAINTAINER mike@steinbaugh.com
 
 RUN yum -y install which unzip aws-cli
-ADD fetch-and-run /usr/local/bin/fetch-and-run
 
+ADD fetch-and-run /usr/local/bin/fetch-and-run
 USER nobody
 WORKDIR /tmp
 
