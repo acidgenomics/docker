@@ -1,6 +1,6 @@
 # """
 # Install Debian.
-# Updated 2020-02-28.
+# Updated 2020-03-05.
 # """
 
 FROM debian:latest
@@ -26,5 +26,8 @@ WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
+
+# Open default port for RStudio Server.
+EXPOSE 8787
 
 CMD ["bash", "-il"]
