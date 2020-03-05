@@ -1,9 +1,9 @@
 # """
-# AWS Batch Debian image.
+# AWS Batch single-cell RNA-seq image.
 # Updated 2020-03-04.
 # """
 
-FROM acidgenomics/debian:latest
+FROM acidgenomics/singlecell:latest
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
