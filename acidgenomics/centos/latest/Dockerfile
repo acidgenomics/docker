@@ -1,9 +1,9 @@
 # """
-# Install CentOS 8.
-# Updated 2020-02-28.
+# Install CentOS.
+# Updated 2020-03-04.
 # """
 
-FROM centos:8
+FROM centos:latest
 MAINTAINER mike@steinbaugh.com
 
 RUN dnf -y install bc curl git sudo
