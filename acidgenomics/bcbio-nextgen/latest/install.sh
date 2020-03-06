@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 set -Eeux -o pipefail
 
-rm -fr /usr/local/koopa
-curl -sSL https://koopa.acidgenomics.com/install \
-    | bash -s -- --non-interactive --test
-
-# shellcheck disable=SC1091
-source /usr/local/koopa/activate
-
-install-bcbio-nextgen
+/usr/local/koopa/os/linux/bin/install-bcbio-nextgen
 
 rm -fr /tmp/*
