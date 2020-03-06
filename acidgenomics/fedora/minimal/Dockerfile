@@ -1,12 +1,12 @@
 # """
-# Install Amazon Linux.
-# Updated 2020-02-28.
+# Install Fedora (minimal).
+# Updated 2020-03-06.
 # """
 
-FROM amazonlinux:latest
+FROM fedora:latest
 MAINTAINER mike@steinbaugh.com
 
-RUN yum -y install bc curl git sudo
+RUN dnf -y install bc curl git sudo
 
 WORKDIR /tmp
 ADD install.sh .
