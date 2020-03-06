@@ -1,6 +1,6 @@
 # """
-# Install Fedora.
-# Updated 2020-02-28.
+# Install Fedora (minimal).
+# Updated 2020-03-06.
 # """
 
 FROM fedora:latest

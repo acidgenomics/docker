@@ -1,6 +1,9 @@
 # """
 # Install bcbio-nextgen.
 # Updated 2020-03-06.
+#
+# bcbio-vm images:
+# https://quay.io/repository/bcbio/bcbio-vc
 # """
 
 FROM debian:latest
