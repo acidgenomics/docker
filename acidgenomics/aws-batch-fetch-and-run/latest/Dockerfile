@@ -1,17 +1,13 @@
 # """
 # AWS Batch fetch and run.
-# Updated 2020-03-04.
-#
-# https://github.com/awslabs/aws-batch-helpers
+# Updated 2020-03-06.
 # """
 
-FROM amazonlinux:latest
+FROM acidgenomics/amzn:latest
 MAINTAINER mike@steinbaugh.com
 
-RUN yum -y install which unzip aws-cli
-
-ADD fetch-and-run /usr/local/bin/fetch-and-run
-USER nobody
 WORKDIR /tmp
+ADD install.sh .
+RUN ./install.sh
 
-ENTRYPOINT ["/usr/local/bin/fetch-and-run"]
+ENTRYPOINT ["/usr/local/koopa/bin/aws-batch-fetch-and-run"]
