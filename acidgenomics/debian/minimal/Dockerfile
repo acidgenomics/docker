@@ -1,5 +1,5 @@
 # """
-# Install Debian (full).
+# Install Debian (minimal).
 # Updated 2020-03-06.
 # """
 
@@ -15,19 +15,18 @@ RUN apt-get update \
         --yes \
         install \
             bc \
+            bzip2 \
             ca-certificates \
             curl \
             git \
             gnupg \
             lsb-release \
-            sudo
+            sudo \
+            wget
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
-
-# Open default port for RStudio Server.
-EXPOSE 8787
 
 CMD ["bash", "-il"]
