@@ -4,35 +4,6 @@ Dockerfile recipes for our [Docker Hub](https://hub.docker.com/repositories?name
 
 Images come preloaded with [koopa](https://koopa.acidgenomics.com/) for shell configuration.
 
-## Build a specific image version
-
-For example, build the basejump toolkit against the current Bioconductor release.
-Note that this script calls the recipe defined in `./acidgenomics/basejump/bioc-release/`:
-
-```sh
-docker-build-image \
-    --tag="bioc-release"
-    "acidgenomics/basejump"
-```
-
-## Build all versions of an image
-
-```sh
-docker-build-all-tags "acidgenomics/basejump"
-```
-
-## Tag build as latest
-
-```sh
-# [1] image  [2] source_tag  [3] dest_tag
-docker-tag \
-    "acidgenomics/basejump" \
-    "bioc-release" \
-    "latest"
-```
-
-* * *
-
 ## Troubleshooting
 
 ### Start or stop the daemon
