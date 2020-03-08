@@ -21,7 +21,7 @@ install(
     )
 )
 ## GitHub
-install_gitub(
+install_github(
     repo = c(
         "hbc/bcbioSingleCell",
         "acidgenomics/Chromium",
