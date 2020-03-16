@@ -8,7 +8,7 @@ curl -sSL https://koopa.acidgenomics.com/install \
 # shellcheck disable=SC1091
 source /usr/local/koopa/activate
 
-install-debian-base --bioconductor
+install-base --bioconductor
 install-r-packages
 update-r-packages
 
