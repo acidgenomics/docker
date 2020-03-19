@@ -27,5 +27,5 @@ install_github(
         "acidgenomics/Chromium",
         "acidgenomics/pointillism"
     ),
-    upgrade = "never"
+    dependencies = TRUE
 )

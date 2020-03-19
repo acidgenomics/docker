@@ -15,5 +15,6 @@ install(
     pkgs = c(
         "acidgenomics/DESeqAnalysis",
         "acidgenomics/acidgsea"
-    )
+    ),
+    dependencies = TRUE
 )
