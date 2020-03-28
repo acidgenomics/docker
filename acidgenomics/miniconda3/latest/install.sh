@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -Eeux -o pipefail
 
-rm -fr /usr/local/koopa
 curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- --non-interactive --test
 
@@ -12,5 +11,3 @@ update-conda
 install-aws-cli
 install-azure-cli
 install-google-cloud-sdk
-
-rm -fr /tmp/*

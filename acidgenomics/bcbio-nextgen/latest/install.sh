@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -Eeux -o pipefail
 
-/usr/local/koopa/bin/koopa update
-/usr/local/koopa/os/linux/bin/install-bcbio-nextgen
+# shellcheck disable=SC1090
+force=1 source ~/.config/koopa/activate
 
-rm -fr /tmp/*
+koopa update
+install-bcbio-nextgen
