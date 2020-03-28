@@ -6,7 +6,7 @@ curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- --non-interactive --test
 
 # shellcheck disable=SC1090
-source ~/.config/koopa/activate
+force=1 source ~/.config/koopa/activate
 
 update-conda
 install-aws-cli
