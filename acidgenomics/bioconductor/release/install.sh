@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 set -Eeux -o pipefail
 
-(
-    cd /usr/local/koopa || exit 1
-    git pull
-)
-
-# shellcheck disable=SC1091
-source /usr/local/koopa/activate
+# shellcheck disable=SC1090
+force=1 source ~/.config/koopa/activate
 
 koopa update
 update-r-packages
