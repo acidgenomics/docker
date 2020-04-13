@@ -11,5 +11,4 @@ force=1 source ~/.config/koopa/activate
 install-base --bioconductor
 install-r-packages
 update-r-packages
-
-rm -fr /tmp/*
+venv-create-r-reticulate

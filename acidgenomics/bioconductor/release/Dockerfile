@@ -3,7 +3,7 @@
 # Updated 2020-03-02.
 # """
 
-FROM acidgenomics/debian:latest
+FROM bioconductor/bioconductor_docker:release
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
