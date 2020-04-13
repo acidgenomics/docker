@@ -1,9 +1,9 @@
 # """
 # Install Bioconductor Release.
-# Updated 2020-03-02.
+# Updated 2020-04-13.
 # """
 
-FROM bioconductor/bioconductor_docker:release
+FROM bioconductor/bioconductor_docker:latest
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
