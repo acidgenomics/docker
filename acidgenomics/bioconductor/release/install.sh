@@ -9,6 +9,9 @@ curl -sSL https://koopa.acidgenomics.com/install \
 force=1 source ~/.config/koopa/activate
 
 install-base --bioconductor
-install-r-packages
-update-r-packages
-venv-create-r-reticulate
+
+# FIXME This errors out because of LLVM_CONFIG missing.
+#venv-create-r-reticulate
+
+#install-r-packages
+#update-r-packages
