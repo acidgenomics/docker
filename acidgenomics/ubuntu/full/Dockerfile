@@ -3,7 +3,7 @@
 # Updated 2020-04-13.
 # """
 
-FROM ubuntu:20.04
+FROM ubuntu:latest
 MAINTAINER mike@steinbaugh.com
 
 ARG DEBIAN_FRONTEND=noninteractive
