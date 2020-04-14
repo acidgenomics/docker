@@ -1,9 +1,9 @@
 options(warn = 2L)
-install.packages(
-    pkgs = "Rcpp",
-    repos = "https://rcppcore.github.io/drat",
-    type = "source"
-)
+## > install.packages(
+## >     pkgs = "Rcpp",
+## >     repos = "https://rcppcore.github.io/drat",
+## >     type = "source"
+## > )
 library(BiocManager)
 install(
     pkgs = paste(
