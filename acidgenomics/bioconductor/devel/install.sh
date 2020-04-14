@@ -8,7 +8,4 @@ curl -sSL https://koopa.acidgenomics.com/install \
 # shellcheck disable=SC1090
 force=1 source ~/.config/koopa/activate
 
-install-base --bioconductor
-install-r-packages
-update-r-packages
-venv-create-r-reticulate
+configure-vm --bioconductor
