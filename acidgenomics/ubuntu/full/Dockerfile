@@ -8,20 +8,21 @@ MAINTAINER mike@steinbaugh.com
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-
 RUN apt-get update \
  && apt-get \
         --no-install-recommends \
         --quiet \
         --yes \
         install \
+            bash \
             bc \
             ca-certificates \
             curl \
             git \
             gnupg \
             lsb-release \
-            sudo
+            sudo \
+            zsh
 
 WORKDIR /tmp
 ADD install.sh .
@@ -31,4 +32,4 @@ WORKDIR /
 # Open default port for RStudio Server.
 EXPOSE 8787
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]

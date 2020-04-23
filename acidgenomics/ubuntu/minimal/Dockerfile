@@ -14,6 +14,7 @@ RUN apt-get update \
         --quiet \
         --yes \
         install \
+            bash \
             bc \
             bzip2 \
             ca-certificates \
@@ -22,11 +23,12 @@ RUN apt-get update \
             gnupg \
             lsb-release \
             sudo \
-            wget
+            wget \
+            zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]
