@@ -1,9 +1,10 @@
 options(warn = 2L)
-install.packages(
-    pkgs = "Rcpp",
-    repos = "https://rcppcore.github.io/drat",
-    type = "source"
-)
+stopifnot(isTRUE(nzchar(Sys.getenv("GITHUB_PAT"))))
+## > install.packages(
+## >     pkgs = "Rcpp",
+## >     repos = "https://rcppcore.github.io/drat",
+## >     type = "source"
+## > )
 library(BiocManager)
 install(
     pkgs = paste(
