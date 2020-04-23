@@ -1,6 +1,6 @@
 # """
 # Install Biocontainers.
-# Updated 2020-02-15.
+# Updated 2020-04-23.
 # """
 
 FROM biocontainers/biocontainers:latest

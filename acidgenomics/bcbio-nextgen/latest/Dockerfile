@@ -1,6 +1,6 @@
 # """
 # Install bcbio-nextgen.
-# Updated 2020-03-06.
+# Updated 2020-04-23.
 #
 # bcbio-vm images:
 # https://quay.io/repository/bcbio/bcbio-vc
@@ -13,5 +13,3 @@ WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
-
-CMD ["bash", "-il"]

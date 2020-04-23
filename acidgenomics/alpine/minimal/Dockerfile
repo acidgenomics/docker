@@ -1,6 +1,6 @@
 # """
 # Install Alpine Linux.
-# Updated 2020-02-28.
+# Updated 2020-04-23.
 #
 # Alpine uses ash (Almquist shell) by default.
 # """
@@ -14,11 +14,12 @@ RUN apk update && \
         ca-certificates \
         curl \
         git \
-        sudo
+        sudo \
+        zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]

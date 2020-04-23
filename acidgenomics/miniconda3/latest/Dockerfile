@@ -1,6 +1,6 @@
 # """
 # Install miniconda3.
-# Updated 2020-02-28.
+# Updated 2020-04-23.
 # """
 
 FROM continuumio/miniconda3:latest
@@ -14,6 +14,7 @@ RUN apt-get update \
         --quiet \
         --yes \
         install \
+            bash \
             bc \
             ca-certificates \
             curl \
@@ -21,11 +22,12 @@ RUN apt-get update \
             gnupg \
             lsb-release \
             sudo \
-            unzip
+            unzip \
+            zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]

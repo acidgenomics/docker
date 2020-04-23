@@ -1,6 +1,6 @@
 # """
 # Install Kali Linux.
-# Updated 2020-02-28.
+# Updated 2020-04-23.
 # """
 
 FROM kalilinux/kali-rolling:latest
@@ -14,17 +14,19 @@ RUN apt-get update \
         --quiet \
         --yes \
         install \
+            bash \
             bc \
             ca-certificates \
             curl \
             git \
             gnupg \
             lsb-release \
-            sudo
+            sudo \
+            zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]

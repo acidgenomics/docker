@@ -1,6 +1,6 @@
 # """
 # Install Arch Linux.
-# Updated 2020-02-27.
+# Updated 2020-04-23.
 # """
 
 FROM archlinux:latest
@@ -12,11 +12,12 @@ RUN pacman -Syyu --noconfirm && \
         bash \
         curl \
         git \
-        sudo
+        sudo \
+        zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]
