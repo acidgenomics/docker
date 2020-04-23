@@ -1,9 +1,9 @@
 # """
 # Install Ubuntu.
-# Updated 2020-03-05.
+# Updated 2020-04-23.
 # """
 
-FROM ubuntu:latest
+FROM ubuntu:20.04
 MAINTAINER mike@steinbaugh.com
 
 ARG DEBIAN_FRONTEND=noninteractive
