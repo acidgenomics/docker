@@ -1,16 +1,16 @@
 # """
 # Install CentOS.
-# Updated 2020-03-04.
+# Updated 2020-04-23.
 # """
 
 FROM centos:latest
 MAINTAINER mike@steinbaugh.com
 
-RUN dnf -y install bc curl git sudo
+RUN dnf -y bash install bc curl git sudo zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]

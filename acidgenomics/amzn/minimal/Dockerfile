@@ -1,16 +1,16 @@
 # """
 # Install Amazon Linux.
-# Updated 2020-03-06.
+# Updated 2020-04-23.
 # """
 
 FROM amazonlinux:latest
 MAINTAINER mike@steinbaugh.com
 
-RUN yum -y install bc curl git sudo unzip
+RUN yum -y install bash bc curl git sudo unzip zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]

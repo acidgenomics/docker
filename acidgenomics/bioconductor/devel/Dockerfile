@@ -1,6 +1,6 @@
 # """
 # Install Bioconductor Devel.
-# Updated 2020-03-02.
+# Updated 2020-04-23.
 # """
 
 FROM bioconductor/bioconductor_docker:devel
@@ -11,4 +11,4 @@ ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-CMD ["bash", "-il"]
+CMD ["zsh", "-il"]
