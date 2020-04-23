@@ -1,6 +1,6 @@
 # """
 # Install Debian (minimal).
-# Updated 2020-03-06.
+# Updated 2020-04-23.
 # """
 
 FROM debian:latest
@@ -22,6 +22,7 @@ RUN apt-get update \
             gnupg \
             lsb-release \
             sudo \
+            unzip \
             wget
 
 WORKDIR /tmp

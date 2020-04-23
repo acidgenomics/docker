@@ -1,9 +1,9 @@
 # """
 # AWS Batch fetch and run.
-# Updated 2020-03-06.
+# Updated 2020-04-23.
 # """
 
-FROM acidgenomics/amzn:latest
+FROM acidgenomics/debian:minimal
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
