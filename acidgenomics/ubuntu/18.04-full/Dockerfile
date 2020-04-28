@@ -1,9 +1,9 @@
 # """
-# Install Ubuntu.
-# Updated 2020-04-23.
+# Install Ubuntu 18.04 LTS (full).
+# Updated 2020-04-28.
 # """
 
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 MAINTAINER mike@steinbaugh.com
 
 ARG DEBIAN_FRONTEND=noninteractive

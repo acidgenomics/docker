@@ -1,6 +1,6 @@
 # """
-# Install Ubuntu (minimal).
-# Updated 2020-04-23.
+# Install Ubuntu 20.04 LTS (full).
+# Updated 2020-04-28.
 # """
 
 FROM ubuntu:20.04
@@ -16,19 +16,20 @@ RUN apt-get update \
         install \
             bash \
             bc \
-            bzip2 \
             ca-certificates \
             curl \
             git \
             gnupg \
             lsb-release \
             sudo \
-            wget \
             zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
+
+# Open default port for RStudio Server.
+EXPOSE 8787
 
 CMD ["zsh", "-il"]
