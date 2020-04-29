@@ -3,10 +3,10 @@
 # Updated 2020-04-29.
 # """
 
-FROM rocker/rstudio:latest
+FROM rocker/rstudio:3.6.3
 MAINTAINER mike@steinbaugh.com
 
-ARG BIOC_VERSION="3.11"
+ARG BIOC_VERSION="3.10"
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \

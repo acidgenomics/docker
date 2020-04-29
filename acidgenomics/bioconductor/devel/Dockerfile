@@ -1,10 +1,29 @@
 # """
-# Install Bioconductor Devel.
-# Updated 2020-04-23.
+# Install Bioconductor.
+# Updated 2020-04-29.
 # """
 
-FROM bioconductor/bioconductor_docker:devel
+FROM rocker/rstudio:devel
 MAINTAINER mike@steinbaugh.com
+
+ARG BIOC_VERSION="devel"
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+ && apt-get \
+        --no-install-recommends \
+        --quiet \
+        --yes \
+        install \
+            bash \
+            bc \
+            ca-certificates \
+            curl \
+            git \
+            gnupg \
+            lsb-release \
+            sudo \
+            zsh
 
 WORKDIR /tmp
 ADD install.sh .
