@@ -1,9 +1,9 @@
 # """
-# Install Bioconductor.
-# Updated 2020-04-29.
+# Install Bioconductor Devel.
+# Updated 2020-04-30.
 # """
 
-FROM rocker/rstudio:devel
+FROM debian:latest
 MAINTAINER mike@steinbaugh.com
 
 ARG BIOC_VERSION="devel"
@@ -29,5 +29,8 @@ WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
+
+# Open default port for RStudio Server.
+EXPOSE 8787
 
 CMD ["zsh", "-il"]

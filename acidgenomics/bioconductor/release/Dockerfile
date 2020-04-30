@@ -1,9 +1,9 @@
 # """
-# Install Bioconductor.
+# Install Bioconductor Release.
 # Updated 2020-04-29.
 # """
 
-FROM rocker/rstudio:latest
+FROM debian:latest
 MAINTAINER mike@steinbaugh.com
 
 ARG BIOC_VERSION="3.11"
