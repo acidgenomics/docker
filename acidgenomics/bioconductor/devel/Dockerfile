@@ -1,5 +1,5 @@
 # """
-# Install Bioconductor Devel.
+# Install Bioconductor devel.
 # Updated 2020-04-30.
 # """
 

@@ -1,5 +1,5 @@
 # """
-# Install Bioconductor Old Release.
+# Install Bioconductor old release.
 # Updated 2020-04-30.
 # """
 

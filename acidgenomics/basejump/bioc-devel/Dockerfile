@@ -1,6 +1,6 @@
 # """
-# Install basejump on Bioconductor Devel.
-# Updated 2020-03-23.
+# Install basejump on Bioconductor devel.
+# Updated 2020-04-30.
 # """
 
 FROM acidgenomics/bioconductor:devel
