@@ -1,6 +1,6 @@
 # """
-# Install bcbioRNASeq on Bioconductor Release.
-# Updated 2019-10-30.
+# Install bcbioRNASeq on Bioconductor release.
+# Updated 2020-04-30.
 # """
 
 FROM acidgenomics/basejump:bioc-release

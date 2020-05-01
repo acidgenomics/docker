@@ -1,12 +1,12 @@
 # """
-# Install Bioconductor release.
+# Install Bioconductor old release.
 # Updated 2020-04-30.
 # """
 
 FROM debian:latest
 MAINTAINER mike@steinbaugh.com
 
-ARG BIOC_VERSION="3.11"
+ARG BIOC_VERSION="3.10"
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \

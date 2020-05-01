@@ -1,6 +1,6 @@
 # """
-# Install Acid Genomics RNA-seq packages on Bioconductor Devel.
-# Updated 2019-10-03.
+# Install Acid Genomics RNA-seq packages on Bioconductor devel.
+# Updated 2020-04-30.
 # """
 
 FROM acidgenomics/basejump:bioc-devel

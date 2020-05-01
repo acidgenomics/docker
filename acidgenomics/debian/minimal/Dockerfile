@@ -1,6 +1,6 @@
 # """
-# Install Debian (minimal).
-# Updated 2020-04-23.
+# Install Debian minimal.
+# Updated 2020-04-30.
 # """
 
 FROM debian:latest

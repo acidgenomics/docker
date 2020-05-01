@@ -1,9 +1,9 @@
 # """
-# Install basejump on Bioconductor release.
+# Install basejump on Bioconductor old release.
 # Updated 2020-04-30.
 # """
 
-FROM acidgenomics/bioconductor:release
+FROM acidgenomics/bioconductor:oldrel
 MAINTAINER mike@steinbaugh.com
 
 ARG GITHUB_PAT

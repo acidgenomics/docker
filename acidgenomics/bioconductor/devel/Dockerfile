@@ -1,14 +1,36 @@
 # """
-# Install Bioconductor Devel.
-# Updated 2020-04-23.
+# Install Bioconductor devel.
+# Updated 2020-04-30.
 # """
 
-FROM bioconductor/bioconductor_docker:devel
+FROM debian:latest
 MAINTAINER mike@steinbaugh.com
+
+ARG BIOC_VERSION="devel"
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+ && apt-get \
+        --no-install-recommends \
+        --quiet \
+        --yes \
+        install \
+            bash \
+            bc \
+            ca-certificates \
+            curl \
+            git \
+            gnupg \
+            lsb-release \
+            sudo \
+            zsh
 
 WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
+
+# Open default port for RStudio Server.
+EXPOSE 8787
 
 CMD ["zsh", "-il"]
