@@ -1,9 +1,9 @@
 # """
-# Install bcbioSingleCell on Bioconductor release.
+# Install bcbioSingleCell on Bioconductor old release.
 # Updated 2020-04-30.
 # """
 
-FROM acidgenomics/basejump:bioc-release
+FROM acidgenomics/basejump:bioc-oldrel
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp

@@ -1,6 +1,6 @@
 # """
-# Install bcbioSingleCell on Bioconductor Devel.
-# Updated 2019-10-30.
+# Install bcbioSingleCell on Bioconductor devel.
+# Updated 2020-04-30.
 # """
 
 FROM acidgenomics/basejump:bioc-devel
