@@ -1,4 +1,7 @@
-options(warn = 2L)
+options(
+    error = quote(quit(status = 1L)),
+    warning = quote(quit(status = 1L))
+)
 library(BiocManager)
 install(
     pkgs = c(
