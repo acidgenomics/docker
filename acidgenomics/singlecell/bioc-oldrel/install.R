@@ -1,7 +1,6 @@
-options(
-    error = quote(quit(status = 1L)),
-    warning = quote(quit(status = 1L))
-)
+#!/usr/bin/env Rscript
+source("/usr/local/koopa/lang/r/include/header.R")
+stopifnot(isTRUE(nzchar(Sys.getenv("GITHUB_PAT"))))
 library(bb8)
 install(
     pkgs = c(

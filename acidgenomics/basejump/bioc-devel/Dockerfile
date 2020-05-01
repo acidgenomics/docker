@@ -1,6 +1,6 @@
 # """
 # Install basejump on Bioconductor devel.
-# Updated 2020-04-30.
+# Updated 2020-05-01.
 # """
 
 FROM acidgenomics/bioconductor:devel
@@ -12,5 +12,5 @@ WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 ADD install.R .
-RUN R -f install.R
+RUN ./install.R
 WORKDIR /
