@@ -1,11 +1,9 @@
-options(warn = 2L)
-stopifnot(isTRUE(nzchar(Sys.getenv("GITHUB_PAT"))))
-install.packages(
-    pkgs = "Rcpp",
-    repos = "https://rcppcore.github.io/drat",
-    type = "source"
+options(
+    error = quote(quit(status = 1L)),
+    warning = quote(quit(status = 1L))
 )
-library(BiocManager)
+stopifnot(isTRUE(nzchar(Sys.getenv("GITHUB_PAT"))))
+library(bb8)
 install(
     pkgs = paste(
         "acidgenomics",
@@ -18,5 +16,6 @@ install(
         ),
         sep = "/"
     ),
-    dependencies = TRUE
+    dependencies = TRUE,
+    reinstall = TRUE
 )

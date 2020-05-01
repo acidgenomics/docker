@@ -2,7 +2,7 @@ options(
     error = quote(quit(status = 1L)),
     warning = quote(quit(status = 1L))
 )
-library(BiocManager)
+library(bb8)
 install(
     pkgs = c(
         "DESeq2",

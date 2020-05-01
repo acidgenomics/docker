@@ -1,28 +1,20 @@
-options(warn = 2L)
-
-library(utils)
-library(remotes)
-library(BiocManager)
-
-## CRAN
+options(
+    error = quote(quit(status = 1L)),
+    warning = quote(quit(status = 1L))
+)
+library(bb8)
 install(
     pkgs = c(
         "Seurat",
-        "sctransform"
-    )
-)
-## Bioconductor
-install(
-    pkgs = c(
         "batchelor",
         "scater",
         "scran",
+        "sctransform",
         "splatter"
     )
 )
-## GitHub
-install_github(
-    repo = c(
+install(
+    pkgs = c(
         "hbc/bcbioSingleCell",
         "acidgenomics/Chromium",
         "acidgenomics/pointillism"
