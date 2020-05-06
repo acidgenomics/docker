@@ -1,6 +1,6 @@
 # """
 # AWS Batch fetch and run.
-# Updated 2020-04-23.
+# Updated 2020-05-06.
 # """
 
 FROM acidgenomics/debian:minimal
