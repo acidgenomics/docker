@@ -1,6 +1,6 @@
 # """
 # Install Nextflow ATAC-seq.
-# Updated 2020-05-05.
+# Updated 2020-05-06.
 # """
 
 FROM nfcore/atacseq:latest
