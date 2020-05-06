@@ -1,5 +1,5 @@
 # """
-# Install Nextflow small RNA pipeline (micro RNAs).
+# Install Nextflow small RNA-seq pipeline.
 # Updated 2020-05-06.
 # """
 

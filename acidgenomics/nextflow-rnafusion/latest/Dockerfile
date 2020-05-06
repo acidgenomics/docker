@@ -1,5 +1,5 @@
 # """
-# Install Nextflow fusion detection pipeline.
+# Install Nextflow RNA fusion detection pipeline.
 # Updated 2020-05-06.
 # """
 
