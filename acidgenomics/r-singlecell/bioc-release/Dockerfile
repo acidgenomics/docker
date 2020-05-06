@@ -1,9 +1,9 @@
 # """
 # Install Acid Genomics single-cell packages on Bioconductor release.
-# Updated 2020-05-01.
+# Updated 2020-05-06.
 # """
 
-FROM acidgenomics/basejump:bioc-release
+FROM acidgenomics/r-basejump:bioc-release
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp

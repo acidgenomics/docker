@@ -1,9 +1,9 @@
 # """
 # Install bcbioRNASeq on Bioconductor devel.
-# Updated 2020-05-01.
+# Updated 2020-05-06.
 # """
 
-FROM acidgenomics/basejump:bioc-devel
+FROM acidgenomics/r-basejump:bioc-devel
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
