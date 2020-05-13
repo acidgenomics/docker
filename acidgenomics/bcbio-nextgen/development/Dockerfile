@@ -1,9 +1,6 @@
 # """
-# Install bcbio-nextgen.
+# Install bcbio-nextgen development version.
 # Updated 2020-05-13.
-#
-# bcbio-vm images:
-# https://quay.io/repository/bcbio/bcbio-vc
 # """
 
 FROM acidgenomics/debian:minimal

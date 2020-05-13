@@ -1,6 +1,6 @@
 # """
-# Install bcbio-nextgen.
-# Updated 2020-04-23.
+# Install bcbio-nextgen stable version.
+# Updated 2020-05-13.
 #
 # bcbio-vm images:
 # https://quay.io/repository/bcbio/bcbio-vc
