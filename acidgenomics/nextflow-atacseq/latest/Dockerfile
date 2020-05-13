@@ -22,6 +22,7 @@ RUN apt-get update \
             gnupg \
             lsb-release \
             sudo \
+            unzip \
             zsh
 
 WORKDIR /tmp
