@@ -1,6 +1,6 @@
 # """
 # AWS Batch Debian image.
-# Updated 2020-05-06.
+# Updated 2020-05-13.
 # """
 
 FROM acidgenomics/debian:latest
