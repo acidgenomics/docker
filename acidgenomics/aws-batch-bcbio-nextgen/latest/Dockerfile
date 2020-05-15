@@ -1,6 +1,6 @@
 # """
 # AWS Batch bcbio-nextgen image.
-# Updated 2020-05-13.
+# Updated 2020-05-15.
 # """
 
 FROM acidgenomics/bcbio-nextgen:latest
