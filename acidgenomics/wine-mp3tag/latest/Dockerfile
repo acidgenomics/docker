@@ -11,4 +11,4 @@ ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-# > ENTRYPOINT wine ~/.wine/drive_c/Program\ Files/Mp3tag/Mp3tag.exe
+ENTRYPOINT wine ~/.wine/drive_c/Program\ Files/Mp3tag/Mp3tag.exe
