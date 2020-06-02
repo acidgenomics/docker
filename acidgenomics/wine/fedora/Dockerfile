@@ -3,7 +3,7 @@
 # Updated 2020-06-01.
 # """
 
-FROM acidgenomics/debian:minimal
+FROM fedora:31
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
