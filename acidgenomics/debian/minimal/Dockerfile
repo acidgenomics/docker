@@ -21,6 +21,7 @@ RUN apt-get update \
             curl \
             git \
             gnupg \
+            less \
             lsb-release \
             sudo \
             unzip \
