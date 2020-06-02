@@ -1,6 +1,6 @@
 # """
 # Install wine.
-# Updated 2020-06-01.
+# Updated 2020-06-02.
 # """
 
 FROM acidgenomics/debian:minimal

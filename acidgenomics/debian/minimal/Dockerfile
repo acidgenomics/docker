@@ -1,6 +1,6 @@
 # """
 # Install Debian minimal.
-# Updated 2020-06-01.
+# Updated 2020-06-02.
 # """
 
 FROM debian:latest
@@ -21,7 +21,6 @@ RUN apt-get update \
             curl \
             git \
             gnupg \
-            less \
             lsb-release \
             sudo \
             unzip \
