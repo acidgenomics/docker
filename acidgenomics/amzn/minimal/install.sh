@@ -6,4 +6,5 @@ curl -sSL https://koopa.acidgenomics.com/install \
 # shellcheck disable=SC1090
 force=1 source ~/.config/koopa/activate
 
+fix-sudo-setrlimit-error
 install-aws-cli
