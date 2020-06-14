@@ -1,7 +1,12 @@
+# """
+# RNAEditingIndexer
+# https://github.com/a2iEditing/RNAEditingIndexer/
+# Updated 2020-06-13.
+# """
+
 FROM biocontainers/biocontainers:latest
 
 USER root
-
 ENV BAM_UTILS_PATH="bam" \
     BEDTOOLS_PATH="bedtools" \
     DEV_ROOT="/bin/AEI/RNAEditingIndexer" \
