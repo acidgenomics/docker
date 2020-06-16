@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+options(verbose = TRUE)
 source("/usr/local/koopa/lang/r/include/header.R")
 stopifnot(isTRUE(nzchar(Sys.getenv("GITHUB_PAT"))))
 library(bb8)
