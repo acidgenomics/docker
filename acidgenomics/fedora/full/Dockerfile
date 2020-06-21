@@ -1,10 +1,12 @@
 # """
 # Install Fedora (full).
-# Updated 2020-06-01.
+# Updated 2020-06-21.
 # """
 
 FROM fedora:32
 MAINTAINER mike@steinbaugh.com
+
+ARG TERM=xterm-256color
 
 RUN dnf -y install bash bc curl git sudo zsh
 
