@@ -16,5 +16,4 @@ curl -sSL https://koopa.acidgenomics.com/install \
 force=1 source ~/.config/koopa/activate
 
 configure-vm
-
-~/.config/koopa/home/tests/ci.sh
+koopa test
