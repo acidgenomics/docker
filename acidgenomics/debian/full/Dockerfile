@@ -18,7 +18,9 @@ RUN apt-get update \
             bash \
             bc \
             ca-certificates \
+            coreutils \
             curl \
+            findutils \
             git \
             gnupg \
             lsb-release \

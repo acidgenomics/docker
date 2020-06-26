@@ -1,6 +1,6 @@
 # """
 # Install Debian minimal.
-# Updated 2020-06-02.
+# Updated 2020-06-26.
 # """
 
 FROM debian:latest
@@ -18,7 +18,9 @@ RUN apt-get update \
             bc \
             bzip2 \
             ca-certificates \
+            coreutils \
             curl \
+            findutils \
             git \
             gnupg \
             less \
