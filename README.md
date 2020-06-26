@@ -1,4 +1,4 @@
-# Docker images
+# Docker images 🐳
 
 Dockerfile recipes for our [Docker Hub](https://hub.docker.com/repositories?namespace=acidgenomics) images.
 
