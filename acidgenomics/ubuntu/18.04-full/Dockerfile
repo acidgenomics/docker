@@ -1,6 +1,6 @@
 # """
 # Install Ubuntu 18.04 LTS (full).
-# Updated 2020-04-28.
+# Updated 2020-06-26.
 # """
 
 FROM ubuntu:18.04
@@ -16,12 +16,18 @@ RUN apt-get update \
         install \
             bash \
             bc \
+            bzip2 \
             ca-certificates \
+            coreutils \
             curl \
+            findutils \
             git \
             gnupg \
+            less \
             lsb-release \
             sudo \
+            unzip \
+            wget \
             zsh
 
 WORKDIR /tmp

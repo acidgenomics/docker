@@ -17,14 +17,18 @@ RUN apt-get update \
         install \
             bash \
             bc \
+            bzip2 \
             ca-certificates \
             coreutils \
             curl \
             findutils \
             git \
             gnupg \
+            less \
             lsb-release \
             sudo \
+            unzip \
+            wget \
             zsh
 
 WORKDIR /tmp
