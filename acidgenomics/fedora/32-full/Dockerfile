@@ -3,7 +3,7 @@
 # Updated 2020-06-28.
 # """
 
-FROM fedora:latest
+FROM fedora:32
 MAINTAINER mike@steinbaugh.com
 
 ARG TERM=xterm-256color
