@@ -1,9 +1,9 @@
 # """
 # Install Fedora (full).
-# Updated 2020-06-26.
+# Updated 2020-06-28.
 # """
 
-FROM fedora:32
+FROM fedora:latest
 MAINTAINER mike@steinbaugh.com
 
 ARG TERM=xterm-256color

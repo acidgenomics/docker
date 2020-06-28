@@ -1,9 +1,9 @@
 # """
 # Install Fedora (minimal).
-# Updated 2020-06-26.
+# Updated 2020-06-28.
 # """
 
-FROM fedora:32
+FROM fedora:latest
 MAINTAINER mike@steinbaugh.com
 
 RUN dnf -y install \
