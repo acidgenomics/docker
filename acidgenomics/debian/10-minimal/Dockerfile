@@ -1,13 +1,12 @@
 # """
-# Install Debian full.
-# Updated 2020-06-21.
+# Install Debian minimal.
+# Updated 2020-06-26.
 # """
 
-FROM debian:latest
+FROM debian:10
 MAINTAINER mike@steinbaugh.com
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG TERM=xterm-256color
 
 RUN apt-get update \
  && apt-get \
@@ -35,8 +34,5 @@ WORKDIR /tmp
 ADD install.sh .
 RUN ./install.sh
 WORKDIR /
-
-# Open default port for RStudio Server.
-EXPOSE 8787
 
 CMD ["zsh", "-il"]

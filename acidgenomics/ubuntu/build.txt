@@ -1,6 +1,0 @@
-20.04-minimal
-18.04-minimal
-minimal
-20.04-full
-18.04-full
-full
