@@ -1,9 +1,9 @@
 # """
 # Install Mp3tag.
-# Updated 2020-06-01.
+# Updated 2020-06-03.
 # """
 
-FROM acidgenomics/wine:latest
+FROM steinbaugh/wine:latest
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
@@ -11,4 +11,4 @@ ADD install.sh .
 RUN ./install.sh
 WORKDIR /
 
-ENTRYPOINT wine ~/.wine/drive_c/Program\ Files/Mp3tag/Mp3tag.exe
+ENTRYPOINT ["wine", "~/.wine/drive_c/Program\ Files/Mp3tag/Mp3tag.exe"]
