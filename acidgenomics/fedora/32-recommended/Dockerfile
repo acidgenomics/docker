@@ -1,5 +1,5 @@
 # """
-# Install Fedora (full).
+# Install Fedora (recommended).
 # Updated 2020-08-05.
 # """
 

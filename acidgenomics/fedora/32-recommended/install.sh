@@ -7,4 +7,4 @@ curl -sSL https://koopa.acidgenomics.com/install \
 # shellcheck disable=SC1090
 force=1 source ~/.config/koopa/activate
 
-configure-vm --full --verbose
+configure-vm --verbose
