@@ -1,6 +1,6 @@
 # """
-# Install CentOS.
-# Updated 2020-06-29.
+# Install CentOS (minimal).
+# Updated 2020-08-05.
 # """
 
 FROM centos:8
