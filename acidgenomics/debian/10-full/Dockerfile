@@ -1,6 +1,6 @@
 # """
-# Install Debian full.
-# Updated 2020-06-28.
+# Install Debian (full).
+# Updated 2020-08-05.
 # """
 
 FROM debian:10
