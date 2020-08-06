@@ -1,2 +1,4 @@
+10-minimal
+10-recommended
 minimal
 recommended
