@@ -16,6 +16,7 @@
 # - https://access.redhat.com/documentation/en-us/red_hat_software_collections/
 #       3/html-single/using_red_hat_software_collections_container_images/index
 # - https://access.redhat.com/discussions/4171061
+# - https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image
 # """
 
 FROM registry.access.redhat.com/ubi8/ubi
