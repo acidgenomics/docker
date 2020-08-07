@@ -1,0 +1,33 @@
+# Minimal bioinformatics images {{{1
+biocontainers
+miniconda3
+
+# Recommended Linux images {{{1
+debian
+ubuntu
+fedora
+centos
+
+# Extra Linux images {{{1
+alpine
+amzn
+arch
+opensuse
+
+# R images {{{1
+bioconductor
+r-basejump
+r-bcbiornaseq
+r-bcbiosinglecell
+r-rnaseq
+r-singlecell
+
+# Large bioinformatics images {{{1
+# rnaeditingindexer
+
+# AWS Batch images {{{1
+aws-batch-fetch-and-run
+aws-batch-miniconda3
+aws-batch-debian
+aws-batch-ubuntu
+aws-batch-fedora
