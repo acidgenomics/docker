@@ -1,6 +1,6 @@
 # """
 # Install Fedora (minimal).
-# Updated 2020-06-28.
+# Updated 2020-06-18.
 # """
 
 FROM fedora:32
@@ -15,6 +15,7 @@ RUN dnf -y install \
     git \
     less \
     sudo \
+    unzip \
     zsh
 
 WORKDIR /tmp
