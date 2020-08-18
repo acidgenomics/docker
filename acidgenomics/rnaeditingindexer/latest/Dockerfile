@@ -1,10 +1,10 @@
 # """
 # RNAEditingIndexer
 # https://github.com/a2iEditing/RNAEditingIndexer/
-# Updated 2020-06-13.
+# Updated 2020-08-18.
 # """
 
-FROM biocontainers/biocontainers:latest
+FROM acidgenomics/biocontainers:latest
 
 USER root
 ENV BAM_UTILS_PATH="bam" \
