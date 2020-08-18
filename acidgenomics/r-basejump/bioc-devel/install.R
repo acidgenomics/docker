@@ -2,7 +2,12 @@
 koopaPrefix <- "/usr/local/koopa"
 source(file.path(koopaPrefix, "/lang/r/include/header.R"))
 install(
-    pkgs = "basejump",
+    pkgs = c(
+        "goalie",
+        "syntactic",
+        "pipette",
+        "basejump"
+    ),
     dependencies = TRUE,
     reinstall = TRUE
 )
