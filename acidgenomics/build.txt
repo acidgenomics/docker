@@ -6,6 +6,7 @@ miniconda3
 debian
 ubuntu
 fedora
+rhel
 centos
 
 # Extra Linux images {{{1
