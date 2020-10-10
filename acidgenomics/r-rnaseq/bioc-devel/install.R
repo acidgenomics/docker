@@ -15,7 +15,7 @@ install(
 install(
     pkgs = c(
         "DESeqAnalysis",
-        "acidgsea"
+        "AcidGSEA"
     ),
     dependencies = TRUE
 )
