@@ -1,9 +1,9 @@
 # """
 # Install Fedora (recommended).
-# Updated 2020-08-18.
+# Updated 2020-10-27.
 # """
 
-FROM fedora:32
+FROM fedora:33
 MAINTAINER mike@steinbaugh.com
 
 ARG TERM=xterm-256color
