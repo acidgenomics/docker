@@ -16,6 +16,7 @@ arch
 opensuse
 
 # R images {{{1
+# Ensure to build Debian image before these.
 bioconductor
 r-basejump
 r-bcbiornaseq
