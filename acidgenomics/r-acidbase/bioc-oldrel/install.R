@@ -1,3 +1,3 @@
 #!/usr/bin/env Rscript
 
-install("AcidBase")
+bb8::install("AcidBase")
