@@ -1,4 +1,4 @@
-FROM acidgenomics/bioconductor:release
+FROM acidgenomics/bioconductor:oldrel
 MAINTAINER mike@steinbaugh.com
 
 WORKDIR /tmp
