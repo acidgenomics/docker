@@ -1,17 +1,21 @@
 # """
 # Install RHEL (minimal).
-# Updated 2020-08-07.
+# Updated 2020-11-06.
+#
+# Note that zsh isn't supported unless built from source.
 # """
 
 FROM registry.access.redhat.com/ubi8/ubi
 MAINTAINER docker@acidgenomics.com
 
-# Note that zsh isn't supported unless built from source.
-RUN dnf -y install bash bc curl git sudo
-
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
+RUN dnf -y install \
+        bash \
+        bc \
+        curl \
+        git \
+        sudo \
+ && curl -sSL https://koopa.acidgenomics.com/install \
+        | bash -s -- --non-interactive --test \
+ && /usr/local/koopa/os/linux/sbin/configure-vm --minimal
 
 CMD ["bash", "-il"]
