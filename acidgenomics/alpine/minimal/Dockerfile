@@ -18,7 +18,6 @@ RUN apk update \
         zsh \
  && curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
- && force=1 source ~/.config/koopa/activate \
- && configure-vm --minimal
+ && /usr/local/koopa/os/linux/sbin/configure-vm --minimal
 
 CMD ["zsh", "-il"]
