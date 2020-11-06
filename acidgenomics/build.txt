@@ -18,6 +18,7 @@ opensuse
 # R images {{{1
 # Ensure to build Debian image before these.
 bioconductor
+
 r-acidbase
 r-acidgenerics
 r-goalie
@@ -26,6 +27,20 @@ r-acidplyr
 r-pipette
 r-acidgenomes
 r-basejump
+
+# Images that extend r-basejump.
+r-acidgsea
+r-acidplots
+r-cbioportalanalysis
+r-cellosaurus
+r-chromium
+r-depmapanalysis
+r-deseqanalysis
+r-eggnog
+r-panther
+r-pointillism
+
+# bcbio R packages.
 r-bcbiobase
 r-bcbiornaseq
 r-bcbiosinglecell
