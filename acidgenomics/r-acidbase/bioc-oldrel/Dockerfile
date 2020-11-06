@@ -1,7 +1,6 @@
 FROM acidgenomics/bioconductor:oldrel
 MAINTAINER mike@steinbaugh.com
 
-WORKDIR /tmp
-ADD install.R .
-RUN ./install.R
-WORKDIR /
+RUN koopa update --fast \
+ && Rscript -e 'bb8::install("AcidBase")' \
+ && koopa delete-cache
