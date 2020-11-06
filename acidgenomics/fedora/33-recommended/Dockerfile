@@ -1,28 +1,11 @@
 # """
 # Install Fedora (recommended).
-# Updated 2020-10-27.
+# Updated 2020-11-06.
 # """
 
-FROM fedora:33
+FROM acidgenomics/fedora:33-minimal
 MAINTAINER docker@acidgenomics.com
 
 ARG TERM=xterm-256color
 
-RUN dnf -y install \
-    bash \
-    bc \
-    coreutils \
-    curl \
-    findutils \
-    git \
-    less \
-    sudo \
-    unzip \
-    zsh
-
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
-
-CMD ["zsh", "-il"]
+RUN /usr/local/koopa/os/linux/sbin/configure-vm --verbose
