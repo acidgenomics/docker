@@ -1,13 +1,12 @@
 # """
 # AWS Batch fetch and run.
-# Updated 2020-05-06.
+# Updated 2020-11-06.
 # """
 
 FROM acidgenomics/debian:minimal
 MAINTAINER docker@acidgenomics.com
 
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
+RUN koopa update --fast \
+ && /usr/local/koopa/os/linux/bin/install-aws-cli
 
 ENTRYPOINT ["/usr/local/koopa/bin/aws-batch-fetch-and-run"]
