@@ -3,37 +3,10 @@
 # Updated 2020-08-07.
 # """
 
-FROM debian:10
+FROM acidgenomics/debian:10-minimal
 MAINTAINER docker@acidgenomics.com
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG TERM=xterm-256color
 
-RUN apt-get update \
- && apt-get \
-        --no-install-recommends \
-        --quiet \
-        --yes \
-        install \
-            bash \
-            bc \
-            bzip2 \
-            ca-certificates \
-            coreutils \
-            curl \
-            findutils \
-            git \
-            gnupg \
-            less \
-            lsb-release \
-            sudo \
-            unzip \
-            wget \
-            zsh
-
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
-
-CMD ["zsh", "-il"]
+RUN /usr/local/koopa/os/linux/sbin/configure-vm --verbose

@@ -1,6 +1,6 @@
 # """
 # Install Debian (minimal).
-# Updated 2020-06-26.
+# Updated 2020-11-06.
 # """
 
 FROM debian:10
@@ -28,11 +28,9 @@ RUN apt-get update \
             sudo \
             unzip \
             wget \
-            zsh
-
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
+            zsh \
+ && curl -sSL https://koopa.acidgenomics.com/install \
+        | bash -s -- --non-interactive --verbose \
+ && /usr/local/koopa/os/linux/sbin/configure-vm --minimal --verbose
 
 CMD ["zsh", "-il"]
