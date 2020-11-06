@@ -4,9 +4,7 @@
 # """
 
 FROM biocontainers/biocontainers:latest
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
+RUN curl -sSL https://koopa.acidgenomics.com/install \
+        | bash -s -- --non-interactive --test

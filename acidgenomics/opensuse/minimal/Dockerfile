@@ -4,7 +4,7 @@
 # """
 
 FROM opensuse/leap:latest
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 RUN zypper refresh && \
     zypper --non-interactive install bash bc curl git sudo tar zsh

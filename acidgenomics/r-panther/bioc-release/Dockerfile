@@ -1,5 +1,5 @@
 FROM acidgenomics/r-basejump:bioc-release
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 RUN koopa update --fast \
  && Rscript -e 'bb8::install("PANTHER")' \

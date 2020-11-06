@@ -4,7 +4,7 @@
 # """
 
 FROM quay.io/bcbio/bcbio-rnaseq:1.2.4-9722272
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 ARG DEBIAN_FRONTEND=noninteractive
 

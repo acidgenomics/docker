@@ -6,7 +6,7 @@
 # """
 
 FROM alpine:latest
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 RUN apk update \
  && apk add \

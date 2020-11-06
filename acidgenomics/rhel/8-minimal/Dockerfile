@@ -4,7 +4,7 @@
 # """
 
 FROM registry.access.redhat.com/ubi8/ubi
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 # Note that zsh isn't supported unless built from source.
 RUN dnf -y install bash bc curl git sudo

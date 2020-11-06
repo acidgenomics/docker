@@ -4,7 +4,7 @@
 # """
 
 FROM debian:10
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG TERM=xterm-256color

@@ -4,7 +4,7 @@
 # """
 
 FROM ubuntu:20.04
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 ARG DEBIAN_FRONTEND=noninteractive
 

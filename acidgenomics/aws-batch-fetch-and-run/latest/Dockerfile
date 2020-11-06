@@ -4,7 +4,7 @@
 # """
 
 FROM acidgenomics/debian:minimal
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 WORKDIR /tmp
 ADD install.sh .

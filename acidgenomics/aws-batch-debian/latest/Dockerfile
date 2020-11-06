@@ -4,6 +4,6 @@
 # """
 
 FROM acidgenomics/debian:latest
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 ENTRYPOINT ["/usr/local/koopa/bin/aws-batch-fetch-and-run"]

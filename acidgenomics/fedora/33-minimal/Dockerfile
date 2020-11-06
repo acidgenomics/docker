@@ -4,7 +4,7 @@
 # """
 
 FROM fedora:33
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 RUN dnf -y install \
     bash \

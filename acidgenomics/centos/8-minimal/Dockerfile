@@ -4,7 +4,7 @@
 # """
 
 FROM centos:8
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 RUN dnf -y install bash bc curl git sudo zsh
 

@@ -8,7 +8,7 @@
 # """
 
 FROM acidgenomics/fedora:minimal
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 WORKDIR /tmp
 ADD install.sh .

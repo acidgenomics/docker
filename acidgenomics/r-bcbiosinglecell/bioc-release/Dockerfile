@@ -4,7 +4,7 @@
 # """
 
 FROM acidgenomics/r-basejump:bioc-release
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 WORKDIR /tmp
 ARG GITHUB_PAT

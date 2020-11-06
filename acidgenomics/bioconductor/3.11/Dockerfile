@@ -4,7 +4,7 @@
 # """
 
 FROM acidgenomics/bioconductor:base
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 WORKDIR /tmp
 ADD install.sh .

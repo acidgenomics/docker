@@ -1,10 +1,10 @@
 # """
 # Install Arch Linux.
-# Updated 2020-04-23.
+# Updated 2020-11-06.
 # """
 
 FROM archlinux:latest
-MAINTAINER mike@steinbaugh.com
+MAINTAINER docker@acidgenomics.com
 
 RUN pacman -Syyu --noconfirm && \
     pacman-db-upgrade && \
@@ -13,11 +13,9 @@ RUN pacman -Syyu --noconfirm && \
         curl \
         git \
         sudo \
-        zsh
-
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
+        zsh \
+ && curl -sSL https://koopa.acidgenomics.com/install \
+        | bash -s -- --non-interactive --test \
+ && /usr/local/koopa/os/linux/sbin/configure-vm --minimal
 
 CMD ["zsh", "-il"]
