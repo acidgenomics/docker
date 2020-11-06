@@ -18,14 +18,22 @@ opensuse
 # R images {{{1
 # Ensure to build Debian image before these.
 bioconductor
+r-acidbase
+r-acidgenerics
+r-goalie
+r-syntactic
+r-acidplyr
+r-pipette
+r-acidgenomes
 r-basejump
+r-bcbiobase
 r-bcbiornaseq
 r-bcbiosinglecell
-r-rnaseq
-r-singlecell
 
 # Large bioinformatics images {{{1
-# rnaeditingindexer
+# > rnaeditingindexer
+# > bcbio-rnaseq
+# > bcbio-vc
 
 # AWS Batch images {{{1
 aws-batch-fetch-and-run
