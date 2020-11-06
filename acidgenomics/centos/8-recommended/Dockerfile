@@ -1,16 +1,9 @@
 # """
 # Install CentOS (full).
-# Updated 2020-08-05.
+# Updated 2020-11-06.
 # """
 
-FROM centos:8
+FROM acidgenomics/centos:8-minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN dnf -y install bash bc curl git sudo zsh
-
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
-
-CMD ["zsh", "-il"]
+RUN /usr/local/koopa/os/linux/sbin/configure-vm --verbose
