@@ -6,7 +6,6 @@
 FROM acidgenomics/debian:10-minimal
 MAINTAINER docker@acidgenomics.com
 
-ARG DEBIAN_FRONTEND=noninteractive
 ARG TERM=xterm-256color
 
 RUN /usr/local/koopa/os/linux/sbin/configure-vm --verbose
