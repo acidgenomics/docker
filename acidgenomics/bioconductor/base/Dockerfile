@@ -1,12 +1,9 @@
 # """
 # Install Bioconductor release.
-# Updated 2020-11-03.
+# Updated 2020-11-06.
 # """
 
 FROM acidgenomics/debian:minimal
 MAINTAINER docker@acidgenomics.com
 
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
+RUN /usr/local/koopa/os/linux/sbin/configure-vm --bioconductor --verbose
