@@ -1,4 +1,4 @@
-FROM acidgenomics/r-basejump:bioc-devel
+FROM acidgenomics/r-basejump:bioc-oldrel
 MAINTAINER docker@acidgenomics.com
 
 RUN koopa update --fast \

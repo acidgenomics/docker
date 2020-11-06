@@ -1,13 +1,6 @@
-# """
-# Install bcbioSingleCell on Bioconductor release.
-# Updated 2020-05-06.
-# """
-
 FROM acidgenomics/r-basejump:bioc-release
 MAINTAINER docker@acidgenomics.com
 
-WORKDIR /tmp
-ARG GITHUB_PAT
-ADD install.R .
-RUN ./install.R
-WORKDIR /
+RUN koopa update --fast \
+ && Rscript -e 'bb8::install("bcbioSingleCell")' \
+ && koopa delete-cache
