@@ -1,6 +1,6 @@
 # """
 # Install Ubuntu 20.04 LTS (minimal).
-# Updated 2020-06-26.
+# Updated 2020-11-06.
 # """
 
 FROM ubuntu:20.04
@@ -28,11 +28,9 @@ RUN apt-get update \
             sudo \
             unzip \
             wget \
-            zsh
-
-WORKDIR /tmp
-ADD install.sh .
-RUN ./install.sh
-WORKDIR /
+            zsh \
+ && curl -sSL https://koopa.acidgenomics.com/install \
+        | bash -s -- --non-interactive --test \
+ && /usr/local/koopa/os/linux/sbin/configure-vm --minimal
 
 CMD ["zsh", "-il"]
