@@ -6,7 +6,5 @@
 FROM acidgenomics/debian:10-minimal
 MAINTAINER docker@acidgenomics.com
 
-ARG TERM=xterm-256color
-
 RUN koopa update --fast \
  && /usr/local/koopa/os/linux/sbin/configure-vm --verbose
