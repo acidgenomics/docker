@@ -1,6 +1,4 @@
 FROM acidgenomics/bioconductor:oldrel
 MAINTAINER docker@acidgenomics.com
 
-RUN koopa update --fast \
- && Rscript -e 'bb8::install("basejump")' \
- && koopa delete-cache
+RUN Rscript -e 'bb8::install("basejump")'

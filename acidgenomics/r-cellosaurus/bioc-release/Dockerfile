@@ -1,6 +1,4 @@
 FROM acidgenomics/r-basejump:bioc-release
 MAINTAINER docker@acidgenomics.com
 
-RUN koopa update --fast \
- && Rscript -e 'bb8::install("Cellosaurus")' \
- && koopa delete-cache
+RUN Rscript -e 'bb8::install("Cellosaurus")'
