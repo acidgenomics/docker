@@ -1,13 +1,14 @@
-# Minimal bioinformatics images {{{1
-biocontainers
-miniconda3
-
 # Recommended Linux images {{{1
 debian
 ubuntu
 fedora
 rhel
 centos
+
+# Minimal bioinformatics images {{{1
+# Note that miniconda3 now extends from Debian.
+biocontainers
+miniconda3
 
 # Extra Linux images {{{1
 alpine
