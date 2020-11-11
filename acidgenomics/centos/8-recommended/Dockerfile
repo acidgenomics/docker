@@ -1,6 +1,6 @@
 # """
 # Install CentOS (full).
-# Updated 2020-11-06.
+# Updated 2020-11-11.
 # """
 
 FROM acidgenomics/centos:8-minimal

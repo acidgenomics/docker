@@ -6,5 +6,4 @@
 FROM acidgenomics/ubuntu:20.04-minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN koopa update --fast \
- && /usr/local/koopa/os/linux/sbin/configure-vm --verbose
+RUN /usr/local/koopa/os/linux/sbin/configure-vm --verbose
