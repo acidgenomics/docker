@@ -8,6 +8,7 @@
 # - https://github.com/mogproject/dockerfiles/blob/master/centos6/redis/
 #       Dockerfile
 # - https://www.xspdf.com/help/50067361.html
+# - https://stackoverflow.com/questions/58304278/
 # """
 
 FROM fedora:33
@@ -25,6 +26,8 @@ RUN dnf -y install \
         curl \
         findutils \
         git \
+        glibc-langpack-en \
+        glibc-locale-source \
         less \
         sudo \
         unzip \
