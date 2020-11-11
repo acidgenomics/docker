@@ -15,6 +15,7 @@ RUN dnf -y install \
         bash \
         bc \
         curl \
+        findutils \
         git \
         glibc-langpack-en \
         glibc-locale-source \
