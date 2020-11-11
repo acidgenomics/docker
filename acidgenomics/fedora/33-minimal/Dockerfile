@@ -1,10 +1,21 @@
 # """
 # Install Fedora (minimal).
-# Updated 2020-11-10.
+# Updated 2020-11-11.
+#
+# How to set locale:
+# - https://stackoverflow.com/questions/49197998/
+# - https://github.com/fedora-cloud/docker-brew-fedora/issues/14
+# - https://github.com/mogproject/dockerfiles/blob/master/centos6/redis/
+#       Dockerfile
+# - https://www.xspdf.com/help/50067361.html
 # """
 
 FROM fedora:33
 MAINTAINER docker@acidgenomics.com
+
+ENV LANG=en_US.UTF-8 \
+    LC_ALL=en_US.UTF-8 \
+    TERM=xterm-256color
 
 USER root
 RUN dnf -y install \
@@ -18,6 +29,7 @@ RUN dnf -y install \
         sudo \
         unzip \
         zsh \
+ && localedef -i en_US -f UTF-8 en_US.UTF-8 \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \
