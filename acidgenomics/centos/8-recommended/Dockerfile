@@ -1,9 +1,9 @@
 # """
-# Install CentOS (full).
-# Updated 2020-11-11.
+# Install CentOS (recommended).
+# Updated 2020-11-12.
 # """
 
 FROM acidgenomics/centos:8-minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN /usr/local/koopa/os/linux/sbin/configure-vm --verbose
+RUN /usr/local/koopa/os/linux/sbin/configure-vm --recommended --verbose
