@@ -10,4 +10,4 @@ RUN /usr/local/koopa/os/debian/sbin/install-r-cran-binary \
  && /usr/local/koopa/bin/install-bioconductor --version='3.11' \
  && koopa delete-cache
 
-CMD ["R"]
+CMD ["R", "--no-restore", "--no-save", "--quiet"]

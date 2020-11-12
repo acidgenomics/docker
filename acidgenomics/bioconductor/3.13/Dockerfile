@@ -12,4 +12,4 @@ RUN /usr/local/koopa/os/debian/sbin/install-r-devel \
  && Rscript -e 'remotes::install_git("https://git.bioconductor.org/packages/SingleCellExperiment")' \
  && koopa delete-cache
 
-CMD ["R"]
+CMD ["R", "--no-restore", "--no-save", "--quiet"]
