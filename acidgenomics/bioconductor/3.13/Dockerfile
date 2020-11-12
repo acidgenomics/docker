@@ -1,6 +1,6 @@
 # """
 # Install Bioconductor devel.
-# Updated 2020-11-11.
+# Updated 2020-11-12.
 # """
 
 FROM acidgenomics/bioconductor:base
@@ -11,3 +11,5 @@ RUN /usr/local/koopa/os/debian/sbin/install-r-devel \
  && Rscript -e 'remotes::install_git("https://git.bioconductor.org/packages/DelayedArray")' \
  && Rscript -e 'remotes::install_git("https://git.bioconductor.org/packages/SingleCellExperiment")' \
  && koopa delete-cache
+
+CMD ["R"]
