@@ -32,6 +32,7 @@ RUN apt-get update \
             lsb-release \
             sudo \
             unzip \
+            tzdata \
             wget \
             zsh \
  && echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen \

@@ -1,6 +1,6 @@
 # """
 # Install Debian (minimal).
-# Updated 2020-11-10.
+# Updated 2020-11-13.
 #
 # See also:
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
@@ -36,6 +36,7 @@ RUN apt-get update \
             locales \
             lsb-release \
             sudo \
+            tzdata \
             unzip \
             wget \
             zsh \
