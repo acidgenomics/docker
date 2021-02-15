@@ -6,4 +6,4 @@
 FROM acidgenomics/centos:8-minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN /usr/local/koopa/os/linux/sbin/configure-vm --recommended --verbose
+RUN /opt/koopa/os/linux/common/sbin/configure-vm --recommended --verbose

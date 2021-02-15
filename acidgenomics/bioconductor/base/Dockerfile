@@ -6,4 +6,4 @@
 FROM acidgenomics/debian:minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN /usr/local/koopa/os/linux/sbin/configure-vm --bioconductor --verbose
+RUN /opt/koopa/os/linux/common/sbin/configure-vm --bioconductor --verbose

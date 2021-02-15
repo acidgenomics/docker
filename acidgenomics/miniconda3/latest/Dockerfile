@@ -12,4 +12,4 @@
 FROM acidgenomics/debian:minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN /usr/local/koopa/bin/install-miniconda
+RUN /opt/koopa/bin/install-miniconda

@@ -33,7 +33,7 @@ RUN yum -y install \
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
- && /usr/local/koopa/os/linux/sbin/configure-vm --minimal \
- && /usr/local/koopa/os/linux/bin/install-aws-cli
+ && /opt/koopa/os/linux/common/sbin/configure-vm --minimal \
+ && /opt/koopa/os/linux/common/bin/install-aws-cli
 
 CMD ["zsh", "-il"]

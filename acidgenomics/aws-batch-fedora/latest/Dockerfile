@@ -6,4 +6,4 @@
 FROM acidgenomics/fedora:latest
 MAINTAINER docker@acidgenomics.com
 
-ENTRYPOINT ["/usr/local/koopa/bin/aws-batch-fetch-and-run"]
+ENTRYPOINT ["/opt/koopa/bin/aws-batch-fetch-and-run"]

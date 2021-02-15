@@ -6,8 +6,8 @@
 FROM acidgenomics/bioconductor:base
 MAINTAINER docker@acidgenomics.com
 
-RUN /usr/local/koopa/os/debian/sbin/install-r-devel \
- && /usr/local/koopa/bin/install-bioconductor --version='3.13' \
+RUN /opt/koopa/os/linux/distro/debian/sbin/install-r-devel \
+ && /opt/koopa/bin/install-bioconductor --version='3.13' \
  && Rscript -e 'remotes::install_git("https://git.bioconductor.org/packages/DelayedArray")' \
  && Rscript -e 'remotes::install_git("https://git.bioconductor.org/packages/SingleCellExperiment")' \
  && koopa delete-cache

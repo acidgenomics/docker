@@ -17,6 +17,6 @@ RUN zypper refresh && \
         zsh \
  && curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
- && /usr/local/koopa/os/linux/sbin/configure-vm --minimal
+ && /opt/koopa/os/linux/common/sbin/configure-vm --minimal
 
 CMD ["zsh", "-il"]

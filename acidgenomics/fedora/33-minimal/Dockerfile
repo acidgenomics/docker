@@ -43,6 +43,6 @@ RUN dnf -y install \
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
- && /usr/local/koopa/os/linux/sbin/configure-vm --minimal --verbose
+ && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose
 
 CMD ["zsh", "-il"]

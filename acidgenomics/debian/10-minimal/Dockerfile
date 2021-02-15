@@ -54,6 +54,6 @@ RUN apt-get update \
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --verbose \
- && /usr/local/koopa/os/linux/sbin/configure-vm --minimal --verbose
+ && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose
 
 CMD ["zsh", "-il"]
