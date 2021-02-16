@@ -20,20 +20,19 @@ miniconda3
 # ==============================================================================
 # Ensure to build Debian image before these (see above).
 bioconductor
-# FIXME NEED TO ADD OTHER ACIDGENOMICS PACKAGES HERE.
-# FIXME r-acidtest
-# FIXME r-acidroxygen
+
+r-acidcli
+r-acidexperiment
 # FIXME r-acidmarkdown
-# FIXME r-acidcli
-# FIXME r-acidexperiment
-# FIXME r-acidsinglecell
-r-goalie
-r-acidgenerics
+r-acidsinglecell
 r-acidbase
-r-syntactic
-r-acidplyr
-r-pipette  # bioc-devel haven rio readr failure
+r-acidgenerics
 r-acidgenomes
+r-acidplyr
+r-goalie
+r-pipette
+r-syntactic
+
 r-basejump
 
 # Images that extend r-basejump                                             {{{2
