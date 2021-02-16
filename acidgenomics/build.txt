@@ -18,11 +18,10 @@ miniconda3
 
 # R images {{{1
 # ==============================================================================
-# Ensure to build Debian image before these.
 r-base
 bioconductor
 
-# Packages that define basejump                                             {{{2
+# basejump                                                                  {{{1
 # ------------------------------------------------------------------------------
 r-acidbase
 r-acidcli
@@ -35,7 +34,6 @@ r-acidsinglecell
 r-goalie
 r-pipette
 r-syntactic
-
 r-basejump
 
 # Packages that extend r-basejump                                           {{{2
