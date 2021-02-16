@@ -6,7 +6,8 @@
 FROM acidgenomics/bioconductor:base
 MAINTAINER docker@acidgenomics.com
 
-RUN koopa install r-devel \
+RUN koopa update \
+ && koopa install r-devel \
  && Rscript -e " \
         install.packages( \
             pkgs = 'AcidDevTools', \
