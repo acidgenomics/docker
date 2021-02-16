@@ -21,6 +21,8 @@ miniconda3
 # Ensure to build Debian image before these (see above).
 bioconductor
 
+# Packages that define basejump                                             {{{2
+# ------------------------------------------------------------------------------
 r-acidbase
 r-acidcli
 r-acidexperiment
@@ -35,7 +37,7 @@ r-syntactic
 
 r-basejump
 
-# Images that extend r-basejump                                             {{{2
+# Packages that extend r-basejump                                           {{{2
 # ------------------------------------------------------------------------------
 r-acidgsea
 r-acidplots
@@ -56,9 +58,8 @@ r-bcbiosinglecell
 
 # Large bioinformatics images                                               {{{1
 # ==============================================================================
+# > bcbio
 # > rnaeditingindexer
-# > bcbio-rnaseq
-# > bcbio-vc
 
 # AWS Batch images                                                          {{{1
 # ==============================================================================
