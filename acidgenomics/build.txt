@@ -18,7 +18,8 @@ miniconda3
 
 # R images {{{1
 # ==============================================================================
-# Ensure to build Debian image before these (see above).
+# Ensure to build Debian image before these.
+r
 bioconductor
 
 # Packages that define basejump                                             {{{2

@@ -1,16 +1,12 @@
 # """
 # Install Bioconductor release.
 # Updated 2021-02-16.
-#
-# NOTE [2021-02-16] R 4.0.4 binary files are temporarily unavailable.
-# > koopa install r-cran-binary
 # """
 
-FROM acidgenomics/bioconductor:base
+FROM acidgenomics/r:4.0.4
 MAINTAINER docker@acidgenomics.com
 
 RUN koopa update \
- && koopa install r --version='4.0.4' \
  && R -e " \
         install.packages( \
             pkgs = 'AcidDevTools', \
@@ -21,7 +17,4 @@ RUN koopa update \
         ); \
         install.packages('BiocManager'); \
         BiocManager::install(version = '3.12', ask = FALSE); \
-    " \
- && koopa system delete-cache
-
-CMD ["R", "--no-restore", "--no-save", "--quiet"]
+    "

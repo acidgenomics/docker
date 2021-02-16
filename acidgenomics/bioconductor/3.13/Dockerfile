@@ -3,11 +3,10 @@
 # Updated 2021-02-16.
 # """
 
-FROM acidgenomics/bioconductor:base
+FROM acidgenomics/r:devel
 MAINTAINER docker@acidgenomics.com
 
 RUN koopa update \
- && koopa install r-devel \
  && R -e " \
         install.packages( \
             pkgs = 'AcidDevTools', \
@@ -18,7 +17,4 @@ RUN koopa update \
         ); \
         install.packages('BiocManager'); \
         BiocManager::install(version = '3.13', ask = FALSE); \
-    " \
- && koopa system delete-cache
-
-CMD ["R", "--no-restore", "--no-save", "--quiet"]
+    "

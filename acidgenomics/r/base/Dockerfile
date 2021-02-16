@@ -1,6 +1,6 @@
 # """
-# Install Bioconductor release.
-# Updated 2020-11-06.
+# Install R Debian base system (for Bioconductor).
+# Updated 2021-02-16.
 # """
 
 FROM acidgenomics/debian:minimal
