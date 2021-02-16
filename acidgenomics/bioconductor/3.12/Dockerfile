@@ -11,6 +11,13 @@ MAINTAINER docker@acidgenomics.com
 
 RUN koopa install r --version='4.0.4' \
  && Rscript -e " \
+        install.packages( \
+            pkgs = 'AcidDevTools', \
+            repos = c( \
+                'https://r.acidgenomics.com', \
+                getOption('repos') \
+            ) \
+        ); \
         install.packages('BiocManager'); \
         BiocManager::install(version = '3.12', ask = FALSE); \
     " \
