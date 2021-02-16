@@ -12,4 +12,5 @@
 FROM acidgenomics/debian:minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN koopa install miniconda
+RUN koopa update \
+ && koopa install miniconda

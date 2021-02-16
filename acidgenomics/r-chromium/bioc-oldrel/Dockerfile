@@ -1,4 +1,4 @@
 FROM acidgenomics/r-basejump:bioc-oldrel
 MAINTAINER docker@acidgenomics.com
 
-RUN Rscript -e 'bb8::install("Chromium")'
+RUN Rscript -e 'AcidDevTools::install("Chromium")'

@@ -1,23 +1,20 @@
-# Recommended Linux images                                                  {{{1
+# Linux base images                                                         {{{1
 # ==============================================================================
+# > arch  # broken on 2021-02-16 due to glibc issue.
+alpine
+amzn
+centos
 debian
-ubuntu
 fedora
+opensuse
 rhel
-# > centos
+ubuntu
 
 # Minimal bioinformatics images                                             {{{1
 # ==============================================================================
 # Note that miniconda3 now extends from Debian.
 biocontainers
 miniconda3
-
-# Extra Linux images                                                        {{{1
-# ==============================================================================
-alpine
-amzn
-arch
-opensuse
 
 # R images {{{1
 # ==============================================================================

@@ -1,4 +1,4 @@
 FROM acidgenomics/bioconductor:devel
 MAINTAINER docker@acidgenomics.com
 
-RUN Rscript -e 'bb8::install("AcidGenomes")'
+RUN Rscript -e 'AcidDevTools::install("AcidGenomes")'

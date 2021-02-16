@@ -1,4 +1,4 @@
 FROM acidgenomics/bioconductor:release
 MAINTAINER docker@acidgenomics.com
 
-RUN Rscript -e 'bb8::install("AcidTest", dependencies = NA)'
+RUN Rscript -e 'AcidDevTools::install("AcidTest", dependencies = NA)'
