@@ -9,6 +9,10 @@
 #5 379.0 cat: RcppNumerical.out: No such file or directory
 #5 379.0 cat: apeglm.out: No such file or directory
 
+# libeigen is installed and relatively current.
+# > pkg-config --modversion eigen3
+# 3.3.7
+
 FROM acidgenomics/r-basejump:bioc-release
 MAINTAINER docker@acidgenomics.com
 
