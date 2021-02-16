@@ -11,7 +11,7 @@ MAINTAINER docker@acidgenomics.com
 
 RUN koopa update \
  && koopa install r --version='4.0.4' \
- && Rscript -e " \
+ && R -e " \
         install.packages( \
             pkgs = 'AcidDevTools', \
             repos = c( \

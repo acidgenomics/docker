@@ -1,4 +1,4 @@
 FROM acidgenomics/bioconductor:devel
 MAINTAINER docker@acidgenomics.com
 
-RUN Rscript -e 'AcidDevTools::install("pipette")'
+RUN R -e 'AcidDevTools::install("pipette")'

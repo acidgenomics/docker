@@ -1,4 +1,4 @@
 FROM acidgenomics/r-basejump:bioc-release
 MAINTAINER docker@acidgenomics.com
 
-RUN Rscript -e 'AcidDevTools::install("DESeqAnalysis")'
+RUN R -e 'AcidDevTools::install("DESeqAnalysis")'

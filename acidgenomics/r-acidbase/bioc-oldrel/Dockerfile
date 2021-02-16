@@ -1,4 +1,4 @@
 FROM acidgenomics/bioconductor:oldrel
 MAINTAINER docker@acidgenomics.com
 
-RUN Rscript -e 'AcidDevTools::install("AcidBase")'
+RUN R -e 'AcidDevTools::install("AcidBase")'
