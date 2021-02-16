@@ -3,7 +3,7 @@
 # Updated 2021-02-16.
 # """
 
-FROM acidgenomics/r:devel
+FROM acidgenomics/r-base:devel
 MAINTAINER docker@acidgenomics.com
 
 RUN koopa update \
