@@ -1,6 +1,6 @@
 # Linux base images                                                         {{{1
 # ==============================================================================
-# > arch  # broken on 2021-02-16 due to glibc issue.
+# > arch  # NOTE [2021-02-16] Broken due to glibc issue.
 alpine
 amzn
 centos
