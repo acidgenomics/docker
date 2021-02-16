@@ -32,7 +32,7 @@ r-acidgenerics
 r-acidbase
 r-syntactic
 r-acidplyr
-r-pipette
+r-pipette  # bioc-devel haven rio readr failure
 r-acidgenomes
 r-basejump
 
