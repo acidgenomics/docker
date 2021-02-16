@@ -11,6 +11,6 @@ RUN koopa update \
  # && koopa install r-cran-binary \
  && koopa install r --version='4.0.4' \
  && koopa install bioconductor --version='3.12' \
- && koopa delete-cache
+ && koopa system delete-cache
 
 CMD ["R", "--no-restore", "--no-save", "--quiet"]
