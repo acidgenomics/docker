@@ -6,8 +6,7 @@
 FROM acidgenomics/bioconductor:base
 MAINTAINER docker@acidgenomics.com
 
-RUN koopa update \
- && koopa install r-devel \
+RUN koopa install r-devel \
  && Rscript -e " \
         install.packages('BiocManager'); \
         BiocManager::install(version = '3.13', ask = FALSE); \
