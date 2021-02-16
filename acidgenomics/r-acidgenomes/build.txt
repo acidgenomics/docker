@@ -1,3 +1,0 @@
-# > bioc-oldrel
-bioc-release
-# > bioc-devel
