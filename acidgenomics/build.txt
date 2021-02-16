@@ -21,14 +21,14 @@ miniconda3
 # Ensure to build Debian image before these (see above).
 bioconductor
 
+r-acidbase
 r-acidcli
 r-acidexperiment
-# FIXME r-acidmarkdown
-r-acidsinglecell
-r-acidbase
 r-acidgenerics
 r-acidgenomes
+r-acidmarkdown
 r-acidplyr
+r-acidsinglecell
 r-goalie
 r-pipette
 r-syntactic
