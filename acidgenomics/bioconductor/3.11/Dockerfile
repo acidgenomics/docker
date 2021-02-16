@@ -6,8 +6,8 @@
 FROM acidgenomics/bioconductor:base
 MAINTAINER docker@acidgenomics.com
 
-RUN /opt/koopa/os/linux/distro/debian/sbin/install-r-cran-binary \
- && /opt/koopa/bin/install-bioconductor --version='3.11' \
+RUN koopa install r-cran-binary \
+ && koopa install bioconductor --version='3.11' \
  && koopa delete-cache
 
 CMD ["R", "--no-restore", "--no-save", "--quiet"]

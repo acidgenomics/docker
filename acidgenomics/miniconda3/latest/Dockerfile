@@ -1,7 +1,7 @@
 # """
 # Install Miniconda.
-# Updated 2020-11-11.
-# 
+# Updated 2021-02-15.
+#
 # See also: continuumio/miniconda3:latest
 # Note that we need to touch '.condarc' to enable bioconda with that image.
 #
@@ -12,4 +12,4 @@
 FROM acidgenomics/debian:minimal
 MAINTAINER docker@acidgenomics.com
 
-RUN /opt/koopa/bin/install-miniconda
+RUN koopa install miniconda

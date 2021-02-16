@@ -4,5 +4,5 @@ set -Eeu -o pipefail
 # shellcheck source=/dev/null
 . "$(koopa header bash)"
 
-install-bcl2fastq
-install-cellranger
+koopa install bcl2fastq
+koopa install cellranger

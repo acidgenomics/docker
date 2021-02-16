@@ -1,25 +1,28 @@
-# Recommended Linux images {{{1
+# Recommended Linux images                                                  {{{1
+# ==============================================================================
 debian
 ubuntu
 fedora
 rhel
-centos
+# > centos
 
-# Minimal bioinformatics images {{{1
+# Minimal bioinformatics images                                             {{{1
+# ==============================================================================
 # Note that miniconda3 now extends from Debian.
 biocontainers
 miniconda3
 
-# Extra Linux images {{{1
+# Extra Linux images                                                        {{{1
+# ==============================================================================
 alpine
 amzn
 arch
 opensuse
 
 # R images {{{1
-# Ensure to build Debian image before these.
+# ==============================================================================
+# Ensure to build Debian image before these (see above).
 bioconductor
-
 r-acidbase
 r-acidgenerics
 r-goalie
@@ -29,7 +32,8 @@ r-pipette
 r-acidgenomes
 r-basejump
 
-# Images that extend r-basejump.
+# Images that extend r-basejump                                             {{{2
+# ------------------------------------------------------------------------------
 r-acidgsea
 r-acidplots
 r-cbioportalanalysis
@@ -41,17 +45,20 @@ r-eggnog
 r-panther
 r-pointillism
 
-# bcbio R packages.
+# bcbio R packages                                                          {{{2
+# ------------------------------------------------------------------------------
 r-bcbiobase
 r-bcbiornaseq
 r-bcbiosinglecell
 
-# Large bioinformatics images {{{1
+# Large bioinformatics images                                               {{{1
+# ==============================================================================
 # > rnaeditingindexer
 # > bcbio-rnaseq
 # > bcbio-vc
 
-# AWS Batch images {{{1
+# AWS Batch images                                                          {{{1
+# ==============================================================================
 aws-batch-fetch-and-run
 aws-batch-miniconda3
 aws-batch-debian

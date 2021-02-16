@@ -34,6 +34,6 @@ USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
  && /opt/koopa/os/linux/common/sbin/configure-vm --minimal \
- && /opt/koopa/os/linux/common/bin/install-aws-cli
+ && /opt/koopa/bin/koopa install aws-cli
 
 CMD ["zsh", "-il"]
