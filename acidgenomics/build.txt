@@ -1,8 +1,8 @@
 # Linux base images                                                         {{{1
 # ==============================================================================
-# > arch  # NOTE [2021-02-16] Broken due to glibc issue.
 alpine
 amzn
+arch
 centos
 debian
 fedora

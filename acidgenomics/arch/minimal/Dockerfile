@@ -13,17 +13,24 @@
 # ERROR: You must have correct permissions to upgrade the database.
 #
 # See also:
+# - https://stackoverflow.com/questions/66154574
 # - https://www.reddit.com/r/archlinux/comments/lek2ba/
 #       arch_linux_on_docker_ci_could_not_find_or_read/
 # - https://bugs.archlinux.org/task/69563
 # - https://serverfault.com/questions/1052963/
 #       pacman-doesnt-work-in-docker-image/1053223
+# - https://bbs.archlinux.org/viewtopic.php?id=263379
+# - https://bugs.archlinux.org/task/69563
 # """
 
 FROM archlinux:latest
 MAINTAINER docker@acidgenomics.com
 
-RUN pacman -Syyu --noconfirm \
+RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
+ && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
+ && bsdtar -C / -xvf "$patched_glibc" \
+ # && pacman -Syyu --noconfirm \
+ && pacman -Syy --noconfirm \
  && pacman-db-upgrade \
  && pacman -S --noconfirm \
         bash \
