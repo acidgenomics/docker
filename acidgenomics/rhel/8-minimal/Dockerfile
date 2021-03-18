@@ -2,7 +2,7 @@
 # Install RHEL (minimal).
 # Updated 2021-03-18.
 #
-# Note that zsh isn't supported unless built from source.
+# FIXME zsh isn't supported unless built from source.
 # """
 
 FROM registry.access.redhat.com/ubi8/ubi
@@ -14,9 +14,18 @@ RUN dnf -y install \
         bc \
         curl \
         git \
-        sudo
-
-# FIXME Need to support non-root install.
+        glibc-langpack-en \
+        glibc-locale-source \
+        sudo \
+        # > zsh \
+ && localedef -i en_US -f UTF-8 en_US.UTF-8 \
+ && useradd docker \
+ && echo 'docker:docker' | chpasswd \
+ && mkdir -pv /home/docker \
+ && chown 'docker:docker' /home/docker \
+ && usermod -a -G wheel docker \
+ && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
+ && chmod 0440 /etc/sudoers.d/wheel
 
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \

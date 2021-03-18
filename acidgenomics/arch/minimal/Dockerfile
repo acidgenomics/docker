@@ -1,6 +1,6 @@
 # """
 # Install Arch Linux.
-# Updated 2021-03-17.
+# Updated 2021-03-18.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -21,6 +21,8 @@
 #       pacman-doesnt-work-in-docker-image/1053223
 # - https://bbs.archlinux.org/viewtopic.php?id=263379
 # - https://bugs.archlinux.org/task/69563
+#
+# FIXME Does the install Zsh script need to fix compinit here?
 # """
 
 FROM archlinux:latest
@@ -31,10 +33,11 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
  && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
  && bsdtar -C / -xvf "$patched_glibc" \
  && rm "$patched_glibc" \
- # && pacman -Syyu --noconfirm \
+ # > && pacman -Syyu --noconfirm \
  && pacman -Syy --noconfirm \
  && pacman-db-upgrade \
  && pacman -S --noconfirm \
+        base-devel \
         bash \
         curl \
         git \
@@ -52,10 +55,8 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal
+ && /opt/koopa/os/linux/common/sbin/configure-vm --minimal \
+ && /opt/koopa/bin/koopa install zsh
 
 WORKDIR /home/docker
-# FIXME zsh issue:
-# zsh-autosuggestions.zsh:154: parse error near `('
-# > CMD ["zsh", "-il"]
-CMD ["bash", "-il"]
+CMD ["/usr/local/bin/zsh", "-il"]
