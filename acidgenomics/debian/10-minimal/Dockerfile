@@ -1,6 +1,6 @@
 # """
 # Install Debian (minimal).
-# Updated 2020-11-13.
+# Updated 2021-03-17.
 #
 # See also:
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
@@ -56,4 +56,5 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --verbose \
  && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose
 
+WORKDIR /home/docker
 CMD ["zsh", "-il"]

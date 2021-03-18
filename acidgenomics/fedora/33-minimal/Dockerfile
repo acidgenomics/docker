@@ -45,4 +45,5 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
  && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose
 
+WORKDIR /home/docker
 CMD ["zsh", "-il"]

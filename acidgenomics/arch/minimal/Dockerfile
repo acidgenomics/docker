@@ -1,6 +1,6 @@
 # """
 # Install Arch Linux.
-# Updated 2021-02-16.
+# Updated 2021-03-17.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -26,6 +26,7 @@
 FROM archlinux:latest
 MAINTAINER docker@acidgenomics.com
 
+USER root
 RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
  && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
  && bsdtar -C / -xvf "$patched_glibc" \
@@ -37,10 +38,24 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
         bash \
         curl \
         git \
+        shadow \
         sudo \
         zsh \
- && curl -sSL https://koopa.acidgenomics.com/install \
+ && useradd docker \
+ && echo 'docker:docker' | chpasswd \
+ && mkdir -pv /home/docker \
+ && chown 'docker:docker' /home/docker \
+ && usermod -a -G wheel docker \
+ && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
+ && chmod 0440 /etc/sudoers.d/wheel
+
+USER docker
+RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
  && /opt/koopa/os/linux/common/sbin/configure-vm --minimal
 
-CMD ["zsh", "-il"]
+WORKDIR /home/docker
+# FIXME zsh issue:
+# zsh-autosuggestions.zsh:154: parse error near `('
+# > CMD ["zsh", "-il"]
+CMD ["bash", "-il"]
