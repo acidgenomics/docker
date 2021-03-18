@@ -1,23 +1,26 @@
 # """
 # Install RHEL (minimal).
 # Updated 2021-03-18.
-#
-# FIXME zsh isn't supported unless built from source.
 # """
 
 FROM registry.access.redhat.com/ubi8/ubi
 MAINTAINER docker@acidgenomics.com
+
+ENV LANG=en_US.UTF-8
 
 USER root
 RUN dnf -y install \
         bash \
         bc \
         curl \
+        gcc \
         git \
         glibc-langpack-en \
         glibc-locale-source \
+        make \
+        ncurses-devel \
         sudo \
-        # > zsh \
+        xz \
  && localedef -i en_US -f UTF-8 en_US.UTF-8 \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
@@ -30,7 +33,8 @@ RUN dnf -y install \
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal
+ && /opt/koopa/os/linux/common/sbin/configure-vm --minimal \
+ && /opt/koopa/bin/koopa install zsh
 
 WORKDIR /home/docker
-CMD ["bash", "-il"]
+CMD ["/usr/local/bin/zsh", "-il"]

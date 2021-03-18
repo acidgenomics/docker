@@ -21,8 +21,6 @@
 #       pacman-doesnt-work-in-docker-image/1053223
 # - https://bbs.archlinux.org/viewtopic.php?id=263379
 # - https://bugs.archlinux.org/task/69563
-#
-# FIXME Does the install Zsh script need to fix compinit here?
 # """
 
 FROM archlinux:latest
