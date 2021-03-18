@@ -13,6 +13,9 @@
 FROM opensuse/leap:latest
 MAINTAINER docker@acidgenomics.com
 
+ENV LANG=en_US.UTF-8 \
+    TERM=xterm-256color
+
 USER root
 RUN zypper refresh && \
     zypper --non-interactive install \

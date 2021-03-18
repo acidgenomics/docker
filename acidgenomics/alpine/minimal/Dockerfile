@@ -14,6 +14,8 @@
 FROM alpine:latest
 MAINTAINER docker@acidgenomics.com
 
+ENV TERM=xterm-256color
+
 USER root
 RUN apk --no-cache update \
  && apk --no-cache add \

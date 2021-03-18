@@ -6,7 +6,8 @@
 FROM registry.access.redhat.com/ubi8/ubi
 MAINTAINER docker@acidgenomics.com
 
-ENV LANG=en_US.UTF-8
+ENV LANG=en_US.UTF-8 \
+    TERM=xterm-256color
 
 USER root
 RUN dnf -y install \

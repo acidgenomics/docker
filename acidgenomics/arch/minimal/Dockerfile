@@ -26,6 +26,8 @@
 FROM archlinux:latest
 MAINTAINER docker@acidgenomics.com
 
+ENV TERM=xterm-256color
+
 USER root
 RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
  && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
