@@ -1,6 +1,6 @@
 # """
 # Install Amazon Linux.
-# Updated 2020-11-11.
+# Updated 2021-03-18.
 # """
 
 FROM amazonlinux:latest
@@ -36,4 +36,5 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
  && /opt/koopa/os/linux/common/sbin/configure-vm --minimal \
  && /opt/koopa/bin/koopa install aws-cli
 
+WORKDIR /home/docker
 CMD ["zsh", "-il"]

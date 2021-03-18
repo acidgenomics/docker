@@ -1,6 +1,6 @@
 # """
 # Install Fedora (minimal).
-# Updated 2020-11-11.
+# Updated 2021-03-18.
 #
 # How to set locale:
 # - https://stackoverflow.com/questions/49197998/

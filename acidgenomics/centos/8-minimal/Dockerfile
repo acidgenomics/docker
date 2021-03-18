@@ -1,6 +1,6 @@
 # """
 # Install CentOS (minimal).
-# Updated 2020-11-11.
+# Updated 2021-03-18.
 # """
 
 FROM centos:8
@@ -36,4 +36,5 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
  && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose
 
+WORKDIR /home/docker
 CMD ["zsh", "-il"]

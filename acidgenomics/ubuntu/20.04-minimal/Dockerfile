@@ -1,6 +1,6 @@
 # """
 # Install Ubuntu 20.04 LTS (minimal).
-# Updated 2020-11-11.
+# Updated 2021-03-18.
 # """
 
 FROM ubuntu:20.04
@@ -51,4 +51,5 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         | bash -s -- --non-interactive --test \
  && /opt/koopa/os/linux/common/sbin/configure-vm --minimal
 
+WORKDIR /home/docker
 CMD ["zsh", "-il"]
