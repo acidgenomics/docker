@@ -1,5 +1,3 @@
-# FIXME Hitting some dependency build issues here.
-
 FROM acidgenomics/bioconductor:release
 MAINTAINER docker@acidgenomics.com
 
