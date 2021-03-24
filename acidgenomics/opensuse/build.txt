@@ -1,2 +1,3 @@
-leap-minimal
+leap-base
+base
 latest
