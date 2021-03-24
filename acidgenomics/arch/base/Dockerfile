@@ -62,7 +62,7 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
         --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-vm" --minimal \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" --base --verbose \
  && "${KOOPA_PREFIX}/bin/koopa" install zsh
 
 WORKDIR /home/docker

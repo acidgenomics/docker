@@ -11,6 +11,7 @@
 
 FROM registry.access.redhat.com/ubi8/ubi:8.3
 
+ARG KOOPA_PREFIX=/opt/koopa
 ENV LANG=en_US.UTF-8 \
     TERM=xterm-256color
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -40,9 +41,12 @@ RUN dnf -y install \
 
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
-        | bash -s -- --non-interactive --test \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal \
- && /opt/koopa/bin/koopa install zsh
+    | bash -s -- \
+        --non-interactive \
+        --prefix="$KOOPA_PREFIX" \
+        --verbose \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" --base \
+ && "${KOOPA_PREFIX}/bin/koopa" install zsh
 
 WORKDIR /home/docker
 CMD ["/usr/local/bin/zsh", "-il"]

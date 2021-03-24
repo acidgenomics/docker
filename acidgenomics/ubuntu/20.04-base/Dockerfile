@@ -8,7 +8,8 @@
 
 FROM ubuntu:20.04
 
-ARG DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive \
+    KOOPA_PREFIX=/opt/koopa
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     TERM=xterm-256color
@@ -56,8 +57,11 @@ RUN apt-get update \
 
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
-        | bash -s -- --non-interactive --test \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal
+    | bash -s -- \
+        --non-interactive \
+        --prefix="$KOOPA_PREFIX" \
+        --verbose \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" --base --verbose
 
 WORKDIR /home/docker
 CMD ["zsh", "-il"]

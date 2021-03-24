@@ -10,4 +10,4 @@
 
 FROM acidgenomics/ubuntu:base
 RUN koopa update \
- && configure-vm --bioconductor --verbose
+ && configure-system --bioconductor --verbose

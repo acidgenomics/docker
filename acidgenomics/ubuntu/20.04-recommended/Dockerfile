@@ -5,4 +5,4 @@
 
 FROM acidgenomics/ubuntu:20.04-base
 
-RUN configure-vm --recommended --verbose
+RUN configure-system --recommended --verbose
