@@ -1,6 +1,6 @@
 # """
 # Install Arch Linux.
-# Updated 2021-03-18.
+# Updated 2021-03-24.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -23,15 +23,15 @@
 # - https://bugs.archlinux.org/task/69563
 # """
 
-FROM archlinux:latest
-MAINTAINER docker@acidgenomics.com
+FROM archlinux:base-20210321.0.17674
 
 ENV TERM=xterm-256color
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
  && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
- && bsdtar -C / -xvf "$patched_glibc" \
+ && bsdtar -C '/' -xvf "$patched_glibc" \
  && rm "$patched_glibc" \
  # > && pacman -Syyu --noconfirm \
  && pacman -Syy --noconfirm \
