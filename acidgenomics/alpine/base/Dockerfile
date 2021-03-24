@@ -20,13 +20,15 @@
 
 FROM alpine:3.13.2
 
-SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+ARG KOOPA_PREFIX=/opt/koopa
 ENV TERM=xterm-256color
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 USER root
 RUN apk --no-cache update \
  && apk --no-cache add \
         bash=~5.1.0 \
+        build-base=~0.5 \
         ca-certificates=~20191127 \
         coreutils=~8.32 \
         curl=~7.74.0 \
@@ -44,8 +46,11 @@ RUN apk --no-cache update \
 
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
-        | bash -s -- --non-interactive --verbose \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose
+    | bash -s -- \
+        --non-interactive \
+        --prefix="$KOOPA_PREFIX" \
+        --verbose \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-vm" --minimal --verbose
 
 WORKDIR /home/docker
 CMD ["zsh", "-il"]

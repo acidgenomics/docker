@@ -1,11 +1,4 @@
-# """
-# Install Bioconductor devel.
-# Updated 2021-02-16.
-# """
-
 FROM acidgenomics/r-base:devel
-MAINTAINER docker@acidgenomics.com
-
 RUN koopa update \
  && R -e " \
         install.packages( \

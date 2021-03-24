@@ -15,6 +15,7 @@
 
 FROM fedora:33
 
+ARG KOOPA_PREFIX=/opt/koopa
 ENV LANG=en_US.UTF-8 \
     TERM=xterm-256color
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -45,8 +46,11 @@ RUN dnf -y install \
 
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
-        | bash -s -- --non-interactive --test \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose
+    | bash -s -- \
+        --non-interactive \
+        --prefix="$KOOPA_PREFIX" \
+        --verbose \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-vm" --minimal --verbose
 
 WORKDIR /home/docker
 CMD ["zsh", "-il"]

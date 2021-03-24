@@ -10,4 +10,4 @@ ENV LANG=en_US.UTF-8 \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN curl -sSL https://koopa.acidgenomics.com/install \
-        | bash -s -- --non-interactive --test
+    | bash -s -- --non-interactive --test

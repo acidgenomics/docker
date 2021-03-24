@@ -16,7 +16,8 @@
 
 FROM debian:10.8
 
-ARG DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractive \
+    KOOPA_PREFIX=/opt/koopa
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     TERM=xterm-256color
@@ -64,9 +65,12 @@ RUN apt-get update \
 
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
-        | bash -s -- --non-interactive --verbose \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal --verbose \
- && /opt/koopa/bin/koopa install zsh
+    | bash -s -- \
+        --non-interactive \
+        --prefix="$KOOPA_PREFIX" \
+        --verbose \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-vm" --minimal --verbose \
+ && "${KOOPA_PREFIX}/bin/koopa" install zsh
 
 WORKDIR /home/docker
 CMD ["/usr/local/bin/zsh", "-il"]

@@ -1,10 +1,9 @@
 # """
-# Install R 4.0.0.
-# Updated 2021-02-16.
+# R 4.0.0.
+# Updated 2021-03-24.
 # """
 
 FROM acidgenomics/r-base:base
-MAINTAINER docker@acidgenomics.com
 
 RUN koopa update \
  && koopa install r --version='4.0.0' \

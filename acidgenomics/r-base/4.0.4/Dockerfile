@@ -1,12 +1,9 @@
 # """
 # Install R 4.0.4.
 # Updated 2021-02-16.
-#
-# NOTE RcppEigen is currently having compilation issues.
 # """
 
 FROM acidgenomics/r-base:base
-MAINTAINER docker@acidgenomics.com
 
 RUN koopa update \
  && koopa install r --version='4.0.4' \

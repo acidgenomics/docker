@@ -1,9 +1,8 @@
 # """
-# Install Ubuntu 20.04 LTS (recommended).
-# Updated 2020-11-12.
+# Ubuntu 20.04 LTS recommended image.
+# Updated 2021-03-24.
 # """
 
-FROM acidgenomics/ubuntu:20.04-minimal
-MAINTAINER docker@acidgenomics.com
+FROM acidgenomics/ubuntu:20.04-base
 
-RUN /opt/koopa/os/linux/common/sbin/configure-vm --recommended --verbose
+RUN configure-vm --recommended --verbose

@@ -1,5 +1,5 @@
 # """
-# Install Arch Linux.
+# Arch Linux base image.
 # Updated 2021-03-24.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
@@ -21,12 +21,16 @@
 #       pacman-doesnt-work-in-docker-image/1053223
 # - https://bbs.archlinux.org/viewtopic.php?id=263379
 # - https://bugs.archlinux.org/task/69563
+#
+# How to get the version of a package:
+# > pacman -Ss <package>
 # """
 
-FROM archlinux:base-20210321.0.17674
+FROM archlinux:latest
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ARG KOOPA_PREFIX=/opt/koopa
 ENV TERM=xterm-256color
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
@@ -54,9 +58,12 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
 
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
-        | bash -s -- --non-interactive --test \
- && /opt/koopa/os/linux/common/sbin/configure-vm --minimal \
- && /opt/koopa/bin/koopa install zsh
+    | bash -s -- \
+        --non-interactive \
+        --prefix="$KOOPA_PREFIX" \
+        --verbose \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-vm" --minimal \
+ && "${KOOPA_PREFIX}/bin/koopa" install zsh
 
 WORKDIR /home/docker
 CMD ["/usr/local/bin/zsh", "-il"]
