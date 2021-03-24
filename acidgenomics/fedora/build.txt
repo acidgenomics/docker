@@ -1,4 +1,4 @@
-33-minimal
+33-base
 33-recommended
-minimal
+base
 recommended
