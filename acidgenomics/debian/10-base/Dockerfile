@@ -14,8 +14,7 @@
 # - DL3009
 # """
 
-# 10.8
-FROM debian:buster-20210311
+FROM debian:10.8
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV LANG=en_US.UTF-8 \
