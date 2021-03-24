@@ -28,14 +28,12 @@ USER root
 RUN apk --no-cache update \
  && apk --no-cache add \
         bash=~5.1.0 \
-        build-base=~0.5 \
         ca-certificates=~20191127 \
         coreutils=~8.32 \
         curl=~7.74.0 \
         git=~2.30.2 \
         shadow=~4.8.1 \
         sudo=~1.9.5 \
-        zsh=~5.8 \
  && addgroup -S docker \
  && adduser -D -G docker -s /bin/ash docker \
  && addgroup -S docker wheel \
@@ -50,7 +48,9 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
         --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" --base --verbose
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
+        --base-image \
+        --verbose
 
 WORKDIR /home/docker
-CMD ["zsh", "-il"]
+CMD ["/usr/local/bin/zsh", "-il"]
