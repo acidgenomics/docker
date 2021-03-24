@@ -25,8 +25,8 @@
 
 FROM archlinux:base-20210321.0.17674
 
-ENV TERM=xterm-256color
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ENV TERM=xterm-256color
 
 USER root
 RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \

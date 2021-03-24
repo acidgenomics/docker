@@ -20,8 +20,8 @@
 
 FROM alpine:3.13.2
 
-ENV TERM=xterm-256color
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+ENV TERM=xterm-256color
 
 USER root
 RUN apk --no-cache update \
