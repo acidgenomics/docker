@@ -38,17 +38,14 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
  && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
  && bsdtar -C '/' -xvf "$patched_glibc" \
  && rm "$patched_glibc" \
- # > && pacman -Syyu --noconfirm \
  && pacman -Syy --noconfirm \
  && pacman-db-upgrade \
  && pacman -S --noconfirm \
-        base-devel \
         bash \
         curl \
         git \
         shadow \
         sudo \
-        zsh \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \
