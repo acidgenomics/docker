@@ -14,10 +14,10 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN dnf -y install \
-        bash-4.4.19 \
-        curl-7.61.1 \
-        git-2.27.0 \
-        sudo-1.8.29 \
+        bash \
+        curl \
+        git \
+        sudo \
  && dnf clean all \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
@@ -38,4 +38,4 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --verbose
 
 WORKDIR /home/docker
-CMD ["/usr/local/bin/zsh", "-il"]
+CMD ["bash", "-il"]

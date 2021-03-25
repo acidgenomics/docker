@@ -30,15 +30,14 @@ RUN apt-get update \
         --quiet \
         --yes \
         install \
-            bash=5.0-4 \
-            bc=1.07.1-2+b1 \
-            ca-certificates=20200601~deb10u2 \
-            coreutils=8.30-3 \
-            curl=7.64.0-4+deb10u1 \
-            findutils=4.6.0+git+20190209-2 \
-            git=1:2.20.1-2+deb10u3 \
-            lsb-release=10.2019051400 \
-            sudo=1.8.27-1+deb10u3 \
+            bash \
+            ca-certificates \
+            coreutils \
+            curl \
+            findutils \
+            git \
+            lsb-release \
+            sudo \
  && apt-get clean \
  && rm -frv /var/lib/apt/lists/* \
  && useradd docker \
@@ -60,4 +59,4 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
     --verbose
 
 WORKDIR /home/docker
-CMD ["/usr/local/bin/zsh", "-il"]
+CMD ["bash", "-il"]

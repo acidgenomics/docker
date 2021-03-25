@@ -5,7 +5,7 @@
 # Use `yum info <pkg>` to get version information.
 # """
 
-FROM amazonlinux:2.0.20210219.0
+FROM amazonlinux:2
 
 ENV LANG=en_US.UTF-8 \
     KOOPA_PREFIX=/opt/koopa \
@@ -19,6 +19,7 @@ RUN yum -y install \
         findutils \
         git \
         sudo \
+        tar \
  && yum clean all \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
