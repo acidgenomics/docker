@@ -28,13 +28,10 @@ USER root
 RUN zypper refresh && \
     zypper install -y \
         bash \
-        bc \
         curl \
         git \
-        glibc-i18ndata \
         sudo \
         tar \
-        zsh \
  && zypper clean \
  && groupadd wheel \
  && groupadd docker \
