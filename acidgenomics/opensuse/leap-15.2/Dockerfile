@@ -1,6 +1,6 @@
 # """
 # openSUSE Leap base image.
-# Updated 2021-03-24.
+# Updated 2021-03-25.
 #
 # How to set locale:
 # https://doc.opensuse.org/documentation/leap/reference/html/
@@ -27,14 +27,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
 RUN zypper refresh && \
     zypper install -y \
-        bash=4.4-lp152.11.80 \
-        bc=1.07.1-lp152.4.123 \
-        curl=7.66.0-lp152.3.12.1 \
-        git=2.26.2-lp152.2.6.1 \
-        glibc-i18ndata=2.26-lp152.26.6.1 \
-        sudo=1.8.22-lp152.8.6.1 \
-        tar=1.30-lp152.3.6 \
-        zsh=5.6-lp152.2.7 \
+        bash \
+        bc \
+        curl \
+        git \
+        glibc-i18ndata \
+        sudo \
+        tar \
+        zsh \
  && zypper clean \
  && groupadd wheel \
  && groupadd docker \
@@ -55,4 +55,4 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --verbose
 
 WORKDIR /home/docker
-CMD ["zsh", "-il"]
+CMD ["bash", "-il"]
