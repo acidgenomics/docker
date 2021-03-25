@@ -16,10 +16,10 @@
 
 FROM debian:10.8
 
-ARG DEBIAN_FRONTEND=noninteractive \
-    KOOPA_PREFIX=/opt/koopa
+ARG DEBIAN_FRONTEND=noninteractive
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
+    KOOPA_PREFIX=/opt/koopa \
     TERM=xterm-256color
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 

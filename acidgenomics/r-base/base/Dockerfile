@@ -10,4 +10,6 @@
 
 FROM acidgenomics/ubuntu:base
 RUN koopa update \
- && configure-system --bioconductor --verbose
+ && "${KOOPA_PREFIX:?}/os/linux/common/sbin/configure-system" \
+        --bioconductor \
+        --verbose

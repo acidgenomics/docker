@@ -1,14 +1,14 @@
 # """
 # Amazon Linux base image.
-# Updated 2021-03-24.
+# Updated 2021-03-25.
 #
 # Use `yum info <pkg>` to get version information.
 # """
 
 FROM amazonlinux:2.0.20210219.0
 
-ARG KOOPA_PREFIX=/opt/koopa
 ENV LANG=en_US.UTF-8 \
+    KOOPA_PREFIX=/opt/koopa \
     TERM=xterm-256color
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -29,7 +29,6 @@ RUN yum -y install \
         tar-1.26 \
         unzip-6.0 \
         xz-5.2.2 \
-        zsh-5.7.1 \
  && yum clean all \
  && localedef -i en_US -f UTF-8 en_US.UTF-8 \
  && useradd docker \
@@ -46,8 +45,9 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
         --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" --base --verbose \
- && "${KOOPA_PREFIX}/bin/koopa" install zsh \
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
+        --base-image \
+        --verbose \
  && "${KOOPA_PREFIX}/bin/koopa" install aws-cli
 
 WORKDIR /home/docker

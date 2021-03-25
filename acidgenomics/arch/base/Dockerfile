@@ -1,6 +1,6 @@
 # """
 # Arch Linux base image.
-# Updated 2021-03-24.
+# Updated 2021-03-25.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -26,10 +26,11 @@
 # > pacman -Ss <package>
 # """
 
+# Rolling release.
 FROM archlinux:latest
 
-ARG KOOPA_PREFIX=/opt/koopa
-ENV TERM=xterm-256color
+ENV KOOPA_PREFIX=/opt/koopa \
+    TERM=xterm-256color
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
@@ -62,8 +63,9 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
         --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" --base --verbose \
- && "${KOOPA_PREFIX}/bin/koopa" install zsh
+ && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
+        --base-image \
+        --verbose
 
 WORKDIR /home/docker
 CMD ["/usr/local/bin/zsh", "-il"]

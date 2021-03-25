@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2021-03-24.
+# Updated 2021-03-25.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -20,8 +20,8 @@
 
 FROM alpine:3.13.2
 
-ARG KOOPA_PREFIX=/opt/koopa
-ENV TERM=xterm-256color
+ENV KOOPA_PREFIX=/opt/koopa \
+    TERM=xterm-256color
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 USER root
