@@ -65,4 +65,4 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --verbose
 
 WORKDIR /home/docker
-CMD ["/usr/local/bin/zsh", "-il"]
+CMD ["bash", "-il"]
