@@ -14,16 +14,11 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN dnf -y install \
-        # koopa dependencies:
         bash-4.4.19 \
         curl-7.61.1 \
         git-2.27.0 \
         sudo-1.8.29 \
-        # locale dependencies:
-        glibc-langpack-en-2.28 \
-        glibc-locale-source-2.28 \
  && dnf clean all \
- && localedef -i en_US -f UTF-8 en_US.UTF-8 \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \

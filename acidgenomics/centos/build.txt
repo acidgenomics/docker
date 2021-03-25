@@ -1,4 +1,0 @@
-8-base
-8-recommended
-base
-recommended

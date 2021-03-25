@@ -14,23 +14,12 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN yum -y install \
-        bash-4.2 \
-        bc-1.06.95 \
-        curl-7.61.1 \
-        findutils-4.5.11 \
-        gcc-7.3.1 \
-        git-2.23.3 \
-        glibc-langpack-en-2.26 \
-        glibc-locale-source-2.26 \
-        less-458 \
-        make-3.82 \
-        ncurses-devel-6.0 \
-        sudo-1.8.23 \
-        tar-1.26 \
-        unzip-6.0 \
-        xz-5.2.2 \
+        bash \
+        curl \
+        findutils \
+        git \
+        sudo \
  && yum clean all \
- && localedef -i en_US -f UTF-8 en_US.UTF-8 \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \
@@ -51,4 +40,4 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
  && "${KOOPA_PREFIX}/bin/koopa" install aws-cli
 
 WORKDIR /home/docker
-CMD ["/usr/local/bin/zsh", "-il"]
+CMD ["bash", "-il"]

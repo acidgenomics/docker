@@ -12,10 +12,6 @@
 #
 # Package repo:
 # https://pkgs.alpinelinux.org/packages
-#
-# hadolint:
-# - DL3018
-# - DL4006
 # """
 
 FROM alpine:3.13.2
@@ -27,13 +23,13 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 USER root
 RUN apk --no-cache update \
  && apk --no-cache add \
-        bash=~5.1.0 \
-        ca-certificates=~20191127 \
-        coreutils=~8.32 \
-        curl=~7.74.0 \
-        git=~2.30.2 \
-        shadow=~4.8.1 \
-        sudo=~1.9.5 \
+        bash \
+        ca-certificates \
+        coreutils \
+        curl \
+        git \
+        shadow \
+        sudo \
  && addgroup -S docker \
  && adduser -D -G docker -s /bin/ash docker \
  && addgroup -S docker wheel \
@@ -53,4 +49,4 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --verbose
 
 WORKDIR /home/docker
-CMD ["/usr/local/bin/zsh", "-il"]
+CMD ["bash", "-il"]
