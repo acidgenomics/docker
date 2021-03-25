@@ -1,4 +1,0 @@
-20.04-base
-20.04-recommended
-base
-recommended
