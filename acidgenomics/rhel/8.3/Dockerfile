@@ -38,7 +38,7 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --prefix="$KOOPA_PREFIX" \
         --verbose \
  && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
-        --base-system \
+        --base-image \
         --verbose
 
 WORKDIR /home/docker
