@@ -11,6 +11,8 @@
 # - https://stackoverflow.com/questions/58304278/
 #
 # Get package version with `dnf info <pkg>`.
+#
+# NOTE arm64 is currently hanging during dnf step on MacBook.
 # """
 
 FROM fedora:33
