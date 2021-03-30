@@ -1,0 +1,2 @@
+10.8-minimal
+10.8-recommended

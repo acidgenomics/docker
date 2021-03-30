@@ -1,6 +1,6 @@
 # """
-# Debian base image.
-# Updated 2021-03-24.
+# Debian minimal base image.
+# Updated 2021-03-30.
 #
 # See also:
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
@@ -53,10 +53,7 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
-        --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
-    --base-image \
-    --verbose
+        --verbose
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]
