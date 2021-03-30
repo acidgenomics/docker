@@ -1,1 +1,2 @@
-../platforms.txt
+amd64
+arm64

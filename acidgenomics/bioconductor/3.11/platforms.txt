@@ -1,1 +1,1 @@
-../platforms.txt
+amd64
