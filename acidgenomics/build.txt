@@ -62,8 +62,8 @@ r-bcbiosinglecell
 
 # AWS Batch images                                                          {{{1
 # ==============================================================================
-aws-batch-fetch-and-run
-aws-batch-miniconda3
 aws-batch-debian
 aws-batch-ubuntu
 aws-batch-fedora
+aws-batch-fetch-and-run
+aws-batch-miniconda3

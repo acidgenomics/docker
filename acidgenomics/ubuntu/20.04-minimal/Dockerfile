@@ -1,6 +1,6 @@
 # """
 # Ubuntu 20.04 LTS base image.
-# Updated 2021-03-25.
+# Updated 2021-03-30.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -45,9 +45,6 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
-        --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
-        --base-image \
         --verbose
 
 WORKDIR /home/docker
