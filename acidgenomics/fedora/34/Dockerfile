@@ -11,6 +11,8 @@
 # - https://stackoverflow.com/questions/58304278/
 #
 # Get package version with `dnf info <pkg>`.
+#
+# FIXME Seems like aarch64 build gets stuck on MacBook for both 34 and 33...
 # """
 
 FROM fedora:34
