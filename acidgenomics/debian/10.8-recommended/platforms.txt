@@ -1,1 +1,1 @@
-../10.8-minimal/platforms.txt
+../platforms.txt
