@@ -1,1 +1,1 @@
-linux/amd64
+../../fedora/platforms.txt
