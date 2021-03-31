@@ -20,6 +20,7 @@ RUN yum -y install \
         git \
         sudo \
         tar \
+        unzip \
  && yum clean all \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
