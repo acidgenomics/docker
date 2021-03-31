@@ -1,6 +1,6 @@
 # """
 # Amazon Linux base image.
-# Updated 2021-03-25.
+# Updated 2021-03-30.
 #
 # Use `yum info <pkg>` to get version information.
 # """
@@ -35,10 +35,7 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
         --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
-        --base-image \
-        --verbose \
- && "${KOOPA_PREFIX}/bin/koopa" install aws-cli
+ && koopa install aws-cli
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]

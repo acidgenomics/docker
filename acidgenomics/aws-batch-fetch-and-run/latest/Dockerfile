@@ -1,1 +1,1 @@
-FROM acidgenomics/aws-batch-debian:latest
+FROM acidgenomics/amzn:minimal
