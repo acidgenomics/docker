@@ -1,5 +1,6 @@
 FROM acidgenomics/r-base:devel
-RUN R -e " \
+RUN koopa update \
+ && R -e " \
         install.packages( \
             pkgs = 'AcidDevTools', \
             repos = c( \
