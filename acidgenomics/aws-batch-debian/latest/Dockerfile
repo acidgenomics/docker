@@ -6,6 +6,7 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-USER docker koopa install aws-cli
+USER docker
+RUN koopa install aws-cli
 
 ENTRYPOINT ["/opt/koopa/bin/aws-batch-fetch-and-run"]
