@@ -1,4 +1,4 @@
-# aws-batch-fedora
+# AWS Batch Fedora
 
 AWS Batch Fedora fetch-and-run image.
 

@@ -1,5 +1,5 @@
-# AWS Batch Debian
+# AWS Batch Ubuntu
 
-AWS Batch Debian fetch-and-run image.
+AWS Batch Ubuntu fetch-and-run image.
 
 Set `BATCH_FILE_URL` to script path (e.g. `s3://batch/script.sh`).
