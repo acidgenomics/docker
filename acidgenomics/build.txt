@@ -9,6 +9,7 @@ fedora
 opensuse
 rhel
 ubuntu
+void
 
 # Minimal bioinformatics images                                             {{{1
 # ==============================================================================
