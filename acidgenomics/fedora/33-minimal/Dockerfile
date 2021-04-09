@@ -1,6 +1,6 @@
 # """
 # Fedora base image.
-# Updated 2021-03-30.
+# Updated 2021-04-09.
 #
 # How to set locale:
 # - https://stackoverflow.com/questions/49197998/
@@ -42,6 +42,7 @@ RUN dnf -y install \
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- \
+        --no-dotfiles \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
         --verbose
