@@ -11,7 +11,6 @@ FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
 ENV LANG=en_US.UTF-8 \
     KOOPA_PREFIX=/opt/koopa \
-    LC_ALL=en_US.UTF-8 \
     TERM=xterm-256color
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
