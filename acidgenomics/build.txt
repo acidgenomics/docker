@@ -15,7 +15,15 @@ void
 # ==============================================================================
 # Note that miniconda3 now extends from Debian.
 biocontainers
-miniconda3
+conda
+
+# AWS Batch images                                                          {{{1
+# ==============================================================================
+aws-batch-fetch-and-run
+aws-batch-conda
+aws-batch-debian
+aws-batch-fedora
+aws-batch-ubuntu
 
 # R images {{{1
 # ==============================================================================
@@ -60,11 +68,3 @@ r-bcbiosinglecell
 # ==============================================================================
 # > bcbio
 # > rnaeditingindexer
-
-# AWS Batch images                                                          {{{1
-# ==============================================================================
-aws-batch-debian
-aws-batch-ubuntu
-aws-batch-fedora
-aws-batch-fetch-and-run
-aws-batch-miniconda3
