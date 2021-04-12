@@ -1,4 +1,4 @@
-FROM acidgenomics/r-base:4.0.4
+FROM acidgenomics/r-base:4.0
 RUN koopa update \
  && R -e " \
         install.packages( \
