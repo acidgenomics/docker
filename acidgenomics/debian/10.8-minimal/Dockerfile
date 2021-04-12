@@ -37,6 +37,7 @@ RUN apt-get update \
             git \
             lsb-release \
             sudo \
+            unzip \
  && apt-get clean \
  && rm -frv /var/lib/apt/lists/* \
  && useradd docker \

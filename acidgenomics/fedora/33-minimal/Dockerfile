@@ -30,6 +30,7 @@ RUN dnf -y install \
         curl \
         git \
         sudo \
+        unzip \
  && dnf clean all \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
