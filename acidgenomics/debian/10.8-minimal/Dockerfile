@@ -1,6 +1,6 @@
 # """
 # Debian minimal base image.
-# Updated 2021-04-09.
+# Updated 2021-04-20.
 #
 # See also:
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
@@ -38,6 +38,7 @@ RUN apt-get update \
             lsb-release \
             sudo \
             unzip \
+            wget \
  && apt-get clean \
  && rm -frv /var/lib/apt/lists/* \
  && useradd docker \

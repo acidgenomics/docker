@@ -1,2 +1,2 @@
-FROM acidgenomics/ubuntu:base
+FROM acidgenomics/ubuntu:minimal
 RUN koopa install bcbio

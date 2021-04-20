@@ -1,6 +1,6 @@
 # """
 # Ubuntu 20.04 LTS base image.
-# Updated 2021-04-09.
+# Updated 2021-04-20.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -30,6 +30,7 @@ RUN apt-get update \
             lsb-release \
             sudo \
             unzip \
+            wget \
  && apt-get clean \
  && rm -frv /var/lib/apt/lists/* \
  && useradd docker \
