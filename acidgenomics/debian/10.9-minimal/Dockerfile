@@ -1,6 +1,6 @@
 # """
 # Debian minimal base image.
-# Updated 2021-04-20.
+# Updated 2021-05-11.
 #
 # See also:
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
@@ -14,12 +14,13 @@
 # - DL3009
 # """
 
-FROM debian:10.8
+FROM debian:10.9
 
-ARG DEBIAN_FRONTEND=noninteractive
-ENV LANG=en_US.UTF-8 \
-    KOOPA_PREFIX=/opt/koopa \
-    TERM=xterm-256color
+ARG DEBIAN_FRONTEND="noninteractive"
+ENV LANG="en_US.UTF-8" \
+    KOOPA_PREFIX="/opt/koopa" \
+    TERM="xterm-256color"
+
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
