@@ -4,7 +4,7 @@
 
 ## Tags
 
-- rolling (**latest**)
+- rolling-minimal (**latest**; minimal; rolling)
 
 [koopa]: https://koopa.acidgenomics.com/
 [void linux]: https://voidlinux.org/

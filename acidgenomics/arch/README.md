@@ -4,7 +4,8 @@
 
 ## Tags
 
-- rolling (**latest**; base)
+- rolling-recommended (**latest**; base; recommended; rolling)
+- rolling-minimal (minimal)
 
 [arch]: https://www.archlinux.org/
 [koopa]: https://koopa.acidgenomics.com/
