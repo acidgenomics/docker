@@ -16,6 +16,7 @@ void
 # Note that miniconda3 now extends from Debian.
 biocontainers
 conda
+mamba
 
 # AWS Batch images                                                          {{{1
 # ==============================================================================
