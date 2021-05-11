@@ -7,8 +7,8 @@
 
 FROM centos:8.3.2011
 
-ARG KOOPA_PREFIX="/opt/koopa"
 ENV LANG="en_US.UTF-8" \
+    KOOPA_PREFIX="/opt/koopa" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
