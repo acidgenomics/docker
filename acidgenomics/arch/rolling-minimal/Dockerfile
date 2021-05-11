@@ -31,7 +31,6 @@ FROM archlinux:latest
 
 ENV KOOPA_PREFIX="/opt/koopa" \
     TERM="xterm-256color"
-ARG KOOPA="${KOOPA_PREFIX}/bin/koopa"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
@@ -61,9 +60,6 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
-        --verbose \
- && "$KOOPA" configure system \
-        --base-image \
         --verbose
 
 WORKDIR /home/docker

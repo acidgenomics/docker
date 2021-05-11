@@ -18,7 +18,6 @@ FROM alpine:3.13.5
 
 ENV KOOPA_PREFIX="/opt/koopa" \
     TERM="xterm-256color"
-
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 USER root
