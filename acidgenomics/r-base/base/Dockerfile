@@ -1,6 +1,6 @@
 # """
 # Install R base system (for Bioconductor).
-# Updated 2021-03-30.
+# Updated 2021-05-11.
 #
 # Switched to Ubuntu from Debian so we can take advantage of new binary
 # package install support via RStudio Package Manager.
@@ -9,6 +9,6 @@
 # """
 
 FROM acidgenomics/ubuntu:base
-RUN "${KOOPA_PREFIX:?}/os/linux/common/sbin/configure-system" \
+RUN "${KOOPA_PREFIX:?}/bin/koopa" configure system \
         --bioconductor \
         --verbose
