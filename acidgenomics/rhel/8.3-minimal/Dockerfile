@@ -1,6 +1,6 @@
 # """
 # RHEL base image.
-# Updated 2021-03-25.
+# Updated 2021-05-11.
 #
 # UBI8 image info:
 # https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
@@ -27,6 +27,7 @@ RUN dnf -y install \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \
  && chown 'docker:docker' /home/docker \
+ && usermod -s /bin/bash docker \
  && usermod -a -G wheel docker \
  && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
  && chmod 0440 /etc/sudoers.d/wheel
@@ -36,9 +37,6 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
-        --verbose \
- && "${KOOPA_PREFIX}/os/linux/common/sbin/configure-system" \
-        --base-image \
         --verbose
 
 WORKDIR /home/docker
