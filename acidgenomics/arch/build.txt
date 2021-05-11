@@ -1,2 +1,0 @@
-rolling-minimal
-rolling-recommended

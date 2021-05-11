@@ -20,7 +20,6 @@ ARG DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \
     KOOPA_PREFIX="/opt/koopa" \
     TERM="xterm-256color"
-
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root

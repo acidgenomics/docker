@@ -15,7 +15,7 @@
 # NOTE arm64 is currently hanging during dnf step on MacBook.
 # """
 
-FROM fedora:33
+FROM fedora:34
 
 ENV LANG="en_US.UTF-8" \
     KOOPA_PREFIX="/opt/koopa" \
