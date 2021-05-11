@@ -13,7 +13,6 @@ void
 
 # Minimal bioinformatics images                                             {{{1
 # ==============================================================================
-# Note that miniconda3 now extends from Debian.
 biocontainers
 conda
 mamba
