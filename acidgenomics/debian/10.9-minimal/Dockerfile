@@ -46,6 +46,7 @@ RUN apt-get update \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \
  && chown 'docker:docker' /home/docker \
+ && usermod -s /bin/bash docker \
  && usermod -a -G sudo docker \
  && echo '%sudo ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/sudo \
  && chmod 0440 /etc/sudoers.d/sudo

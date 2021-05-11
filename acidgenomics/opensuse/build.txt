@@ -1,0 +1,2 @@
+leap-15.2-minimal
+leap-15.2-recommended

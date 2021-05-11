@@ -9,9 +9,9 @@
 
 FROM voidlinux/voidlinux:latest
 
-ENV LANG=en_US.UTF-8 \
-    KOOPA_PREFIX=/opt/koopa \
-    TERM=xterm-256color
+ENV LANG="en_US.UTF-8" \
+    KOOPA_PREFIX="/opt/koopa" \
+    TERM="xterm-256color"
 
 USER root
 RUN xbps-install -Suy \
@@ -26,6 +26,7 @@ RUN xbps-install -Suy \
  && useradd docker \
  && mkdir -pv /home/docker \
  && chown 'docker:docker' /home/docker \
+ && usermod -s /bin/bash docker \
  && usermod -a -G wheel docker \
  && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
  && chmod 0440 /etc/sudoers.d/wheel
