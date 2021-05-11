@@ -1,4 +1,4 @@
-FROM acidgenomics/debian:10.9-minimal
+FROM acidgenomics/arch:rolling-minimal
 RUN "${KOOPA_PREFIX}/bin/koopa" configure system \
         --base-image \
         --verbose

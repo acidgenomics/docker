@@ -18,7 +18,6 @@ FROM alpine:3.13.5
 
 ENV KOOPA_PREFIX="/opt/koopa" \
     TERM="xterm-256color"
-ARG KOOPA="${KOOPA_PREFIX}/bin/koopa"
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
@@ -37,11 +36,10 @@ RUN apk --no-cache update \
  && addgroup -S docker wheel \
  && mkdir -pv /home/docker \
  && chown 'docker:docker' /home/docker \
+ && usermod -s /bin/bash docker \
  && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
  && chmod 0440 /etc/sudoers.d/wheel
 
-# NOTE The 'koopa configure system' call will fail unless we switch the
-# default shell to bash here first.
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER docker
@@ -49,9 +47,6 @@ RUN curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
-        --verbose \
- && "$KOOPA" configure system \
-        --base-image \
         --verbose
 
 WORKDIR /home/docker

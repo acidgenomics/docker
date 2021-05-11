@@ -51,6 +51,7 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \
  && chown 'docker:docker' /home/docker \
+ && usermod -s /bin/bash docker \
  && usermod -a -G wheel docker \
  && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
  && chmod 0440 /etc/sudoers.d/wheel
