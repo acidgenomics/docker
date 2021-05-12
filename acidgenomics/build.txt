@@ -15,7 +15,7 @@ void
 # ==============================================================================
 biocontainers
 conda
-mamba
+# > mamba  # update this manually upon version change.
 
 # AWS Batch images                                                          {{{1
 # ==============================================================================

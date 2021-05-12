@@ -1,7 +1,6 @@
 # """
 # Micromamba base image.
-# Updated 2021-05-11.
+# Updated 2021-05-12.
 # """
 
-# Inherits from debian-slim base image.
 FROM mambaorg/micromamba:0.12.2
