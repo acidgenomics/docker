@@ -28,6 +28,7 @@ RUN apk --no-cache update \
         coreutils \
         curl \
         git \
+        procps \
         shadow \
         sudo \
  && addgroup -S docker \

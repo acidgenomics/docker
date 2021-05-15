@@ -36,7 +36,7 @@ RUN apt-get update \
             findutils \
             git \
             lsb-release \
-            procs \
+            procps \
             sudo \
             unzip \
             wget \
