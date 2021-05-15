@@ -36,6 +36,7 @@ RUN dnf -y install \
 USER docker
 RUN curl -sSL https://koopa.acidgenomics.com/install \
     | bash -s -- \
+        --no-dotfiles \
         --non-interactive \
         --prefix="$KOOPA_PREFIX" \
         --verbose
