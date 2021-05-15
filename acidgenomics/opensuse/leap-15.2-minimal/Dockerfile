@@ -30,6 +30,7 @@ RUN zypper refresh && \
         bash \
         curl \
         git \
+        procps \
         sudo \
         tar \
  && zypper clean \

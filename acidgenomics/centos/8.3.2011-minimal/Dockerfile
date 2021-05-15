@@ -17,6 +17,7 @@ RUN dnf -y install \
         bash \
         curl \
         git \
+        procps \
         sudo \
  && dnf clean all \
  && useradd docker \

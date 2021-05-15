@@ -29,6 +29,7 @@ RUN dnf -y install \
         findutils \
         curl \
         git \
+        procps \
         sudo \
         unzip \
  && dnf clean all \

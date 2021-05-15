@@ -21,6 +21,7 @@ RUN xbps-install -Suy \
         coreutils \
         curl \
         git \
+        procps \
         shadow \
         sudo \
  && useradd docker \

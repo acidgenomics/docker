@@ -18,6 +18,7 @@ RUN yum -y install \
         curl \
         findutils \
         git \
+        procps \
         sudo \
         tar \
         unzip \
