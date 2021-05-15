@@ -1,6 +1,6 @@
 # """
 # Arch Linux base image.
-# Updated 2021-05-11.
+# Updated 2021-05-15.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -47,6 +47,7 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
         procps \
         shadow \
         sudo \
+        unzip \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \
