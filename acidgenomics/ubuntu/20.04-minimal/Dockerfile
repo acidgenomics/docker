@@ -28,6 +28,7 @@ RUN apt-get update \
             findutils \
             git \
             lsb-release \
+            procs \
             sudo \
             unzip \
             wget \
