@@ -23,6 +23,7 @@ RUN dnf -y install \
         git \
         procps \
         sudo \
+        wget \
  && dnf clean all \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \

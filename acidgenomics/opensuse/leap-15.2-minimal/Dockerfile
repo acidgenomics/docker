@@ -33,6 +33,7 @@ RUN zypper refresh && \
         procps \
         sudo \
         tar \
+        wget \
  && zypper clean \
  && groupadd wheel \
  && groupadd docker \

@@ -22,6 +22,7 @@ RUN yum -y install \
         sudo \
         tar \
         unzip \
+        wget \
  && yum clean all \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \

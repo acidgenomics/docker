@@ -48,6 +48,7 @@ RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
         shadow \
         sudo \
         unzip \
+        wget \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \
  && mkdir -pv /home/docker \

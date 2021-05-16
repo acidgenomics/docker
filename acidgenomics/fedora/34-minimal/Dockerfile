@@ -32,6 +32,7 @@ RUN dnf -y install \
         procps \
         sudo \
         unzip \
+        wget \
  && dnf clean all \
  && useradd docker \
  && echo 'docker:docker' | chpasswd \

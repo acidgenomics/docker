@@ -24,6 +24,7 @@ RUN xbps-install -Suy \
         procps \
         shadow \
         sudo \
+        wget \
  && useradd docker \
  && mkdir -pv /home/docker \
  && chown 'docker:docker' /home/docker \

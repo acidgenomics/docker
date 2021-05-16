@@ -31,6 +31,7 @@ RUN apk --no-cache update \
         procps \
         shadow \
         sudo \
+        wget \
  && addgroup -S docker \
  && adduser -D -G docker -s /bin/ash docker \
  && addgroup -S docker wheel \
