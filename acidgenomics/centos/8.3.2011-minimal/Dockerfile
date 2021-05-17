@@ -19,6 +19,7 @@ RUN dnf -y install \
         git \
         procps \
         sudo \
+        unzip \
         wget \
  && dnf clean all \
  && useradd docker \

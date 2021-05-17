@@ -33,6 +33,7 @@ RUN zypper refresh && \
         procps \
         sudo \
         tar \
+        unzip \
         wget \
  && zypper clean \
  && groupadd wheel \
