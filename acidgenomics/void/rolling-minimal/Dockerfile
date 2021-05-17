@@ -21,7 +21,6 @@ RUN xbps-install -Suy \
         coreutils \
         curl \
         git \
-        procps \
         shadow \
         sudo \
         unzip \
