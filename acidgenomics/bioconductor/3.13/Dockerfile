@@ -1,4 +1,4 @@
-FROM acidgenomics/r-base:devel
+FROM acidgenomics/r-base:4.1
 RUN R -e " \
         install.packages( \
             pkgs = 'AcidDevTools', \
