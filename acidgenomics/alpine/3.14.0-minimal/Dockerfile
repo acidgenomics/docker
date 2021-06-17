@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2021-05-11.
+# Updated 2021-06-17.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -14,7 +14,7 @@
 # https://pkgs.alpinelinux.org/packages
 # """
 
-FROM alpine:3.13.5
+FROM alpine:3.14.0
 
 ENV KOOPA_PREFIX="/opt/koopa" \
     TERM="xterm-256color"
