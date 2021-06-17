@@ -6,6 +6,9 @@
 #
 # NOTE yum seems to be broken in current 2.0.20210525.0 build.
 # This may be specific to local network at 28-7, need to test.
+#
+# @seealso
+# - https://github.com/amazonlinux/container-images
 # """
 
 FROM amazonlinux:2.0.20210421.0
