@@ -8,7 +8,7 @@ Refer to [Docker containers for Bioconductor](https://www.bioconductor.org/help/
 
 ## Tags
 
-- 3.13 (devel); R-devel
+- 3.13 (devel); R-devel / R 4.1 RC
 - 3.12 (**latest**; release); R 4.0
 - 3.11 (oldrel); R 4.0
 
