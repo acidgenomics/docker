@@ -1,2 +1,2 @@
 FROM acidgenomics/debian:minimal
-RUN koopa install miniconda --version='4.9.2'
+RUN koopa install conda --version='4.9.2'
