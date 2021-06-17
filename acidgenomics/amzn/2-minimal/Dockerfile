@@ -1,11 +1,14 @@
 # """
 # Amazon Linux base image.
-# Updated 2021-05-11.
+# Updated 2021-06-17.
 #
 # Use `yum info <pkg>` to get version information.
+#
+# NOTE yum seems to be broken in current 2.0.20210525.0 build.
+# This may be specific to local network at 28-7, need to test.
 # """
 
-FROM amazonlinux:2
+FROM amazonlinux:2.0.20210421.0
 
 ENV LANG="en_US.UTF-8" \
     KOOPA_PREFIX="/opt/koopa" \
