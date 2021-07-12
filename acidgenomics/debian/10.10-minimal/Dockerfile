@@ -1,6 +1,6 @@
 # """
 # Debian minimal base image.
-# Updated 2021-05-14.
+# Updated 2021-07-12.
 #
 # See also:
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
@@ -14,7 +14,7 @@
 # - DL3009
 # """
 
-FROM debian:10.9-slim
+FROM debian:10.10-slim
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \
