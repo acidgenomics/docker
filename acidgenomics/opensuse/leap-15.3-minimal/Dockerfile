@@ -1,6 +1,6 @@
 # """
 # openSUSE Leap base image.
-# Updated 2021-05-11.
+# Updated 2021-07-12.
 #
 # How to set locale:
 # https://doc.opensuse.org/documentation/leap/reference/html/
@@ -17,7 +17,7 @@
 # > sudo zypper search -s <pkg>
 # """
 
-FROM opensuse/leap:15.2
+FROM opensuse/leap:15.3
 
 ENV LANG="en_US.UTF-8" \
     KOOPA_PREFIX="/opt/koopa" \
