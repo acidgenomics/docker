@@ -1,0 +1,9 @@
+10
+10-recommended
+10.9
+10.9-recommended
+base
+buster
+buster-recommended
+latest
+recommended
