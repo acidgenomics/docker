@@ -1,6 +1,6 @@
 # """
 # Amazon Linux base image.
-# Updated 2021-06-17.
+# Updated 2021-07-12.
 #
 # Use `yum info <pkg>` to get version information.
 #
@@ -11,7 +11,7 @@
 # - https://github.com/amazonlinux/container-images
 # """
 
-FROM amazonlinux:2.0.20210421.0
+FROM amazonlinux:2.0.20210617.0
 
 ENV LANG="en_US.UTF-8" \
     KOOPA_PREFIX="/opt/koopa" \
