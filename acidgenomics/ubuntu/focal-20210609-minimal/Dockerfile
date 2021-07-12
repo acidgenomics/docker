@@ -1,12 +1,12 @@
 # """
 # Ubuntu 20.04 LTS base image.
-# Updated 2021-05-11.
+# Updated 2021-07-12.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
 # """
 
-FROM ubuntu:20.04
+FROM ubuntu:focal-20210609
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \

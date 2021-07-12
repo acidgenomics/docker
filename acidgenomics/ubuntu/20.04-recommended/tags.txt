@@ -1,4 +1,0 @@
-20.04
-base
-latest
-recommended
