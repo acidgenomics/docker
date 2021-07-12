@@ -1,6 +1,6 @@
 # """
 # RHEL base image.
-# Updated 2021-05-11.
+# Updated 2021-07-12.
 #
 # UBI8 image info:
 # https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
@@ -9,7 +9,7 @@
 # > dnf info <pkg>
 # """
 
-FROM registry.access.redhat.com/ubi8/ubi:8.3
+FROM registry.access.redhat.com/ubi8/ubi:8.4
 
 ENV LANG=en_US.UTF-8 \
     KOOPA_PREFIX=/opt/koopa \
