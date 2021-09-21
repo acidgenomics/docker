@@ -1,6 +1,6 @@
 # """
 # Fedora base image.
-# Updated 2021-05-11.
+# Updated 2021-09-21.
 #
 # How to set locale:
 # - https://stackoverflow.com/questions/49197998/
@@ -13,9 +13,8 @@
 # Get package version with `dnf info <pkg>`.
 #
 # NOTE arm64 is currently hanging during dnf step on MacBook.
+# NOTE Can improve configuration of locale here.
 # """
-
-FROM fedora:34
 
 ENV LANG="en_US.UTF-8" \
     KOOPA_PREFIX="/opt/koopa" \
@@ -24,27 +23,27 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN dnf -y install \
-        bash \
-        coreutils \
-        findutils \
-        curl \
-        git \
-        procps \
-        sudo \
-        unzip \
-        wget \
+        'bash' \
+        'coreutils' \
+        'findutils' \
+        'curl' \
+        'git' \
+        'procps' \
+        'sudo' \
+        'unzip' \
+        'wget' \
  && dnf clean all \
- && useradd docker \
+ && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
- && mkdir -pv /home/docker \
- && chown 'docker:docker' /home/docker \
- && usermod -s /bin/bash docker \
- && usermod -a -G wheel docker \
- && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
- && chmod 0440 /etc/sudoers.d/wheel
+ && mkdir -p '/home/docker' \
+ && chown 'docker:docker' '/home/docker' \
+ && usermod -s '/bin/bash' 'docker' \
+ && usermod -a -G 'wheel' 'docker' \
+ && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/wheel' \
+ && chmod '0440' '/etc/sudoers.d/wheel'
 
 USER docker
-RUN curl -sSL https://koopa.acidgenomics.com/install \
+RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
