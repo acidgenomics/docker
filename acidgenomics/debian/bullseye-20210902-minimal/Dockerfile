@@ -19,9 +19,6 @@ FROM debian:bullseye-20210902-slim
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_PREFIX="/opt/koopa" \
-    LANG="en_US.UTF-8" \
-    LANGUAGE="en_US:en" \
-    LC_ALL="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -46,6 +43,11 @@ RUN apt-get update \
             'wget' \
  && apt-get clean \
  && rm -fr '/var/lib/apt/lists/'* \
+ && echo 'en_US.UTF-8 UTF-8' > '/etc/locale.gen' \
+ && locale-gen \
+ && dpkg-reconfigure --frontend='noninteractive' locales \
+ && update-locale LANG='en_US.UTF-8' \
+ && locale \
  && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
@@ -53,11 +55,10 @@ RUN apt-get update \
  && usermod -s '/bin/bash' 'docker' \
  && usermod -a -G 'sudo' 'docker' \
  && echo '%sudo ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/sudo' \
- && chmod '0440' '/etc/sudoers.d/sudo' \
- && echo "${LANG:?} UTF-8" > '/etc/locale.gen' \
- && locale-gen \
- && dpkg-reconfigure --frontend='noninteractive' locales \
- && update-locale LANG="${LANG:?}"
+ && chmod '0440' '/etc/sudoers.d/sudo'
+
+ENV LANG="en_US.UTF-8" \
+    LANGUAGE="en_US:en"
 
 USER docker
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
