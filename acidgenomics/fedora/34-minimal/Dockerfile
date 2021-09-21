@@ -16,8 +16,10 @@
 # NOTE Can improve configuration of locale here.
 # """
 
-ENV LANG="en_US.UTF-8" \
-    KOOPA_PREFIX="/opt/koopa" \
+FROM fedora:34
+
+ENV KOOPA_PREFIX="/opt/koopa" \
+    LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
