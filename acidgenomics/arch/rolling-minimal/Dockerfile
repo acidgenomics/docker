@@ -1,6 +1,6 @@
 # """
 # Arch Linux base image.
-# Updated 2021-05-15.
+# Updated 2021-09-21.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -34,32 +34,32 @@ ENV KOOPA_PREFIX="/opt/koopa" \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
- && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
- && bsdtar -C '/' -xvf "$patched_glibc" \
- && rm "$patched_glibc" \
- && pacman -Syy --noconfirm \
+# > RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
+# >  && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
+# >  && bsdtar -C '/' -xvf "$patched_glibc" \
+# >  && rm "$patched_glibc"
+RUN pacman -Syy --noconfirm \
  && pacman-db-upgrade \
  && pacman -S --noconfirm \
-        bash \
-        curl \
-        git \
-        procps \
-        shadow \
-        sudo \
-        unzip \
-        wget \
- && useradd docker \
+        'bash' \
+        'curl' \
+        'git' \
+        'procps' \
+        'shadow' \
+        'sudo' \
+        'unzip' \
+        'wget' \
+ && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
- && mkdir -pv /home/docker \
- && chown 'docker:docker' /home/docker \
- && usermod -s /bin/bash docker \
- && usermod -a -G wheel docker \
- && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel \
- && chmod 0440 /etc/sudoers.d/wheel
+ && mkdir -p '/home/docker' \
+ && chown 'docker:docker' '/home/docker' \
+ && usermod -s '/bin/bash' 'docker' \
+ && usermod -a -G 'wheel' 'docker' \
+ && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/wheel' \
+ && chmod '0440' '/etc/sudoers.d/wheel'
 
 USER docker
-RUN curl -sSL https://koopa.acidgenomics.com/install \
+RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \

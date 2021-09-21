@@ -14,6 +14,8 @@
 # https://pkgs.alpinelinux.org/packages
 # """
 
+# FIXME This is currently failing due to BusyBox symlink to /usr/bin/coreutils.
+
 FROM alpine:3.14.2
 
 ENV KOOPA_PREFIX="/opt/koopa" \
