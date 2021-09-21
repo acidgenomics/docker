@@ -19,6 +19,8 @@ FROM debian:bullseye-20210902-slim
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_PREFIX="/opt/koopa" \
+    LANG="en_US.UTF-8" \
+    LANGUAGE="en_US:en" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -56,9 +58,6 @@ RUN apt-get update \
  && usermod -a -G 'sudo' 'docker' \
  && echo '%sudo ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/sudo' \
  && chmod '0440' '/etc/sudoers.d/sudo'
-
-ENV LANG="en_US.UTF-8" \
-    LANGUAGE="en_US:en"
 
 USER docker
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
