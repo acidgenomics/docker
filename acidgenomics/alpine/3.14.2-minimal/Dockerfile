@@ -50,7 +50,7 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="$KOOPA_PREFIX" \
+        --prefix="${KOOPA_PREFIX:?}" \
         --verbose
 
 WORKDIR /home/docker

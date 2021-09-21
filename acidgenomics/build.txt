@@ -1,6 +1,6 @@
 # Linux base images                                                         {{{1
 # ==============================================================================
-alpine
+# alpine  # FIXME Disabled until we can rework coreutils
 amzn
 arch
 centos
