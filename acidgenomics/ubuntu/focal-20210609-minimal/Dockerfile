@@ -1,10 +1,12 @@
 # """
 # Ubuntu 20.04 LTS base image.
-# Updated 2021-07-12.
+# Updated 2021-09-21.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
 # """
+
+# FIXME Rework locale handling, matching conventions used in Ubuntu.
 
 FROM ubuntu:focal-20210609
 
@@ -27,6 +29,7 @@ RUN apt-get update \
             curl \
             findutils \
             git \
+            locales \
             lsb-release \
             procps \
             sudo \

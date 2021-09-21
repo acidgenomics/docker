@@ -44,10 +44,10 @@ RUN apt-get update \
  && apt-get clean \
  && rm -fr '/var/lib/apt/lists/'* \
  && echo 'en_US.UTF-8 UTF-8' > '/etc/locale.gen' \
- && locale-gen \
+ && locale-gen --purge \
  && dpkg-reconfigure --frontend='noninteractive' locales \
  && update-locale LANG='en_US.UTF-8' \
- && locale \
+ && locale -a \
  && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
