@@ -1,9 +1,9 @@
-10
-10-recommended
-10.9
-10.9-recommended
+11
+11-recommended
+11.0
+11.0-recommended
 base
-buster
-buster-recommended
+bullseye
+bullseye-recommended
 latest
 recommended

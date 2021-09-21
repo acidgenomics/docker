@@ -1,4 +1,4 @@
-10-minimal
-10.10-minimal
-buster-minimal
+11-minimal
+11.0-minimal
+bullseye-minimal
 minimal
