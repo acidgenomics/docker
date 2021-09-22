@@ -4,8 +4,11 @@
 
 ## Tags
 
-- 20.04-recommended (**latest**; 20.04; base; recommended)
-- 20.04-minimal (minimal)
+- focal-20210827-minimal
+  (20.04-minimal; focal-minimal; minimal)
+- 20.04-recommended
+  (**latest**; 20.04; 20.04-recommended; base; focal;
+  focal-recommended; recommended)
 
 [koopa]: https://koopa.acidgenomics.com/
 [ubuntu]: https://www.ubuntu.com/

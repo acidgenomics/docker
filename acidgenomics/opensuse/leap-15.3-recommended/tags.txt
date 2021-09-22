@@ -1,4 +1,4 @@
 base
 latest
-leap-15.2
+leap
 recommended
