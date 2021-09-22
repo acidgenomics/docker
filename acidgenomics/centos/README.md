@@ -4,8 +4,10 @@
 
 ## Tags
 
-- 8.3.2011-recommended (**latest**; 8; 8.3.2011; base; recommended)
-- 8.3.2011-minimal (minimal)
+- 8.4.2015-minimal
+  (minimal)
+- 8.4.2015-recommended
+  (**latest**; 8; base; recommended)
 
 [centos]: https://www.centos.org/
 [koopa]: https://koopa.acidgenomics.com/
