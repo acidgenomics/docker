@@ -11,4 +11,5 @@
 FROM acidgenomics/ubuntu:base
 RUN "${KOOPA_PREFIX:?}/bin/koopa" configure system \
         --bioconductor \
-        --verbose
+        --verbose \
+ && "${KOOPA_PREFIX:?}/bin/koopa" install openjdk
