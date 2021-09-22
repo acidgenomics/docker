@@ -19,6 +19,8 @@
 
 FROM acidgenomics/r-base:4.1
 RUN R -e " \
+        install.packages('BiocManager'); \
+        BiocManager::install(version = 'devel', ask = FALSE); \
         install.packages( \
             pkgs = 'AcidDevTools', \
             repos = c( \
@@ -26,6 +28,4 @@ RUN R -e " \
                 getOption('repos') \
             ) \
         ); \
-        install.packages('BiocManager'); \
-        BiocManager::install(version = 'devel', ask = FALSE); \
     "
