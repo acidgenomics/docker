@@ -37,7 +37,7 @@ RUN apk --no-cache update \
  && addgroup -S 'docker' \
  && adduser -D -G 'docker' -s '/bin/ash' 'docker' \
  && addgroup -S 'docker' 'wheel' \
- && mkdir -pv '/home/docker' \
+ && mkdir -p '/home/docker' \
  && chown 'docker:docker' '/home/docker' \
  && usermod -s '/bin/bash' 'docker' \
  && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/wheel' \

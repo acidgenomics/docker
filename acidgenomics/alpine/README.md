@@ -5,7 +5,7 @@
 ## Tags
 
 - 3.14.2-minimal (minimal)
-- 3.14.2-recommended (**latest**; base; recommended)
+- 3.14.2-recommended (**latest**; 3; base; recommended)
 
 [alpine]: https://alpinelinux.org/
 [koopa]: https://koopa.acidgenomics.com/
