@@ -1,6 +1,6 @@
 # """
 # Install R base system (for Bioconductor).
-# Updated 2021-05-11.
+# Updated 2021-09-22.
 #
 # Switched to Ubuntu from Debian so we can take advantage of new binary
 # package install support via RStudio Package Manager.
