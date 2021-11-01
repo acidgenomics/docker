@@ -4,9 +4,9 @@
 
 ## Tags
 
-- focal-20210827-minimal
+- focal-20211006-minimal
   (20.04-minimal; focal-minimal; minimal)
-- 20.04-recommended
+- focal-20211006-recommended
   (**latest**; 20.04; 20.04-recommended; base; focal;
   focal-recommended; recommended)
 

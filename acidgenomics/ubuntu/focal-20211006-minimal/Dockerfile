@@ -1,12 +1,13 @@
 # """
 # Ubuntu 20.04 LTS base image.
-# Updated 2021-09-21.
+# Updated 2021-11-01.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
 # """
 
-FROM ubuntu:focal-20210827
+# 20.04
+FROM ubuntu:focal-20211006
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_PREFIX="/opt/koopa" \
