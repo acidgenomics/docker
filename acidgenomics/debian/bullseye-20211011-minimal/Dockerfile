@@ -1,6 +1,6 @@
 # """
 # Debian minimal base image.
-# Updated 2021-09-21.
+# Updated 2021-11-01.
 #
 # See also:
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
@@ -15,7 +15,8 @@
 # - DL3009
 # """
 
-FROM debian:bullseye-20210902-slim
+## 11.1
+FROM debian:bullseye-20211011-slim
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_PREFIX="/opt/koopa" \
