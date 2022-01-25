@@ -1,3 +1,3 @@
 FROM acidgenomics/r-base:base
-RUN koopa install r-devel --version='80948'
-CMD ["R", "--no-restore", "--no-save", "--quiet"]
+RUN koopa install r-devel
+CMD ["/opt/koopa/opt/r-devel/bin/R", "--no-restore", "--no-save", "--quiet"]
