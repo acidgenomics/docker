@@ -18,18 +18,18 @@ Here's an example Bash script chaining multiple conda environments together:
 # shellcheck source=/dev/null
 source "$(koopa header bash)"
 
-koopa::conda_create_env samtools
-koopa::conda_create_env bamtools
+koopa_conda_create_env 'samtools'
+koopa_conda_create_env 'bamtools'
 
 # samtools  {{{1
-koopa::activate_conda_env samtools
+koopa_activate_conda_env 'samtools'
 conda list
 samtools --version
-koopa::deactivate_conda
+koopa_deactivate_conda
 
 # bamtools  {{{1
-koopa::activate_conda_env bamtools
+koopa_activate_conda_env 'bamtools'
 conda list
 bamtools --version
-koopa::deactivate_conda
+koopa_deactivate_conda
 ```
