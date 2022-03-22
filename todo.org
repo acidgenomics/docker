@@ -1,0 +1,4 @@
+** TODO Following dotfiles update, need to ensure certain config files are removed.
+    - `.bash_logout`
+    - `.bashrc`
+    - `.profile`.
