@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2021-09-21.
+# Updated 2022-04-26.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -14,12 +14,9 @@
 # https://pkgs.alpinelinux.org/packages
 # """
 
-# FIXME This is currently failing due to BusyBox symlink to /usr/bin/coreutils.
+FROM alpine:3.15.4
 
-FROM alpine:3.14.2
-
-ENV KOOPA_PREFIX="/opt/koopa" \
-    TERM="xterm-256color"
+ENV TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 USER root
@@ -50,7 +47,6 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="${KOOPA_PREFIX:?}" \
         --verbose
 
 WORKDIR /home/docker

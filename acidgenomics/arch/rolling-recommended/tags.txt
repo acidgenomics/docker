@@ -1,4 +1,0 @@
-base
-latest
-recommended
-rolling

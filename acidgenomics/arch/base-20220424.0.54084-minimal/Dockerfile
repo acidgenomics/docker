@@ -1,6 +1,6 @@
 # """
 # Arch Linux base image.
-# Updated 2021-09-21.
+# Updated 2022-04-26.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -26,18 +26,12 @@
 # > pacman -Ss <package>
 # """
 
-# Rolling release.
-FROM archlinux:latest
+FROM archlinux:base-20220424.0.54084
 
-ENV KOOPA_PREFIX="/opt/koopa" \
-    TERM="xterm-256color"
+ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-# > RUN patched_glibc='glibc-linux4-2.33-4-x86_64.pkg.tar.zst' \
-# >  && curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" \
-# >  && bsdtar -C '/' -xvf "$patched_glibc" \
-# >  && rm "$patched_glibc"
 RUN pacman -Syy --noconfirm \
  && pacman-db-upgrade \
  && pacman -S --noconfirm \
@@ -63,7 +57,6 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="${KOOPA_PREFIX:?}" \
         --verbose
 
 WORKDIR /home/docker
