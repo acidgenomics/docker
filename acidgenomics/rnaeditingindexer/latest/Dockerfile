@@ -4,7 +4,7 @@
 # Updated 2020-08-18.
 # """
 
-FROM acidgenomics/biocontainers:latest
+FROM docker.io/acidgenomics/biocontainers:latest
 
 USER root
 ENV BAM_UTILS_PATH="bam" \

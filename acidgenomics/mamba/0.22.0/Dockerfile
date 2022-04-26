@@ -3,4 +3,4 @@
 # Updated 2022-04-26.
 # """
 
-FROM mambaorg/micromamba:0.22.0
+FROM docker.io/mambaorg/micromamba:0.22.0

@@ -1,4 +1,4 @@
-FROM acidgenomics/r-base:4.1
+FROM docker.io/acidgenomics/r-base:4.1
 RUN R -e " \
         install.packages('BiocManager'); \
         BiocManager::install(version = '3.14', ask = FALSE); \
