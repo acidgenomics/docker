@@ -1,14 +1,13 @@
 # """
 # Rocky Linux base image.
-# Updated 2021-09-21.
+# Updated 2022-04-26.
 #
 # Use `dnf info <pkg>` to get version information.
 # """
 
-FROM rockylinux/rockylinux:8.4
+FROM rockylinux:8.5.20220308
 
-ENV KOOPA_PREFIX="/opt/koopa" \
-    LANG="en_US.UTF-8" \
+ENV LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -36,7 +35,6 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="$KOOPA_PREFIX" \
         --verbose
 
 WORKDIR /home/docker
