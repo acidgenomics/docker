@@ -10,8 +10,7 @@
 FROM ubuntu:jammy-20220421
 
 ARG DEBIAN_FRONTEND="noninteractive"
-ENV KOOPA_PREFIX="/opt/koopa" \
-    LANG="en_US.UTF-8" \
+ENV LANG="en_US.UTF-8" \
     LANGUAGE="en_US:en" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -56,7 +55,7 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="${KOOPA_PREFIX:?}" \
+        --prefix='/opt/koopa' \
         --verbose
 
 WORKDIR /home/docker
