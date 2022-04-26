@@ -1,4 +1,4 @@
 11-minimal
-11.1-minimal
+11.3-minimal
 bullseye-minimal
 minimal

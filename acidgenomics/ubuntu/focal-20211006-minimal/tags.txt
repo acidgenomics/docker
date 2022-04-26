@@ -1,3 +1,0 @@
-20.04-minimal
-focal-minimal
-minimal

@@ -1,7 +1,0 @@
-20.04
-20.04-recommended
-base
-focal
-focal-recommended
-latest
-recommended

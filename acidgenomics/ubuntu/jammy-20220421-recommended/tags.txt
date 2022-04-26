@@ -1,0 +1,7 @@
+22.04
+22.04-recommended
+base
+jammy
+jammy-recommended
+latest
+recommended

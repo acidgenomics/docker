@@ -1,22 +1,13 @@
 # """
-# Debian minimal base image.
-# Updated 2021-11-01.
-#
-# See also:
-# - https://hub.docker.com/r/rocker/r-ver/dockerfile
-# - https://hub.docker.com/r/rocker/rstudio/dockerfile
-# - https://github.com/r-lib/actions/blob/master/run-rchk/Dockerfile
-# - https://wiki.debian.org/Locale
+# Ubuntu 22.04 LTS base image.
+# Updated 2022-04-26.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
-#
-# hadolint:
-# - DL3009
 # """
 
-## 11.1
-FROM debian:bullseye-20211011-slim
+# 22.04
+FROM ubuntu:jammy-20220421
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_PREFIX="/opt/koopa" \
@@ -51,7 +42,7 @@ RUN apt-get update \
  && dpkg-reconfigure --frontend='noninteractive' locales \
  && update-locale LANG='en_US.UTF-8' \
  && locale -a \
- && useradd 'docker' \
+ && useradd docker \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
  && chown 'docker:docker' '/home/docker' \
