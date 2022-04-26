@@ -1,4 +1,4 @@
-FROM acidgenomics/conda:latest
+FROM docker.io/acidgenomics/conda:latest
 
 USER root
 RUN apt-get update \
@@ -9,4 +9,4 @@ RUN apt-get update \
 USER docker
 RUN koopa install aws-cli
 
-ENTRYPOINT ["/opt/koopa/bin/aws-batch-fetch-and-run"]
+ENTRYPOINT ["koopa", "app", "aws", "batch", "fetch-and-run"]

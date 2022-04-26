@@ -1,3 +1,6 @@
+# FIXME This is missing dependencies:
+# bash cp curl find git grep mkdir mktemp mv rm sed tar unzip.
+
 # """
 # Rocky Linux base image.
 # Updated 2022-04-26.
@@ -5,7 +8,7 @@
 # Use `dnf info <pkg>` to get version information.
 # """
 
-FROM rockylinux:8.5.20220308
+FROM docker.io/library/rockylinux:8.5.20220308
 
 ENV LANG="en_US.UTF-8" \
     TERM="xterm-256color"

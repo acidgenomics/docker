@@ -1,6 +1,8 @@
+# FIXME This is failing because 'dirname' doesn't exist.
+
 # """
 # Biocontainers base image.
-# Updated 2021-09-21.
+# Updated 2022-04-26.
 # """
 
 FROM biocontainers/biocontainers:latest
@@ -10,4 +12,8 @@ ENV LANG="en_US.UTF-8" \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
-    | bash -s -- --non-interactive --verbose
+    | bash -s -- \
+        --no-dotfiles \
+        --non-interactive \
+        --profile \
+        --verbose

@@ -28,7 +28,7 @@
 # > pacman -Ss <package>
 # """
 
-FROM archlinux:base-20220424.0.54084
+FROM docker.io/library/archlinux:base-20220424.0.54084
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

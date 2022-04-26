@@ -7,7 +7,7 @@
 # """
 
 # 22.04
-FROM ubuntu:jammy-20220421
+FROM docker.io/library/ubuntu:jammy-20220421
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \

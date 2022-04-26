@@ -16,7 +16,7 @@
 # """
 
 ## 11.1
-FROM debian:bullseye-20220418-slim
+FROM docker.io/library/debian:bullseye-20220418-slim
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \

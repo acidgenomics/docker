@@ -1,6 +1,6 @@
 # """
 # Fedora base image.
-# Updated 2021-09-21.
+# Updated 2022-04-26.
 #
 # How to set locale:
 # - https://stackoverflow.com/questions/49197998/
@@ -16,10 +16,9 @@
 # NOTE Can improve configuration of locale here.
 # """
 
-FROM fedora:34
+FROM docker.io/library/fedora:35
 
-ENV KOOPA_PREFIX="/opt/koopa" \
-    LANG="en_US.UTF-8" \
+ENV LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -49,7 +48,6 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="${KOOPA_PREFIX:?}" \
         --verbose
 
 WORKDIR /home/docker

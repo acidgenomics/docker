@@ -1,6 +1,6 @@
 # """
 # openSUSE Leap base image.
-# Updated 2021-09-21.
+# Updated 2022-04-26.
 #
 # How to set locale:
 # https://doc.opensuse.org/documentation/leap/reference/html/
@@ -17,10 +17,9 @@
 # > sudo zypper search -s <pkg>
 # """
 
-FROM opensuse/leap:15.3
+FROM docker.io/opensuse/leap:15.3
 
-ENV KOOPA_PREFIX="/opt/koopa" \
-    LANG="en_US.UTF-8" \
+ENV LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -50,7 +49,6 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="${KOOPA_PREFIX:?}" \
         --verbose
 
 WORKDIR /home/docker

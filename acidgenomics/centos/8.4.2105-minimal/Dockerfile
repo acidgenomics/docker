@@ -1,14 +1,13 @@
 # """
 # CentOS base image.
-# Updated 2021-09-21.
+# Updated 2022-04-26.
 #
 # Use `dnf info <pkg>` to get version information.
 # """
 
-FROM centos:8.4.2105
+FROM docker.io/library/centos:8.4.2105
 
 ENV LANG="en_US.UTF-8" \
-    KOOPA_PREFIX="/opt/koopa" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -36,7 +35,6 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --no-dotfiles \
         --non-interactive \
-        --prefix="${KOOPA_PREFIX:?}" \
         --verbose
 
 WORKDIR /home/docker

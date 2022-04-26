@@ -1,2 +1,2 @@
-FROM acidgenomics/ubuntu:minimal
-RUN koopa install bcbio
+FROM docker.io/acidgenomics/ubuntu:minimal
+RUN koopa install bcbio-nextgen

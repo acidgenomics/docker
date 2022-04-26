@@ -1,3 +1,3 @@
-FROM acidgenomics/ubuntu:minimal
+FROM docker.io/acidgenomics/ubuntu:minimal
 RUN koopa install aws-cli
-ENTRYPOINT ["/opt/koopa/bin/aws-batch-fetch-and-run"]
+ENTRYPOINT ["koopa", "app", "aws", "batch", "fetch-and-run"]

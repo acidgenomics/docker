@@ -14,7 +14,7 @@
 # https://pkgs.alpinelinux.org/packages
 # """
 
-FROM alpine:3.15.4
+FROM docker.io/library/alpine:3.15.4
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
