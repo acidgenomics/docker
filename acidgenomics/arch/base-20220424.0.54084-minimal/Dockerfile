@@ -1,3 +1,5 @@
+# FIXME Prompt isn't getting configured correctly in current build.
+
 # """
 # Arch Linux base image.
 # Updated 2022-04-26.
