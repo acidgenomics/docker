@@ -1,9 +1,0 @@
-11
-11-recommended
-11.3
-11.3-recommended
-base
-bullseye
-bullseye-recommended
-latest
-recommended

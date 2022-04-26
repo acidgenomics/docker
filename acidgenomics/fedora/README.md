@@ -4,8 +4,7 @@
 
 ## Tags
 
-- 34-recommended (**latest**; 34; base; recommended)
-- 34-minimal (minimal)
+- 35-minimal (**latest**; 35; minimal)
 
 [fedora]: https://getfedora.org/
 [koopa]: https://koopa.acidgenomics.com/

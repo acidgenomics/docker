@@ -1,3 +1,4 @@
-22.04-minimal
-jammy-minimal
+22.04
+jammy
+latest
 minimal
