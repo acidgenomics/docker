@@ -1,3 +1,5 @@
+# FIXME Failed to set locale, defaulting to C.UTF-8
+
 # """
 # RHEL base image.
 # Updated 2022-04-26.
@@ -9,7 +11,7 @@
 # > dnf info <pkg>
 # """
 
-FROM registry.access.redhat.com/ubi8/ubi:8.4-211
+FROM registry.access.redhat.com/ubi8:8.5-236.1648460182
 
 ENV LANG="en_US.UTF-8" \
     TERM="xterm-256color"
