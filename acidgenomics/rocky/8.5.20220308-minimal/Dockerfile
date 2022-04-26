@@ -18,6 +18,7 @@ USER root
 RUN dnf -y install \
         'bash' \
         'curl' \
+        'findutils' \
         'git' \
         'procps' \
         'sudo' \
