@@ -24,8 +24,8 @@ ENV LANG="en_US.UTF-8" \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN zypper refresh && \
-    zypper install -y \
+# > zypper refresh
+RUN zypper install -y \
         'bash' \
         'curl' \
         'git' \
