@@ -1,21 +1,20 @@
 # Linux base images                                                         {{{1
 # ==============================================================================
-# alpine  # FIXME Disabled until we can rework coreutils
+alpine
 amzn
 arch
 centos
 debian
 fedora
-opensuse
+# > opensuse
 rhel
 ubuntu
-void
 
 # Minimal bioinformatics images                                             {{{1
 # ==============================================================================
 biocontainers
 conda
-# > mamba  # update this manually upon version change.
+mamba
 
 # AWS Batch images                                                          {{{1
 # ==============================================================================
