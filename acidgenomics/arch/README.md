@@ -4,7 +4,7 @@
 
 ## Tags
 
-- base-20220424.0.54084-minimal (**latest**; minimal)
+- base-20220619.0.62803 (**latest**)
 
 [arch]: https://www.archlinux.org/
 [koopa]: https://koopa.acidgenomics.com/

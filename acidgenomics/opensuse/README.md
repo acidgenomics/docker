@@ -4,8 +4,7 @@
 
 ## Tags
 
-- leap-15.3-minimal (minimal)
-- leap-15.3-recommended (**latest**; base; leap; recommended)
+- leap-15.4 (**latest**)
 
 [koopa]: https://koopa.acidgenomics.com/
 [opensuse]: https://www.opensuse.org/

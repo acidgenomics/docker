@@ -4,7 +4,7 @@
 
 ## Tags
 
-- 8.5.20220308-minimal (**latest**; 8; 8.5; minimal)
+- 8.5.20220308 (**latest**; 8; 8.5)
 
 [centos]: https://www.centos.org/
 [koopa]: https://koopa.acidgenomics.com/

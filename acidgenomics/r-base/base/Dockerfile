@@ -8,7 +8,7 @@
 # Refer to "https://packagemanager.rstudio.com" for details on RSPM config.
 # """
 
-FROM docker.io/acidgenomics/ubuntu:minimal
+FROM docker.io/acidgenomics/ubuntu:latest
 # FIXME Rethink this, installing packages manually instead.
 RUN koopa configure system \
         --bioconductor \

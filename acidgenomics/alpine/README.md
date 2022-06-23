@@ -4,7 +4,7 @@
 
 ## Tags
 
-- 3.15.4-minimal (**latest**; minimal)
+- 3.16.0 (**latest**)
 
 [alpine]: https://alpinelinux.org/
 [koopa]: https://koopa.acidgenomics.com/

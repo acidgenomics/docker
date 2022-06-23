@@ -4,8 +4,7 @@
 
 ## Tags
 
-- bullseye-20220418-minimal
-  (**latest**; 11; bullseye; minimal)
+- bullseye-20220622 (**latest**; 11; bullseye)
 
 [debian]: https://www.debian.org/
 [koopa]: https://koopa.acidgenomics.com/

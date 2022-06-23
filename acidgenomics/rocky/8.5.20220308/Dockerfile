@@ -1,17 +1,11 @@
-# FIXME Failed to set locale, defaulting to C.UTF-8
-
 # """
-# RHEL base image.
-# Updated 2022-04-26.
+# Rocky Linux base image.
+# Updated 2022-06-23.
 #
-# UBI8 image info:
-# https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
-#
-# How to look up package version:
-# > dnf info <pkg>
+# Use `dnf info <pkg>` to get version information.
 # """
 
-FROM registry.access.redhat.com/ubi8:8.5-236.1648460182
+FROM docker.io/library/rockylinux:8.5.20220308
 
 ENV LANG="en_US.UTF-8" \
     TERM="xterm-256color"
@@ -21,7 +15,9 @@ USER root
 RUN dnf -y install \
         'bash' \
         'curl' \
+        'findutils' \
         'git' \
+        'perl' \
         'procps' \
         'sudo' \
         'unzip' \
@@ -39,9 +35,9 @@ RUN dnf -y install \
 USER docker
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
-        --no-dotfiles \
         --non-interactive \
-        --verbose
+        --verbose \
+ && koopa system info
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]

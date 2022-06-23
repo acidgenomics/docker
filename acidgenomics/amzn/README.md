@@ -4,7 +4,7 @@
 
 ## Tags
 
-- 2.0.20220419.0-minimal (**latest**; 2; minimal)
+- 2.0.20220606.1 (**latest**; 2)
 
 [amazon linux]: https://aws.amazon.com/amazon-linux-2/
 [koopa]: https://koopa.acidgenomics.com/

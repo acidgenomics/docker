@@ -1,13 +1,22 @@
 # """
-# Ubuntu 22.04 LTS base image.
-# Updated 2022-04-26.
+# Debian base image.
+# Updated 2022-06-23.
+#
+# See also:
+# - https://hub.docker.com/r/rocker/r-ver/dockerfile
+# - https://hub.docker.com/r/rocker/rstudio/dockerfile
+# - https://github.com/r-lib/actions/blob/master/run-rchk/Dockerfile
+# - https://wiki.debian.org/Locale
 #
 # How to get apt package version:
 # > apt-cache policy <package>
+#
+# hadolint:
+# - DL3009
 # """
 
-# 22.04
-FROM docker.io/library/ubuntu:jammy-20220421
+## 11.1
+FROM docker.io/library/debian:bullseye-20220622-slim
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \
@@ -30,6 +39,7 @@ RUN apt-get update \
             'git' \
             'locales' \
             'lsb-release' \
+            'perl' \
             'procps' \
             'sudo' \
             'unzip' \
@@ -41,7 +51,7 @@ RUN apt-get update \
  && dpkg-reconfigure --frontend='noninteractive' locales \
  && update-locale LANG='en_US.UTF-8' \
  && locale -a \
- && useradd docker \
+ && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
  && chown 'docker:docker' '/home/docker' \
@@ -53,9 +63,9 @@ RUN apt-get update \
 USER docker
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
-        --no-dotfiles \
         --non-interactive \
-        --verbose
+        --verbose \
+ && koopa system info
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]
