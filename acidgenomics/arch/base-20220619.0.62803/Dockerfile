@@ -2,7 +2,7 @@
 
 # """
 # Arch Linux base image.
-# Updated 2022-04-26.
+# Updated 2022-06-23.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -28,7 +28,7 @@
 # > pacman -Ss <package>
 # """
 
-FROM docker.io/library/archlinux:base-20220424.0.54084
+FROM docker.io/library/archlinux:base-20220619.0.62803
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -40,6 +40,7 @@ RUN pacman -Syy --noconfirm \
         'bash' \
         'curl' \
         'git' \
+        'perl' \
         'procps' \
         'shadow' \
         'sudo' \
@@ -57,9 +58,9 @@ RUN pacman -Syy --noconfirm \
 USER docker
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
-        --no-dotfiles \
         --non-interactive \
-        --verbose
+        --verbose \
+ && koopa system info
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]

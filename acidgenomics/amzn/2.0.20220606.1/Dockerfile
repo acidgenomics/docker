@@ -1,6 +1,6 @@
 # """
 # Amazon Linux base image.
-# Updated 2022-04-26.
+# Updated 2022-06-23.
 #
 # Use `yum info <pkg>` to get version information.
 #
@@ -11,7 +11,7 @@
 # - https://github.com/amazonlinux/container-images
 # """
 
-FROM docker.io/library/amazonlinux:2.0.20220419.0
+FROM docker.io/library/amazonlinux:2.0.20220606.1
 
 ENV LANG="en_US.UTF-8" \
     TERM="xterm-256color"
@@ -23,6 +23,7 @@ RUN yum -y install \
         'curl' \
         'findutils' \
         'git' \
+        'perl' \
         'procps' \
         'sudo' \
         'tar' \
@@ -41,9 +42,9 @@ RUN yum -y install \
 USER docker
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
-        --no-dotfiles \
         --non-interactive \
         --verbose \
+ && koopa system info \
  && koopa install aws-cli
 
 WORKDIR /home/docker
