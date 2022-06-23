@@ -1,5 +1,3 @@
-# FIXME The '--add-to-user-profile' command isn't modifying bashrc as expected.
-
 # """
 # Biocontainers base image.
 # Updated 2022-06-23.
@@ -15,4 +13,5 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --add-to-user-profile \
         --non-interactive \
-        --verbose
+        --verbose \
+ && "${HOME}/.local/share/koopa/bin/koopa" system info
