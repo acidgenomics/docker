@@ -77,4 +77,5 @@ RUN sudo apt-get update \
  && koopa install 'fontconfig' \
  && koopa install 'lzo' \
  && koopa install 'pixman' \
- && koopa install 'cairo'
+ && koopa install 'cairo' \
+ && koopa install 'openjdk'
