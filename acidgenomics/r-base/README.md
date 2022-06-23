@@ -8,8 +8,7 @@ We recommend extending from the [rocker][] project instead.
 
 ## Tags
 
-- 4.1.3 (4.1; oldrel)
-- 4.2.0 (**latest**; 4; 4.2; release)
+- 4.2.1 (**latest**; 4; 4.2; release)
 - base: Ubuntu Linux base image used to install R.
 - devel: Latest R development build from [svn repo][].
 
