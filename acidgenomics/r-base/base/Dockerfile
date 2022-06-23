@@ -7,7 +7,8 @@
 # Can consider renaming the Makefile to use '-lncursesw' instead.
 # """
 
-# FIXME Switch to install using koopa binaries, once they're available.
+# NOTE In a future build, work toward removing all apt packages from image.
+# NOTE Switch to install using koopa binaries, once they're available.
 
 FROM docker.io/acidgenomics/ubuntu:latest
 
@@ -79,3 +80,4 @@ RUN sudo apt-get update \
  && koopa install 'pixman' \
  && koopa install 'cairo' \
  && koopa install 'openjdk'
+# NOTE Consider including: 'hdf5'.
