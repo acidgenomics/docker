@@ -23,6 +23,7 @@ RUN sudo apt-get update \
             'gfortran' \
             'libncurses5-dev' \
  && koopa install 'pkg-config' \
+ && koopa install 'libtool' \
  && koopa install 'make' \
  && koopa install 'ncurses' \
  && koopa install 'icu4c' \
@@ -67,11 +68,14 @@ RUN sudo apt-get update \
  && koopa install 'xorg-libxt' \
  && koopa install 'tcl-tk' \
  && koopa install 'perl' \
-
  && koopa install 'texinfo' \
+ && koopa install 'meson' \
+ && koopa install 'ninja' \
  && koopa install 'glib' \
  && koopa install 'freetype' \
+ && koopa install 'gperf' \
  && koopa install 'fontconfig' \
  && koopa install 'lzo' \
  && koopa install 'pixman' \
+ && koopa install 'cairo' \
  && koopa install 'r' --version='4.2.1'
