@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2022-04-26.
+# Updated 2022-06-23.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -14,7 +14,7 @@
 # https://pkgs.alpinelinux.org/packages
 # """
 
-FROM docker.io/library/alpine:3.15.4
+FROM docker.io/library/alpine:3.16.0
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
@@ -27,6 +27,7 @@ RUN apk --no-cache update \
         'coreutils' \
         'curl' \
         'git' \
+        'perl' \
         'procps' \
         'shadow' \
         'sudo' \
@@ -45,7 +46,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER docker
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
-        --no-dotfiles \
         --non-interactive \
         --verbose
 
