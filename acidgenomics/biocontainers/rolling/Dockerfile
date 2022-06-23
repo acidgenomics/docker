@@ -1,8 +1,8 @@
-# FIXME This is failing because 'dirname' doesn't exist.
+# FIXME The '--add-to-user-profile' command isn't modifying bashrc as expected.
 
 # """
 # Biocontainers base image.
-# Updated 2022-04-26.
+# Updated 2022-06-23.
 # """
 
 FROM biocontainers/biocontainers:latest
@@ -13,7 +13,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
-        --no-dotfiles \
+        --add-to-user-profile \
         --non-interactive \
-        --profile \
         --verbose
