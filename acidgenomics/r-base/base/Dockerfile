@@ -9,6 +9,7 @@
 # """
 
 FROM docker.io/acidgenomics/ubuntu:minimal
+# FIXME Rethink this, installing packages manually instead.
 RUN koopa configure system \
         --bioconductor \
         --verbose
