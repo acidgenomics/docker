@@ -1,15 +1,15 @@
 # """
 # Install R base system (for Bioconductor).
 # Updated 2022-06-23.
+#
+# Debian 'build-essential' packages: dpkg-dev, g++, gcc, libc-dev, make.
 # """
 
-# NOTE Switch to install using koopa binaries, once they're available.
+# FIXME Switch to install using koopa binaries, once they're available.
 
 FROM docker.io/acidgenomics/debian:latest
 
 ARG DEBIAN_FRONTEND="noninteractive"
-
-# NOTE We likely will run into libc issues after removing 'build-essential'.
 
 RUN sudo apt-get update \
  && sudo apt-get --no-install-recommends --quiet --yes \
