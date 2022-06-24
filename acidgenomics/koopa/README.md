@@ -1,4 +1,4 @@
-# Koopa
+# koopa
 
 Linux base images with [koopa][] pre-installed.
 
