@@ -7,7 +7,8 @@ FROM docker.io/acidgenomics/koopa:ubuntu
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
-RUN sudo apt-get update \
+RUN koopa update koopa \
+ && sudo apt-get update \
  && sudo apt-get --no-install-recommends --yes \
         install \
             'autoconf' \
