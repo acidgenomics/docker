@@ -1,5 +1,5 @@
-# Conda
+# conda
 
 ## Tags
 
-- 4.12.0 (**latest**)
+- `4.12.0` (`latest`)
