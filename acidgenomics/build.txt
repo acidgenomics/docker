@@ -1,6 +1,5 @@
 koopa
 conda
-mamba
 aws-batch
 r-base
 r-packages
