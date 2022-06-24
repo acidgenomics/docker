@@ -1,4 +1,4 @@
-# Koopa
+# koopa
 
 Linux base images with [koopa][] pre-installed.
 
@@ -7,6 +7,7 @@ Linux base images with [koopa][] pre-installed.
 - [Alpine][]
 - [Amazon Linux][]
 - [Arch][]
+- [Biocontainers][]
 - [Debian][]
 - [Fedora][]
 - [openSUSE][]
@@ -17,6 +18,7 @@ Linux base images with [koopa][] pre-installed.
 [alpine]: https://alpinelinux.org/
 [amazon linux]: https://aws.amazon.com/amazon-linux-2/
 [arch]: https://www.archlinux.org/
+[biocontainers]: https://biocontainers.pro/
 [debian]: https://www.debian.org/
 [fedora]: https://getfedora.org/
 [koopa]: https://koopa.acidgenomics.com/
