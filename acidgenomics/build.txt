@@ -1,14 +1,6 @@
 # Linux base images                                                         {{{1
 # ==============================================================================
-alpine
-amzn
-arch
-centos
-debian
-fedora
-# > opensuse
-rhel
-ubuntu
+koopa
 
 # Minimal bioinformatics images                                             {{{1
 # ==============================================================================
