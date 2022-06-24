@@ -6,16 +6,28 @@
 # """
 
 # FIXME Switch to install using koopa binaries, once they're available.
+# FIXME Consider removing other apt packages at end of install step.
+
+# FIXME Need to ensure these are removed at end of install:
+# - 'bash'
+# - 'coreutils'
+# - 'curl'
+# - 'findutils'
+# - 'git'
+# - 'perl'
+# - 'unzip'
+# - 'wget'
 
 FROM docker.io/acidgenomics/debian:latest
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN sudo apt-get update \
- && sudo apt-get --no-install-recommends --quiet --yes \
+ && sudo apt-get --no-install-recommends --yes \
         install 'build-essential' \
  && koopa install 'pkg-config' \
  && koopa install 'make' \
+ && koopa install 'patch' \
  && koopa install 'm4' \
  && koopa install 'autoconf' \
  && koopa install 'automake' \
@@ -26,8 +38,7 @@ RUN sudo apt-get update \
  && koopa install 'mpfr' \
  && koopa install 'mpc' \
  && koopa install 'gcc' \
- && sudo apt-get --quiet --yes remove 'build-essential' \
- && sudo apt-get --quiet --yes autoremove \
+ && koopa install 'bash' \
  && koopa install 'attr' \
  && koopa install 'coreutils' \
  && koopa install 'findutils' \
