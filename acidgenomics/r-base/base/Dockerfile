@@ -7,7 +7,6 @@
 
 # FIXME Switch to install using koopa binaries, once they're available.
 # FIXME Consider removing other apt packages at end of install step.
-
 # FIXME Need to ensure these are removed at end of install:
 # - 'bash'
 # - 'coreutils'
@@ -24,20 +23,21 @@ ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN sudo apt-get update \
  && sudo apt-get --no-install-recommends --yes \
-        install 'build-essential' \
+        install 'gcc' 'g++' 'libc-dev' 'make' \
  && koopa install 'pkg-config' \
  && koopa install 'make' \
- && koopa install 'patch' \
+ && koopa install 'xz' \
  && koopa install 'm4' \
- && koopa install 'autoconf' \
- && koopa install 'automake' \
- && koopa install 'bison' \
- && koopa install 'libtool' \
- && koopa install 'gperf' \
  && koopa install 'gmp' \
  && koopa install 'mpfr' \
  && koopa install 'mpc' \
  && koopa install 'gcc' \
+ && koopa install 'patch' \
+ && koopa install 'autoconf' \
+ && koopa install 'automake' \
+ && koopa install 'bison' \
+ && koopa install 'gperf' \
+ && koopa install 'libtool' \
  && koopa install 'bash' \
  && koopa install 'attr' \
  && koopa install 'coreutils' \
@@ -48,7 +48,6 @@ RUN sudo apt-get update \
  && koopa install 'readline' \
  && koopa install 'libxml2' \
  && koopa install 'gettext' \
- && koopa install 'xz' \
  && koopa install 'openssl3' \
  && koopa install 'cmake' \
  && koopa install 'curl' \
