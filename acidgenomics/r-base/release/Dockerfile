@@ -44,8 +44,10 @@ RUN apt-get update \
             'libpcre3-dev' \
             'libpng-dev' \
             'libreadline-dev' \
+            'libssl-dev' \
             'libtiff5-dev' \
             'libx11-dev' \
+            'libxml2-dev' \
             'libxt-dev' \
             'locales' \
             'lsb-release' \
