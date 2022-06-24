@@ -1,2 +1,2 @@
 FROM docker.io/acidgenomics/bioconductor:release
-RUN R -e 'AcidDevTools::install("syntactic")'
+RUN R -e 'AcidDevTools::install("syntactic", dependencies = TRUE)'

@@ -1,2 +1,2 @@
 FROM docker.io/acidgenomics/r-basejump:bioc-release
-RUN R -e 'AcidDevTools::install("DESeqAnalysis")'
+RUN R -e 'AcidDevTools::install("DESeqAnalysis", dependencies = TRUE)'

@@ -1,2 +1,2 @@
 FROM docker.io/acidgenomics/r-basejump:bioc-release
-RUN R -e 'AcidDevTools::install("cBioPortalAnalysis")'
+RUN R -e 'AcidDevTools::install("cBioPortalAnalysis", dependencies = TRUE)'

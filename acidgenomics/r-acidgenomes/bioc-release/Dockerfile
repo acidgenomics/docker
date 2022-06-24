@@ -1,2 +1,2 @@
 FROM docker.io/acidgenomics/bioconductor:release
-RUN R -e 'AcidDevTools::install("AcidGenomes")'
+RUN R -e 'AcidDevTools::install("AcidGenomes", dependencies = TRUE)'

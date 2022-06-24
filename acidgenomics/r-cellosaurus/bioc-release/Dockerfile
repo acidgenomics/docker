@@ -1,2 +1,2 @@
 FROM docker.io/acidgenomics/r-basejump:bioc-release
-RUN R -e 'AcidDevTools::install("Cellosaurus")'
+RUN R -e 'AcidDevTools::install("Cellosaurus", dependencies = TRUE)'

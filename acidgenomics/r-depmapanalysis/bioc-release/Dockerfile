@@ -1,2 +1,2 @@
 FROM docker.io/acidgenomics/r-basejump:bioc-release
-RUN R -e 'AcidDevTools::install("DepMapAnalysis")'
+RUN R -e 'AcidDevTools::install("DepMapAnalysis", dependencies = TRUE)'
