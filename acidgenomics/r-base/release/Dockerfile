@@ -79,6 +79,18 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 USER docker
-RUN koopa install r-binary
+RUN koopa update \
+ && koopa install r-binary \
+ && R -e " \
+        install.packages('BiocManager'); \
+        BiocManager::install(ask = FALSE); \
+        install.packages( \
+            pkgs = 'AcidDevTools', \
+            repos = c( \
+                'https://r.acidgenomics.com', \
+                getOption('repos') \
+            ) \
+        ); \
+    "
 
 CMD ["R", "--no-restore", "--no-save", "--quiet"]
