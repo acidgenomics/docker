@@ -7,8 +7,9 @@ FROM docker.io/acidgenomics/koopa:ubuntu
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
-RUN sudo apt-get update \
- && sudo apt-get --no-install-recommends --yes \
+USER root
+RUN apt-get update \
+ && apt-get --no-install-recommends --yes \
         install \
             'autoconf' \
             'bash' \
@@ -74,6 +75,10 @@ RUN sudo apt-get update \
             'xvfb' \
             'xz-utils' \
             'zlib1g-dev' \
- && koopa install r-binary
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+USER docker
+RUN koopa install r-binary
 
 CMD ["R", "--no-restore", "--no-save", "--quiet"]
