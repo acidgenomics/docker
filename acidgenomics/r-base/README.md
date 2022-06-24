@@ -8,8 +8,8 @@ We recommend extending from the [rocker][] project instead.
 
 ## Tags
 
-- release (**latest**).
-- devel: Latest R development build from [svn repo][].
+- `release` (`latest`).
+- `devel`: Latest R development build from [svn repo][].
 
 [acid genomics]: https://acidgenomics.com/
 [r]: https://cran.r-project.org/
