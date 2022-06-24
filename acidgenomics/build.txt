@@ -1,53 +1,8 @@
-# Linux base images                                                         {{{1
-# ==============================================================================
-
 koopa
-
-# Minimal bioinformatics images                                             {{{1
-# ==============================================================================
-
 conda
 mamba
-
-# AWS Batch images                                                          {{{1
-# ==============================================================================
-
 aws-batch
-
-# R images {{{1
-# ==============================================================================
-
 r-base
-bioconductor
-
-r-acidbase
-r-acidcli
-r-acidexperiment
-r-acidgenerics
-r-acidgenomes
-r-acidgsea
-r-acidmarkdown
-r-acidplots
-r-acidplyr
-r-acidsinglecell
-r-basejump
-r-bcbiobase
-r-bcbiornaseq
-r-bcbiosinglecell
-r-cbioportalanalysis
-r-cellosaurus
-r-chromium
-r-depmapanalysis
-r-deseqanalysis
-r-eggnog
-r-goalie
-r-panther
-r-pipette
-r-pointillism
-r-syntactic
-
-# Large bioinformatics images                                               {{{1
-# ==============================================================================
-
+r-packages
 # > bcbio
 # > rnaeditingindexer
