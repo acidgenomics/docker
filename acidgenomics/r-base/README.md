@@ -8,7 +8,7 @@ We recommend extending from the [rocker][] project instead.
 
 ## Tags
 
-- release (**latest**)
+- release (**latest**).
 - devel: Latest R development build from [svn repo][].
 
 [acid genomics]: https://acidgenomics.com/
