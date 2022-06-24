@@ -1,22 +1,33 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2022-06-23.
+# Updated 2022-06-24.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
+#
+# Alternatively, can use 'Etc/UTC' for time zone.
+#
+# @seealso
+# - https://stackoverflow.com/questions/8671308/
 # """
 
 # 22.04
 FROM docker.io/library/ubuntu:jammy-20220531
 
-ARG DEBIAN_FRONTEND="noninteractive"
+ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
+    DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \
     LANGUAGE="en_US:en" \
-    TERM="xterm-256color"
+    TERM="xterm-256color" \
+    TZ="America/New_York"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN apt-get update \
+RUN echo 'tzdata tzdata/Areas select America' \
+        | debconf-set-selections \
+ && echo 'tzdata tzdata/Zones/America select New_York' \
+        | debconf-set-selections \
+ && apt-get update \
  && apt-get \
         --no-install-recommends \
         --yes \
@@ -32,6 +43,7 @@ RUN apt-get update \
             'perl' \
             'procps' \
             'sudo' \
+            'tzdata' \
             'unzip' \
  && apt-get clean \
  && rm -fr '/var/lib/apt/lists/'* \
