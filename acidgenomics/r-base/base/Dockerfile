@@ -18,7 +18,7 @@
 # - 'unzip'
 # - 'wget'
 
-FROM docker.io/acidgenomics/debian:latest
+FROM docker.io/acidgenomics/koopa:debian
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
