@@ -20,28 +20,17 @@ aws-batch
 r-base
 bioconductor
 
-# basejump                                                                  {{{1
-# ------------------------------------------------------------------------------
-
-r-acidgenerics
 r-acidbase
 r-acidcli
-r-goalie
-r-acidmarkdown
-r-syntactic
-r-pipette
-r-acidplyr
-r-acidgenomes
 r-acidexperiment
+r-acidgenerics
+r-acidgenomes
+r-acidgsea
+r-acidmarkdown
+r-acidplots
+r-acidplyr
 r-acidsinglecell
 r-basejump
-
-# Packages that extend r-basejump                                           {{{2
-# ------------------------------------------------------------------------------
-
-r-acidplots
-r-deseqanalysis
-r-acidgsea
 r-bcbiobase
 r-bcbiornaseq
 r-bcbiosinglecell
@@ -49,9 +38,13 @@ r-cbioportalanalysis
 r-cellosaurus
 r-chromium
 r-depmapanalysis
+r-deseqanalysis
 r-eggnog
+r-goalie
 r-panther
+r-pipette
 r-pointillism
+r-syntactic
 
 # Large bioinformatics images                                               {{{1
 # ==============================================================================

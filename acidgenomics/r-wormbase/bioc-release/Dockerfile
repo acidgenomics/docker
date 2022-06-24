@@ -1,2 +1,2 @@
-FROM docker.io/acidgenomics/r-basejump:bioc-release
+FROM docker.io/acidgenomics/bioconductor:release
 RUN R -e 'AcidDevTools::install("WormBase", dependencies = TRUE)'
