@@ -1,4 +1,4 @@
-# R
+# r-base
 
 Base [R][] image for [Acid Genomics][] packages.
 
