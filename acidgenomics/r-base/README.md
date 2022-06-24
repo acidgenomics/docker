@@ -1,7 +1,9 @@
 # R
 
 Base [R][] image for [Acid Genomics][] packages.
+
 Not intended for general public use.
+
 We recommend extending from the [rocker][] project instead.
 
 [acid genomics]: https://acidgenomics.com/
