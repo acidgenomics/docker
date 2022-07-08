@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2022-06-24.
+# Updated 2022-07-08.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -24,16 +24,11 @@ ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
     DEBIAN_FRONTEND="noninteractive"
 ENV LANG="en_US.UTF-8" \
     LANGUAGE="en_US:en" \
-    TERM="xterm-256color" \
-    TZ="America/New_York"
+    TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN echo 'tzdata tzdata/Areas select America' \
-        | debconf-set-selections \
- && echo 'tzdata tzdata/Zones/America select New_York' \
-        | debconf-set-selections \
- && apt-get update \
+RUN apt-get update \
  && apt-get \
         --no-install-recommends \
         --yes \
@@ -49,7 +44,6 @@ RUN echo 'tzdata tzdata/Areas select America' \
             'perl' \
             'procps' \
             'sudo' \
-            'tzdata' \
             'unzip' \
  && apt-get clean \
  && rm -fr '/var/lib/apt/lists/'* \
