@@ -1,14 +1,15 @@
+# FIXME Need to update locate to 'en_US.UTF-8'.
+
 # """
 # Rocky Linux base image.
-# Updated 2022-06-23.
+# Updated 2022-07-18.
 #
 # Use `dnf info <pkg>` to get version information.
 # """
 
-FROM docker.io/library/rockylinux:8.5.20220308
+FROM docker.io/library/rockylinux:9.0.20220712
 
-ENV LANG="en_US.UTF-8" \
-    TERM="xterm-256color"
+ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root

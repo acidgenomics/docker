@@ -1,3 +1,0 @@
-rocky
-rocky-8
-rocky-8.5
