@@ -13,9 +13,10 @@ ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
+# Conflicts with pre-installed packages:
+# - 'bash' : 'bash-minimal'
+# - 'curl' : 'curl-minimal'
 RUN dnf -y install \
-        'bash' \
-        'curl' \
         'findutils' \
         'git' \
         'perl' \
