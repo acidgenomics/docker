@@ -1,2 +1,0 @@
-rhel
-rhel-8

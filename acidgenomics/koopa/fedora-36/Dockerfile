@@ -1,3 +1,5 @@
+# FIXME Work on setting locale to UTF-8.
+
 # """
 # Fedora base image.
 # Updated 2022-06-23.
@@ -18,8 +20,7 @@
 
 FROM docker.io/library/fedora:36
 
-ENV LANG="en_US.UTF-8" \
-    TERM="xterm-256color"
+ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root

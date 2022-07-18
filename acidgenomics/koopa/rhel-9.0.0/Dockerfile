@@ -1,26 +1,27 @@
-# FIXME Failed to set locale, defaulting to C.UTF-8
-
 # """
 # RHEL base image.
-# Updated 2022-06-23.
+# Updated 2022-07-18.
 #
-# UBI8 image info:
+# UBI8:
 # https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
+#
+# UBI9:
+# https://catalog.redhat.com/software/containers/ubi9/ubi/615bcf606feffc5384e8452e
 #
 # How to look up package version:
 # > dnf info <pkg>
 # """
 
-FROM registry.access.redhat.com/ubi8:8.6-754.1655117782
+FROM registry.access.redhat.com/ubi9:9.0.0-1576
 
-ENV LANG="en_US.UTF-8" \
-    TERM="xterm-256color"
+ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
+# Conflicts with pre-installed packages:
+# - 'bash' : 'bash-minimal'
+# - 'curl' : 'curl-minimal'
 RUN dnf -y install \
-        'bash' \
-        'curl' \
         'git' \
         'perl' \
         'procps' \
