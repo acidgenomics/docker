@@ -43,8 +43,11 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \
- && koopa system info \
- && koopa install aws-cli
+ && koopa system info
+
+# FIXME To install AWS CLI, this requires system Python to be installed, to
+# enable JSON parsing.
+# > && koopa install aws-cli
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]
