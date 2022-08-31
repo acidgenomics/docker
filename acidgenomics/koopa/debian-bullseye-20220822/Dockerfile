@@ -1,18 +1,24 @@
 # """
-# Ubuntu 22.04 LTS base image.
-# Updated 2022-07-08.
+# Debian base image.
+# Updated 2022-08-30.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
 #
 # Alternatively, can use 'Etc/UTC' for time zone.
 #
-# @seealso
-# - https://stackoverflow.com/questions/8671308/
+# hadolint:
+# - DL3009
+#
+# @seealso:
+# - https://hub.docker.com/r/rocker/r-ver/dockerfile
+# - https://hub.docker.com/r/rocker/rstudio/dockerfile
+# - https://github.com/r-lib/actions/blob/master/run-rchk/Dockerfile
+# - https://wiki.debian.org/Locale
 # """
 
-# 22.04
-FROM docker.io/library/ubuntu:jammy-20220531
+## 11.4
+FROM docker.io/library/debian:bullseye-20220822-slim
 
 ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
     DEBIAN_FRONTEND="noninteractive"
@@ -46,7 +52,7 @@ RUN apt-get update \
  && dpkg-reconfigure --frontend='noninteractive' locales \
  && update-locale LANG='en_US.UTF-8' \
  && locale -a \
- && useradd docker \
+ && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
  && chown 'docker:docker' '/home/docker' \

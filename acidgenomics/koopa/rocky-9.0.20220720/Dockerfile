@@ -1,24 +1,19 @@
+# FIXME Need to update locate to 'en_US.UTF-8'.
+
 # """
-# Amazon Linux base image.
-# Updated 2022-06-23.
+# Rocky Linux base image.
+# Updated 2022-08-31.
 #
-# Use `yum info <pkg>` to get version information.
-#
-# NOTE yum seems to be broken in current 2.0.20210525.0 build.
-# This may be specific to local network at 28-7, need to test.
-#
-# @seealso
-# - https://github.com/amazonlinux/container-images
+# Use `dnf info <pkg>` to get version information.
 # """
 
-FROM docker.io/library/amazonlinux:2.0.20220606.1
+FROM docker.io/library/rockylinux:9.0.20220720
 
-ENV LANG="en_US.UTF-8" \
-    TERM="xterm-256color"
+ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN yum -y install \
+RUN dnf -y install \
         'bash' \
         'curl' \
         'findutils' \
@@ -26,9 +21,8 @@ RUN yum -y install \
         'perl' \
         'procps' \
         'sudo' \
-        'tar' \
         'unzip' \
- && yum clean all \
+ && dnf clean all \
  && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
@@ -43,8 +37,7 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \
- && koopa system info \
- && koopa install aws-cli
+ && koopa system info
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]

@@ -1,22 +1,27 @@
-# FIXME Need to update locate to 'en_US.UTF-8'.
-
 # """
-# Rocky Linux base image.
-# Updated 2022-07-18.
+# RHEL base image.
+# Updated 2022-08-31.
 #
-# Use `dnf info <pkg>` to get version information.
+# UBI8:
+# https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
+#
+# UBI9:
+# https://catalog.redhat.com/software/containers/ubi9/ubi/615bcf606feffc5384e8452e
+#
+# How to look up package version:
+# > dnf info <pkg>
 # """
 
-FROM docker.io/library/rockylinux:9.0.20220712
+FROM registry.access.redhat.com/ubi9:9.0.0-1604
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
+# Conflicts with pre-installed packages:
+# - 'bash' : 'bash-minimal'
+# - 'curl' : 'curl-minimal'
 RUN dnf -y install \
-        'bash' \
-        'curl' \
-        'findutils' \
         'git' \
         'perl' \
         'procps' \

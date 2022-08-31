@@ -1,33 +1,34 @@
 # """
-# RHEL base image.
-# Updated 2022-07-18.
+# Amazon Linux base image.
+# Updated 2022-08-31.
 #
-# UBI8:
-# https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
+# Use `yum info <pkg>` to get version information.
 #
-# UBI9:
-# https://catalog.redhat.com/software/containers/ubi9/ubi/615bcf606feffc5384e8452e
+# NOTE yum seems to be broken in current 2.0.20210525.0 build.
+# This may be specific to local network at 28-7, need to test.
 #
-# How to look up package version:
-# > dnf info <pkg>
+# @seealso
+# - https://github.com/amazonlinux/container-images
 # """
 
-FROM registry.access.redhat.com/ubi9:9.0.0-1576
+FROM docker.io/library/amazonlinux:2.0.20220805.0
 
-ENV TERM="xterm-256color"
+ENV LANG="en_US.UTF-8" \
+    TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-# Conflicts with pre-installed packages:
-# - 'bash' : 'bash-minimal'
-# - 'curl' : 'curl-minimal'
-RUN dnf -y install \
+RUN yum -y install \
+        'bash' \
+        'curl' \
+        'findutils' \
         'git' \
         'perl' \
         'procps' \
         'sudo' \
+        'tar' \
         'unzip' \
- && dnf clean all \
+ && yum clean all \
  && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
@@ -42,7 +43,8 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \
- && koopa system info
+ && koopa system info \
+ && koopa install aws-cli
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]

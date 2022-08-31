@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2022-06-23.
+# Updated 2022-08-31.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -14,7 +14,7 @@
 # https://pkgs.alpinelinux.org/packages
 # """
 
-FROM docker.io/library/alpine:3.16.0
+FROM docker.io/library/alpine:3.16.2
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
