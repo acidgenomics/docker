@@ -12,7 +12,7 @@
 # """
 
 # 22.04
-FROM docker.io/library/ubuntu:jammy-20220831
+FROM docker.io/library/ubuntu:jammy-20220801
 
 ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
     DEBIAN_FRONTEND="noninteractive"
