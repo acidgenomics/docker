@@ -4,10 +4,12 @@
 # Rocky Linux base image.
 # Updated 2022-09-20.
 #
+# The minimal variant doesn't contain 'dnf'.
+#
 # Use `dnf info <pkg>` to get version information.
 # """
 
-FROM docker.io/library/rockylinux:9.0.20220720-minimal
+FROM docker.io/library/rockylinux:9.0.20220720
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
