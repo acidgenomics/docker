@@ -2,12 +2,12 @@
 
 # """
 # Rocky Linux base image.
-# Updated 2022-08-31.
+# Updated 2022-09-20.
 #
 # Use `dnf info <pkg>` to get version information.
 # """
 
-FROM docker.io/library/rockylinux:9.0.20220720
+FROM docker.io/library/rockylinux:9.0.20220720-minimal
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

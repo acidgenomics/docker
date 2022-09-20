@@ -2,7 +2,7 @@
 
 # """
 # Arch Linux base image.
-# Updated 2022-08-31.
+# Updated 2022-09-20.
 #
 # Upgrade with `pacman -Syyu --noconfirm` is currently breaking.
 #
@@ -28,7 +28,7 @@
 # > pacman -Ss <package>
 # """
 
-FROM docker.io/library/archlinux:base-20220828.0.78480
+FROM docker.io/library/archlinux:base-20220918.0.86346
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

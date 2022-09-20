@@ -1,6 +1,6 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2022-08-31.
+# Updated 2022-09-20.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -12,7 +12,7 @@
 # """
 
 # 22.04
-FROM docker.io/library/ubuntu:jammy-20220801
+FROM docker.io/library/ubuntu:jammy-20220815
 
 ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
     DEBIAN_FRONTEND="noninteractive"

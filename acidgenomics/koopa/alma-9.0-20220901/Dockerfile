@@ -2,12 +2,12 @@
 
 # """
 # Alma Linux base image.
-# Updated 2022-07-18.
+# Updated 2022-09-20.
 #
 # Use `dnf info <pkg>` to get version information.
 # """
 
-FROM docker.io/library/almalinux:9.0-20220706
+FROM docker.io/library/almalinux:9.0-20220901
 
 ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
