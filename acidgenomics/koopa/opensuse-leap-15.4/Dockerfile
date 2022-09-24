@@ -1,6 +1,6 @@
 # """
 # openSUSE Leap base image.
-# Updated 2022-06-23.
+# Updated 2022-09-24.
 #
 # How to set locale:
 # https://doc.opensuse.org/documentation/leap/reference/html/
@@ -19,7 +19,8 @@
 
 FROM docker.io/opensuse/leap:15.4
 
-ENV LANG="en_US.UTF-8" \
+ENV KOOPA_IS_DOCKER=1 \
+    LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 

@@ -2,7 +2,7 @@
 
 # """
 # Rocky Linux base image.
-# Updated 2022-09-20.
+# Updated 2022-09-24.
 #
 # The minimal variant doesn't contain 'dnf'.
 #
@@ -11,7 +11,8 @@
 
 FROM docker.io/library/rockylinux:9.0.20220720
 
-ENV TERM="xterm-256color"
+ENV KOOPA_IS_DOCKER=1 \
+    TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root

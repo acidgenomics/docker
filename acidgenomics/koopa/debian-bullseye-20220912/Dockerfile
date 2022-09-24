@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2022-09-20.
+# Updated 2022-09-24.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -22,7 +22,8 @@ FROM docker.io/library/debian:bullseye-20220912-slim
 
 ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
     DEBIAN_FRONTEND="noninteractive"
-ENV LANG="en_US.UTF-8" \
+ENV KOOPA_IS_DOCKER=1 \
+    LANG="en_US.UTF-8" \
     LANGUAGE="en_US:en" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

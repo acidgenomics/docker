@@ -2,14 +2,15 @@
 
 # """
 # Alma Linux base image.
-# Updated 2022-09-20.
+# Updated 2022-09-24.
 #
 # Use `dnf info <pkg>` to get version information.
 # """
 
 FROM docker.io/library/almalinux:9.0-20220901
 
-ENV TERM="xterm-256color"
+ENV KOOPA_IS_DOCKER=1 \
+    TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root

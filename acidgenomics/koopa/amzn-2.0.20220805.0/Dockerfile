@@ -1,6 +1,6 @@
 # """
 # Amazon Linux base image.
-# Updated 2022-08-31.
+# Updated 2022-09-24.
 #
 # Use `yum info <pkg>` to get version information.
 #
@@ -13,7 +13,8 @@
 
 FROM docker.io/library/amazonlinux:2.0.20220805.0
 
-ENV LANG="en_US.UTF-8" \
+ENV KOOPA_IS_DOCKER=1 \
+    LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 

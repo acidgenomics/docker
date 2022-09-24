@@ -1,6 +1,6 @@
 # """
 # RHEL base image.
-# Updated 2022-08-31.
+# Updated 2022-09-24.
 #
 # UBI8:
 # https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
@@ -14,7 +14,8 @@
 
 FROM registry.access.redhat.com/ubi9:9.0.0-1604
 
-ENV TERM="xterm-256color"
+ENV KOOPA_IS_DOCKER=1 \
+    TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root

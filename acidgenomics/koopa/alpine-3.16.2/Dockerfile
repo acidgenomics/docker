@@ -16,7 +16,8 @@
 
 FROM docker.io/library/alpine:3.16.2
 
-ENV TERM="xterm-256color"
+ENV KOOPA_IS_DOCKER=1 \
+    TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 USER root
