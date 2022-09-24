@@ -1,6 +1,8 @@
 # """
 # Install R base system (for Bioconductor).
 # Updated 2022-09-24.
+#
+# Packages install into '/usr/local/lib/R/site-library' by default.
 # """
 
 FROM docker.io/acidgenomics/koopa:ubuntu
