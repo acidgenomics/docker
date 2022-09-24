@@ -1,6 +1,6 @@
 # """
 # Install R base system (for Bioconductor).
-# Updated 2022-08-09.
+# Updated 2022-09-24.
 # """
 
 FROM docker.io/acidgenomics/koopa:ubuntu
@@ -81,8 +81,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 USER docker
-RUN koopa update \
- && koopa install system r \
+RUN koopa install system r \
  && R -e " \
         install.packages('BiocManager'); \
         BiocManager::install(ask = FALSE); \
