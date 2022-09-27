@@ -1,17 +1,18 @@
 # """
 # Install R base system (for Bioconductor).
-# Updated 2022-09-24.
+# Updated 2022-09-27.
 #
 # Packages install into '/usr/local/lib/R/site-library' by default.
 # """
 
 FROM docker.io/acidgenomics/koopa:ubuntu
 
-ARG DEBIAN_FRONTEND="noninteractive"
+ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
+    DEBIAN_FRONTEND="noninteractive" \
+    TZ="Etc/UTC"
 
-USER root
-RUN apt-get update \
- && apt-get --no-install-recommends --yes \
+RUN sudo apt-get update \
+ && sudo -E apt-get --no-install-recommends --yes \
         install \
             'autoconf' \
             'bash' \
@@ -79,11 +80,10 @@ RUN apt-get update \
             'xvfb' \
             'xz-utils' \
             'zlib1g-dev' \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
-
-USER docker
-RUN koopa install system r \
+ && sudo apt-get clean \
+ && sudo rm -rf /var/lib/apt/lists/* \
+ && koopa install system r \
+ && sudo rm -rf /usr/local/lib/R \
  && R -e " \
         install.packages('BiocManager'); \
         BiocManager::install(ask = FALSE); \
