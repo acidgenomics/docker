@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2022-08-31.
+# Updated 2022-10-17.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -12,6 +12,9 @@
 #
 # Package repo:
 # https://pkgs.alpinelinux.org/packages
+#
+# @seealso
+# - https://hub.docker.com/_/alpine
 # """
 
 FROM docker.io/library/alpine:3.16.2

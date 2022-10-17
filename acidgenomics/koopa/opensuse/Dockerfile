@@ -1,17 +1,23 @@
 # """
-# Amazon Linux base image.
-# Updated 2022-09-24.
+# openSUSE Leap base image.
+# Updated 2022-10-17.
 #
-# Use `yum info <pkg>` to get version information.
+# How to set locale:
+# https://doc.opensuse.org/documentation/leap/reference/html/
+#     book-opensuse-reference/cha-suse.html
 #
-# NOTE yum seems to be broken in current 2.0.20210525.0 build.
-# This may be specific to local network at 28-7, need to test.
+# zypper cheatsheet:
+# https://en.opensuse.org/images/3/30/Zypper-cheat-sheet-2.pdf
+#
+# How to look up package versions:
+# > sudo zypper info <pkg>
+# > sudo zypper search -s <pkg>
 #
 # @seealso
-# - https://github.com/amazonlinux/container-images
+# - https://hub.docker.com/r/opensuse/leap
 # """
 
-FROM docker.io/library/amazonlinux:2.0.20220805.0
+FROM docker.io/opensuse/leap:15.4
 
 ENV KOOPA_IS_DOCKER=1 \
     LANG="en_US.UTF-8" \
@@ -19,23 +25,23 @@ ENV KOOPA_IS_DOCKER=1 \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN yum -y install \
+RUN zypper refresh \
+ && zypper install -y \
         'bash' \
         'curl' \
-        'findutils' \
         'git' \
         'perl' \
         'procps' \
         'sudo' \
         'tar' \
         'unzip' \
- && yum clean all \
- && useradd 'docker' \
- && echo 'docker:docker' | chpasswd \
+ && zypper clean \
+ && groupadd 'wheel' \
+ && groupadd 'docker' \
+ && useradd -G 'docker,wheel' 'docker' >/dev/null 2>&1 \
  && mkdir -p '/home/docker' \
  && chown 'docker:docker' '/home/docker' \
  && usermod -s '/bin/bash' 'docker' \
- && usermod -a -G 'wheel' 'docker' \
  && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/wheel' \
  && chmod '0440' '/etc/sudoers.d/wheel'
 
@@ -45,10 +51,6 @@ RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
         --non-interactive \
         --verbose \
  && koopa system info
-
-# FIXME To install AWS CLI, this requires system Python to be installed, to
-# enable JSON parsing.
-# > && koopa install aws-cli
 
 WORKDIR /home/docker
 CMD ["bash", "-il"]

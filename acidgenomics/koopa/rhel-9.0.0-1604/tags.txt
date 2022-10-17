@@ -1,3 +1,0 @@
-rhel
-rhel-9
-rhel-9.0

@@ -1,24 +1,20 @@
-# FIXME Work on setting locale to UTF-8.
-
 # """
-# Fedora base image.
-# Updated 2022-09-24.
+# RHEL base image.
+# Updated 2022-10-17.
 #
-# How to set locale:
-# - https://stackoverflow.com/questions/49197998/
-# - https://github.com/fedora-cloud/docker-brew-fedora/issues/14
-# - https://github.com/mogproject/dockerfiles/blob/master/centos6/redis/
-#       Dockerfile
-# - https://www.xspdf.com/help/50067361.html
-# - https://stackoverflow.com/questions/58304278/
+# Conflicts with pre-installed packages:
+# - 'bash' : 'bash-minimal'
+# - 'curl' : 'curl-minimal'
 #
-# Get package version with `dnf info <pkg>`.
+# How to look up package version:
+# > dnf info <pkg>
 #
-# NOTE arm64 is currently hanging during dnf step on MacBook.
-# NOTE Can improve configuration of locale here.
+# @seealso
+# - https://catalog.redhat.com/software/containers/ubi9/
+#     ubi/615bcf606feffc5384e8452e
 # """
 
-FROM docker.io/library/fedora:36
+FROM registry.access.redhat.com/ubi9/ubi:9.0.0-1640.1665068441
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
@@ -26,10 +22,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN dnf -y install \
-        'bash' \
-        'coreutils' \
-        'curl' \
-        'findutils' \
         'git' \
         'perl' \
         'procps' \

@@ -1,47 +1,41 @@
 # """
-# openSUSE Leap base image.
-# Updated 2022-09-24.
+# Fedora base image.
+# Updated 2022-10-17.
 #
 # How to set locale:
-# https://doc.opensuse.org/documentation/leap/reference/html/
-#     book-opensuse-reference/cha-suse.html
+# - https://stackoverflow.com/questions/49197998/
+# - https://stackoverflow.com/questions/58304278/
+# - https://github.com/fedora-cloud/docker-brew-fedora/issues/14
+# - https://github.com/mogproject/dockerfiles/blob/master/centos6/redis/
+#       Dockerfile
 #
-# Not currently working:
-# > localedef -i en_US -f UTF-8 en_US.UTF-8
-#
-# zypper cheatsheet:
-# https://en.opensuse.org/images/3/30/Zypper-cheat-sheet-2.pdf
-#
-# How to look up package versions:
-# > sudo zypper info <pkg>
-# > sudo zypper search -s <pkg>
+# Get package version with `dnf info <pkg>`.
 # """
 
-FROM docker.io/opensuse/leap:15.4
+FROM docker.io/library/fedora:36
 
 ENV KOOPA_IS_DOCKER=1 \
-    LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN zypper refresh \
- && zypper install -y \
+RUN dnf -y install \
         'bash' \
+        'coreutils' \
         'curl' \
+        'findutils' \
         'git' \
         'perl' \
         'procps' \
         'sudo' \
-        'tar' \
         'unzip' \
- && zypper clean \
- && groupadd 'wheel' \
- && groupadd 'docker' \
- && useradd -G 'docker,wheel' 'docker' >/dev/null 2>&1 \
+ && dnf clean all \
+ && useradd 'docker' \
+ && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
  && chown 'docker:docker' '/home/docker' \
  && usermod -s '/bin/bash' 'docker' \
+ && usermod -a -G 'wheel' 'docker' \
  && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/wheel' \
  && chmod '0440' '/etc/sudoers.d/wheel'
 

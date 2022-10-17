@@ -1,22 +1,22 @@
-# FIXME Need to update locate to 'en_US.UTF-8'.
-
 # """
 # Alma Linux base image.
-# Updated 2022-09-24.
+# Updated 2022-10-17.
 #
-# Use `dnf info <pkg>` to get version information.
+# Conflicts with pre-installed packages:
+# - 'bash' : 'bash-minimal'
+# - 'curl' : 'curl-minimal'
+#
+# @seealso
+# - https://hub.docker.com/_/almalinux
 # """
 
-FROM docker.io/library/almalinux:9.0-20220901
+FROM docker.io/library/almalinux:9.0-20221001
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-# Conflicts with pre-installed packages:
-# - 'bash' : 'bash-minimal'
-# - 'curl' : 'curl-minimal'
 RUN dnf -y install \
         'findutils' \
         'git' \

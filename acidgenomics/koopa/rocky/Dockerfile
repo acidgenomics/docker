@@ -1,12 +1,14 @@
-# FIXME Need to update locate to 'en_US.UTF-8'.
-
 # """
 # Rocky Linux base image.
-# Updated 2022-09-24.
+# Updated 2022-10-17.
 #
 # The minimal variant doesn't contain 'dnf'.
 #
-# Use `dnf info <pkg>` to get version information.
+# Regarding '--nobest' flag usage during 'dnf install' step:
+# https://access.redhat.com/discussions/6138732
+#
+# @seealso
+# - https://hub.docker.com/_/rockylinux
 # """
 
 FROM docker.io/library/rockylinux:9.0.20220720
@@ -16,7 +18,11 @@ ENV KOOPA_IS_DOCKER=1 \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN dnf -y install \
+RUN dnf clean all \
+ && dnf check \
+ && dnf check-update \
+ && dnf update \
+ && dnf -y install \
         'bash' \
         'curl' \
         'findutils' \

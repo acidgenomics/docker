@@ -1,34 +1,31 @@
 # """
-# RHEL base image.
-# Updated 2022-09-24.
+# Amazon Linux base image.
+# Updated 2022-10-17.
 #
-# UBI8:
-# https://catalog.redhat.com/software/containers/ubi8/5c647760bed8bd28d0e38f9f
-#
-# UBI9:
-# https://catalog.redhat.com/software/containers/ubi9/ubi/615bcf606feffc5384e8452e
-#
-# How to look up package version:
-# > dnf info <pkg>
+# @seealso
+# - https://hub.docker.com/_/amazonlinux
+# - https://github.com/amazonlinux/container-images
 # """
 
-FROM registry.access.redhat.com/ubi9:9.0.0-1604
+FROM docker.io/library/amazonlinux:2.0.20220912.1
 
 ENV KOOPA_IS_DOCKER=1 \
+    LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-# Conflicts with pre-installed packages:
-# - 'bash' : 'bash-minimal'
-# - 'curl' : 'curl-minimal'
-RUN dnf -y install \
+RUN yum -y install \
+        'bash' \
+        'curl' \
+        'findutils' \
         'git' \
         'perl' \
         'procps' \
         'sudo' \
+        'tar' \
         'unzip' \
- && dnf clean all \
+ && yum clean all \
  && useradd 'docker' \
  && echo 'docker:docker' | chpasswd \
  && mkdir -p '/home/docker' \
