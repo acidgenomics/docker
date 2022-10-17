@@ -18,11 +18,7 @@ ENV KOOPA_IS_DOCKER=1 \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN dnf clean all \
- && dnf check \
- && dnf check-update \
- && dnf update \
- && dnf -y install \
+RUN dnf -y install --nobest \
         'bash' \
         'curl' \
         'findutils' \
