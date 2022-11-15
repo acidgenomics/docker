@@ -1,6 +1,6 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2022-10-17.
+# Updated 2022-11-15.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -24,7 +24,8 @@ ENV KOOPA_IS_DOCKER=1 \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN apt-get update \
+RUN pro config set apt_news=false \
+ && apt-get update \
  && apt-get \
         --no-install-recommends \
         --yes \
