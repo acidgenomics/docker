@@ -1,6 +1,6 @@
 # """
 # RHEL base image.
-# Updated 2022-10-17.
+# Updated 2022-12-14.
 #
 # Conflicts with pre-installed packages:
 # - 'bash' : 'bash-minimal'
@@ -14,7 +14,7 @@
 #     ubi/615bcf606feffc5384e8452e
 # """
 
-FROM registry.access.redhat.com/ubi9/ubi:9.0.0-1640.1665068441
+FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1646.1669627755
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"

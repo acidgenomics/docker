@@ -1,11 +1,14 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2022-11-15.
+# Updated 2022-12-14.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
 #
 # Alternatively, can use 'Etc/UTC' for time zone.
+#
+# Can disable Ubuntu Pro spam with:
+# > pro config set apt_news=false
 #
 # @seealso
 # - https://hub.docker.com/_/ubuntu
@@ -13,7 +16,7 @@
 # """
 
 # 22.04
-FROM docker.io/library/ubuntu:jammy-20221003
+FROM docker.io/library/ubuntu:jammy-20221130
 
 ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
     DEBIAN_FRONTEND="noninteractive"
@@ -24,8 +27,7 @@ ENV KOOPA_IS_DOCKER=1 \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN pro config set apt_news=false \
- && apt-get update \
+RUN apt-get update \
  && apt-get \
         --no-install-recommends \
         --yes \

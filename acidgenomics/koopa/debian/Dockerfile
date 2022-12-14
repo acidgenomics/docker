@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2022-10-17.
+# Updated 2022-12-14.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -19,7 +19,7 @@
 # """
 
 ## 11.5
-FROM docker.io/library/debian:bullseye-20221004-slim
+FROM docker.io/library/debian:bullseye-20221205-slim
 
 ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
     DEBIAN_FRONTEND="noninteractive"
