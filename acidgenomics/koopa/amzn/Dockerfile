@@ -1,13 +1,13 @@
 # """
 # Amazon Linux base image.
-# Updated 2022-12-14.
+# Updated 2023-01-05.
 #
 # @seealso
 # - https://hub.docker.com/_/amazonlinux
 # - https://github.com/amazonlinux/container-images
 # """
 
-FROM docker.io/library/amazonlinux:2.0.20221103.3
+FROM docker.io/library/amazonlinux:2.0.20221210.0
 
 ENV KOOPA_IS_DOCKER=1 \
     LANG="en_US.UTF-8" \
