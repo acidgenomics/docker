@@ -1,6 +1,6 @@
 # """
 # Rocky Linux base image.
-# Updated 2022-10-17.
+# Updated 2023-01-05.
 #
 # The minimal variant doesn't contain 'dnf'.
 #
@@ -11,7 +11,7 @@
 # - https://hub.docker.com/_/rockylinux
 # """
 
-FROM docker.io/library/rockylinux:9.0.20220720
+FROM docker.io/library/rockylinux:9.1.20221221
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
