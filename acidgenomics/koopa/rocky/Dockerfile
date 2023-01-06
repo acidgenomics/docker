@@ -9,6 +9,7 @@
 #
 # @seealso
 # - https://hub.docker.com/_/rockylinux
+# - https://bugs.launchpad.net/tripleo/+bug/1953156
 # """
 
 FROM docker.io/library/rockylinux:9.1.20221221
@@ -18,9 +19,9 @@ ENV KOOPA_IS_DOCKER=1 \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
-RUN dnf -y install --nobest \
+RUN dnf -y install \
         'bash' \
-        'curl' \
+        'curl-minimal' \
         'findutils' \
         'git' \
         'perl' \
