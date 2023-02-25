@@ -1,6 +1,6 @@
 # """
 # Rocky Linux base image.
-# Updated 2023-01-05.
+# Updated 2023-02-24.
 #
 # The minimal variant doesn't contain 'dnf'.
 #
@@ -12,7 +12,7 @@
 # - https://bugs.launchpad.net/tripleo/+bug/1953156
 # """
 
-FROM docker.io/library/rockylinux:9.1.20221221
+FROM docker.io/library/rockylinux:9.1.20230215
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"

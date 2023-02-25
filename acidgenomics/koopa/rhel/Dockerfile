@@ -10,11 +10,11 @@
 # > dnf info <pkg>
 #
 # @seealso
-# - https://catalog.redhat.com/software/containers/ubi9/
-#     ubi/615bcf606feffc5384e8452e
+# - https://catalog.redhat.com/software/containers/search
+#   Search for "ubi9"
 # """
 
-FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1646.1669627755
+FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1750.1675784955
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"

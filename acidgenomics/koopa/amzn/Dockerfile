@@ -7,7 +7,7 @@
 # - https://github.com/amazonlinux/container-images
 # """
 
-FROM docker.io/library/amazonlinux:2.0.20221210.0
+FROM docker.io/library/amazonlinux:2.0.20230207.0
 
 ENV KOOPA_IS_DOCKER=1 \
     LANG="en_US.UTF-8" \

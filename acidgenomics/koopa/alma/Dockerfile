@@ -1,6 +1,6 @@
 # """
 # Alma Linux base image.
-# Updated 2022-12-14.
+# Updated 2023-02-24.
 #
 # Conflicts with pre-installed packages:
 # - 'bash' : 'bash-minimal'
@@ -10,7 +10,7 @@
 # - https://hub.docker.com/_/almalinux
 # """
 
-FROM docker.io/library/almalinux:9.1-20221201
+FROM docker.io/library/almalinux:9.1-20230222
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
