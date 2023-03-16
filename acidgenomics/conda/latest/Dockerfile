@@ -1,2 +1,2 @@
-FROM docker.io/acidgenomics/koopa:debian
+FROM public.ecr.aws/acidgenomics/koopa:debian
 RUN koopa install conda
