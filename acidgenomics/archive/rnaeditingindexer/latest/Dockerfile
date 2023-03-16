@@ -1,10 +1,10 @@
 # """
 # RNAEditingIndexer
 # https://github.com/a2iEditing/RNAEditingIndexer/
-# Updated 2022-06-24.
+# Updated 2023-03-16.
 # """
 
-FROM docker.io/acidgenomics/koopa:biocontainers
+FROM public.ecr.aws/acidgenomics/koopa:biocontainers
 
 USER root
 ENV BAM_UTILS_PATH="bam" \
