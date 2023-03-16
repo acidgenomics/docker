@@ -2,16 +2,17 @@
 
 # """
 # Arch Linux base image.
-# Updated 2023-02-24.
+# Updated 2023-03-16.
 #
 # How to get the version of a package:
 # > pacman -Ss <package>
 #
 # @seealso
+# - https://gallery.ecr.aws/docker/library/archlinux
 # - https://hub.docker.com/_/archlinux
 # """
 
-FROM docker.io/library/archlinux:base-20230219.0.127702
+FROM public.ecr.aws/docker/library/archlinux:base-20230312.0.133040
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
