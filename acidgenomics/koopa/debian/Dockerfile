@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2023-02-24.
+# Updated 2023-03-16.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -18,11 +18,10 @@
 # - https://wiki.debian.org/Locale
 # """
 
-## 11.6
-FROM docker.io/library/debian:bullseye-20230208-slim
+FROM public.ecr.aws/debian/debian:stable-20230227-slim
 
-ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
-    DEBIAN_FRONTEND="noninteractive"
+ARG DEBCONF_NONINTERACTIVE_SEEN="true"
+ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_IS_DOCKER=1 \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US:en" \
