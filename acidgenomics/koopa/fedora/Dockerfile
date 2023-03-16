@@ -1,6 +1,6 @@
 # """
 # Fedora base image.
-# @note Updated 2022-12-14.
+# @note Updated 2023-03-16.
 #
 # How to set locale:
 # - https://stackoverflow.com/questions/49197998/
@@ -15,7 +15,7 @@
 # - https://hub.docker.com/_/fedora
 # """
 
-FROM docker.io/library/fedora:37
+FROM public.ecr.aws/docker/library/fedora:37
 
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
