@@ -1,15 +1,15 @@
 # """
 # Install R base system (for Bioconductor).
-# Updated 2022-09-27.
+# Updated 2023-03-16.
 #
 # Packages install into '/usr/local/lib/R/site-library' by default.
 # """
 
-FROM docker.io/acidgenomics/koopa:ubuntu
+FROM public.ecr.aws/acidgenomics/koopa:ubuntu
 
-ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
-    DEBIAN_FRONTEND="noninteractive" \
-    TZ="Etc/UTC"
+ARG DEBCONF_NONINTERACTIVE_SEEN="true"
+ARG DEBIAN_FRONTEND="noninteractive"
+ARG TZ="Etc/UTC"
 
 RUN sudo apt-get update \
  && sudo -E apt-get --no-install-recommends --yes \

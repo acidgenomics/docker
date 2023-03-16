@@ -1,7 +1,7 @@
 FROM docker.io/acidgenomics/r-base:latest
 
-ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
-    DEBIAN_FRONTEND="noninteractive"
+ARG DEBCONF_NONINTERACTIVE_SEEN="true"
+ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN sudo apt-get update \
  && sudo -E apt-get install --no-install-recommends --yes \
