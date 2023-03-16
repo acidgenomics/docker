@@ -1,3 +1,3 @@
 # Docker images 🐳
 
-Dockerfile recipes for our [Docker Hub](https://hub.docker.com/u/acidgenomics) images.
+Dockerfile recipes for our [AWS ECR](https://gallery.ecr.aws/acidgenomics) images.
