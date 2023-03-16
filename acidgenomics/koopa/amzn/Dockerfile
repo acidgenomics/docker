@@ -1,23 +1,24 @@
 # """
 # Amazon Linux base image.
-# Updated 2023-01-05.
+# Updated 2023-03-16.
 #
 # @seealso
-# - https://hub.docker.com/_/amazonlinux
+# - https://gallery.ecr.aws/amazonlinux/amazonlinux
+# - https://docs.aws.amazon.com/AmazonECR/latest/userguide/
+#     amazon_linux_container_image.html
 # - https://github.com/amazonlinux/container-images
+# - https://hub.docker.com/_/amazonlinux
 # """
 
-FROM docker.io/library/amazonlinux:2.0.20230207.0
+FROM public.ecr.aws/amazonlinux/amazonlinux:2023.0.20230315.0
 
 ENV KOOPA_IS_DOCKER=1 \
-    LANG="en_US.UTF-8" \
+    LANG="C.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 RUN yum -y install \
-        'bash' \
-        'curl' \
         'findutils' \
         'git' \
         'perl' \
