@@ -1,6 +1,6 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2023-02-24.
+# Updated 2023-03-16.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -11,15 +11,16 @@
 # > pro config set apt_news=false
 #
 # @seealso
+# - https://gallery.ecr.aws/lts/ubuntu
+# - https://gallery.ecr.aws/ubuntu/ubuntu
 # - https://hub.docker.com/_/ubuntu
 # - https://stackoverflow.com/questions/8671308/
 # """
 
-# 22.04
-FROM docker.io/library/ubuntu:jammy-20230126
+FROM public.ecr.aws/lts/ubuntu:22.04_stable
 
-ARG DEBCONF_NONINTERACTIVE_SEEN="true" \
-    DEBIAN_FRONTEND="noninteractive"
+ARG DEBCONF_NONINTERACTIVE_SEEN="true"
+ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_IS_DOCKER=1 \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US:en" \
