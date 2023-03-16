@@ -1,4 +1,4 @@
-FROM docker.io/acidgenomics/r-base:latest
+FROM public.ecr.aws/acidgenomics/r-base:latest
 
 ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 ARG DEBIAN_FRONTEND="noninteractive"

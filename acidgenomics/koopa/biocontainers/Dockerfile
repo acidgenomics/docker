@@ -3,7 +3,7 @@
 # Updated 2022-09-24.
 # """
 
-FROM biocontainers/biocontainers:latest
+FROM docker.io/biocontainers/biocontainers:latest
 
 ENV KOOPA_IS_DOCKER=1 \
     LANG="en_US.UTF-8" \
