@@ -40,7 +40,7 @@ RUN pacman -Syy --noconfirm \
  && chmod '0440' '/etc/sudoers.d/wheel'
 
 USER docker
-RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
+RUN curl -LSs 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \

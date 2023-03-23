@@ -47,7 +47,7 @@ RUN apk --no-cache update \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER docker
-RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
+RUN curl -LSs 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \

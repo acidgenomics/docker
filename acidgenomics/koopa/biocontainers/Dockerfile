@@ -10,7 +10,7 @@ ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN curl -sSL 'https://koopa.acidgenomics.com/install' \
+RUN curl -LSs 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --add-to-user-profile \
         --non-interactive \
