@@ -15,21 +15,21 @@
 # """
 
 FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1750.1675784955
-ENV KOOPA_IS_DOCKER=1 \
-    TERM="xterm-256color"
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ENV KOOPA_IS_DOCKER="1"
+ENV TERM="xterm-256color"
+SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
 USER root
-RUN dnf -y install \
+RUN /usr/bin/dnf -y install \
         'git' \
         'perl' \
         'procps' \
         'sudo' \
         'unzip' \
- && dnf clean all \
- && curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | bash -s -- \
+ && /usr/bin/dnf clean all \
+ && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
+    | /usr/bin/bash -s -- \
         --non-interactive \
         --verbose \
- && koopa system info
+ && /opt/koopa/bin/koopa system info
 WORKDIR /root
-CMD ["/bin/bash", "-il"]
+CMD ["/usr/bin/bash", "-il"]

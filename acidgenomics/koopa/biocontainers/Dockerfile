@@ -4,12 +4,12 @@
 # """
 
 FROM docker.io/biocontainers/biocontainers:latest
-ENV KOOPA_IS_DOCKER=1 \
-    LANG="en_US.UTF-8" \
-    TERM="xterm-256color"
+ENV KOOPA_IS_DOCKER="1"
+ENV LANG="en_US.UTF-8"
+ENV TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | bash -s -- \
+RUN /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
+    | /bin/bash -s -- \
         --add-to-user-profile \
         --non-interactive \
         --verbose \

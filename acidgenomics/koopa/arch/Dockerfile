@@ -11,13 +11,13 @@
 # """
 
 FROM public.ecr.aws/docker/library/archlinux:base-20230312.0.133040
-ENV KOOPA_IS_DOCKER=1 \
-    TERM="xterm-256color"
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ENV KOOPA_IS_DOCKER="1"
+ENV TERM="xterm-256color"
+SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
 USER root
-RUN pacman -Syy --noconfirm \
- && pacman-db-upgrade \
- && pacman -S --noconfirm \
+RUN /usr/sbin/pacman -Syy --noconfirm \
+ && /usr/sbin/pacman-db-upgrade \
+ && /usr/sbin/pacman -S --noconfirm \
         'bash' \
         'curl' \
         'git' \
@@ -26,10 +26,10 @@ RUN pacman -Syy --noconfirm \
         'shadow' \
         'sudo' \
         'unzip' \
- && curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | bash -s -- \
+ && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
+    | /usr/bin/bash -s -- \
         --non-interactive \
         --verbose \
- && koopa system info
+ && /opt/koopa/bin/koopa system info
 WORKDIR /root
-CMD ["/bin/bash", "-il"]
+CMD ["/usr/bin/bash", "-il"]

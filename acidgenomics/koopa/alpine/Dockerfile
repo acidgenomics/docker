@@ -18,12 +18,12 @@
 # """
 
 FROM public.ecr.aws/docker/library/alpine:3.17.2
-ENV KOOPA_IS_DOCKER=1 \
-    TERM="xterm-256color"
+ENV KOOPA_IS_DOCKER="1"
+ENV TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 USER root
-RUN apk --no-cache update \
- && apk --no-cache add \
+RUN /sbin/apk --no-cache update \
+ && /sbin/apk --no-cache add \
         'bash' \
         'ca-certificates' \
         'coreutils' \
@@ -33,11 +33,11 @@ RUN apk --no-cache update \
         'procps' \
         'shadow' \
         'sudo' \
- && curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | bash -s -- \
+ && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
+    | /bin/bash -s -- \
         --non-interactive \
         --verbose \
- && koopa system info
+ && /opt/koopa/bin/koopa system info
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 WORKDIR /root
 CMD ["/bin/bash", "-il"]
