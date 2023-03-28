@@ -1,6 +1,6 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2023-03-16.
+# Updated 2023-03-28.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -52,8 +52,7 @@ RUN apt-get update \
  && dpkg-reconfigure --frontend='noninteractive' locales \
  && update-locale LANG='en_US.UTF-8' \
  && locale -a \
- && useradd docker \
- && echo 'docker:docker' | chpasswd \
+ && adduser --disabled-password --gecos='docker' 'docker' \
  && mkdir -p '/home/docker' \
  && chown 'docker:docker' '/home/docker' \
  && usermod -s '/bin/bash' 'docker' \
