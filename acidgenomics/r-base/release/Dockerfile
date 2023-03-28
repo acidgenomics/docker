@@ -4,15 +4,13 @@
 # """
 
 FROM public.ecr.aws/acidgenomics/koopa:ubuntu
-
 ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 ARG DEBIAN_FRONTEND="noninteractive"
 ARG TZ="Etc/UTC"
-
 RUN koopa update koopa \
  && koopa install system r \
- && sudo apt-get clean \
- && sudo rm -rf \
+ && apt-get clean \
+ && rm -rf \
         /usr/local/lib/R \
         /var/lib/apt/lists/* \
  && R -e " \
@@ -26,5 +24,4 @@ RUN koopa update koopa \
             ) \
         ); \
     "
-
 CMD ["R", "--no-restore", "--no-save", "--quiet"]

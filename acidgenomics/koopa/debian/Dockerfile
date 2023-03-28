@@ -19,7 +19,6 @@
 # """
 
 FROM public.ecr.aws/debian/debian:stable-20230227-slim
-
 ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_IS_DOCKER=1 \
@@ -27,7 +26,6 @@ ENV KOOPA_IS_DOCKER=1 \
     LANGUAGE="en_US:en" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
 USER root
 RUN apt-get update \
  && apt-get \
@@ -53,20 +51,10 @@ RUN apt-get update \
  && dpkg-reconfigure --frontend='noninteractive' locales \
  && update-locale LANG='en_US.UTF-8' \
  && locale -a \
- && adduser --disabled-password --gecos='docker' 'docker' \
- && mkdir -p '/home/docker' \
- && chown 'docker:docker' '/home/docker' \
- && usermod -s '/bin/bash' 'docker' \
- && usermod -a -G 'sudo' 'docker' \
- && echo '%sudo ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/sudo' \
- && chmod '0440' '/etc/sudoers.d/sudo'
-
-USER docker
-RUN curl -LSs 'https://koopa.acidgenomics.com/install' \
+ && curl -LSs 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \
  && koopa system info
-
-WORKDIR /home/docker
-CMD ["bash", "-il"]
+WORKDIR /root
+CMD ["/bin/bash", "-il"]

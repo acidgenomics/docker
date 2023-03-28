@@ -1,6 +1,6 @@
 # """
 # openSUSE Leap base image.
-# Updated 2022-10-17.
+# Updated 2023-03-28.
 #
 # How to set locale:
 # https://doc.opensuse.org/documentation/leap/reference/html/
@@ -18,12 +18,10 @@
 # """
 
 FROM docker.io/opensuse/leap:15.4
-
 ENV KOOPA_IS_DOCKER=1 \
     LANG="en_US.UTF-8" \
     TERM="xterm-256color"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
 USER root
 RUN zypper refresh \
  && zypper install -y \
@@ -36,21 +34,10 @@ RUN zypper refresh \
         'tar' \
         'unzip' \
  && zypper clean \
- && groupadd 'wheel' \
- && groupadd 'docker' \
- && useradd -G 'docker,wheel' 'docker' >/dev/null 2>&1 \
- && mkdir -p '/home/docker' \
- && chown 'docker:docker' '/home/docker' \
- && usermod -s '/bin/bash' 'docker' \
- && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/wheel' \
- && chmod '0440' '/etc/sudoers.d/wheel'
-
-USER docker
-RUN curl -LSs 'https://koopa.acidgenomics.com/install' \
+ && curl -LSs 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \
  && koopa system info
-
-WORKDIR /home/docker
-CMD ["bash", "-il"]
+WORKDIR /root
+CMD ["/bin/bash", "-il"]

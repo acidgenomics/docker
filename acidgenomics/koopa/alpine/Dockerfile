@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2023-03-16.
+# Updated 2023-03-28.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -18,11 +18,9 @@
 # """
 
 FROM public.ecr.aws/docker/library/alpine:3.17.2
-
 ENV KOOPA_IS_DOCKER=1 \
     TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
-
 USER root
 RUN apk --no-cache update \
  && apk --no-cache add \
@@ -35,23 +33,11 @@ RUN apk --no-cache update \
         'procps' \
         'shadow' \
         'sudo' \
- && addgroup -S 'docker' \
- && adduser -D -G 'docker' -s '/bin/ash' 'docker' \
- && addgroup -S 'docker' 'wheel' \
- && mkdir -p '/home/docker' \
- && chown 'docker:docker' '/home/docker' \
- && usermod -s '/bin/bash' 'docker' \
- && echo '%wheel ALL=(ALL) NOPASSWD: ALL' > '/etc/sudoers.d/wheel' \
- && chmod '0440' '/etc/sudoers.d/wheel'
-
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-USER docker
-RUN curl -LSs 'https://koopa.acidgenomics.com/install' \
+ && curl -LSs 'https://koopa.acidgenomics.com/install' \
     | bash -s -- \
         --non-interactive \
         --verbose \
  && koopa system info
-
-WORKDIR /home/docker
-CMD ["bash", "-il"]
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+WORKDIR /root
+CMD ["/bin/bash", "-il"]
