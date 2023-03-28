@@ -1,12 +1,7 @@
 # """
 # Install R base system (for Bioconductor).
-# Updated 2023-03-21.
-#
-# Packages install into '/usr/local/lib/R/site-library' by default.
+# Updated 2023-03-28.
 # """
-
-# FIXME Need to run 'koopa configure system r' here.
-# FIXME Consider moving these apt packages into 'koopa install system r'.
 
 FROM public.ecr.aws/acidgenomics/koopa:ubuntu
 
@@ -14,7 +9,8 @@ ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 ARG DEBIAN_FRONTEND="noninteractive"
 ARG TZ="Etc/UTC"
 
-RUN koopa install system r \
+RUN koopa update koopa \
+ && koopa install system r \
  && sudo apt-get clean \
  && sudo rm -rf \
         /usr/local/lib/R \
