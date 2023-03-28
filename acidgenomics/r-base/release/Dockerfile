@@ -9,11 +9,11 @@ ARG DEBIAN_FRONTEND="noninteractive"
 ARG TZ="Etc/UTC"
 RUN koopa update koopa \
  && koopa install system r \
- && apt-get clean \
- && rm -rf \
+ && /usr/bin/apt-get clean \
+ && /bin/rm -rf \
         /usr/local/lib/R \
         /var/lib/apt/lists/* \
- && R -e " \
+ && /usr/bin/R -e " \
         install.packages('BiocManager'); \
         BiocManager::install(ask = FALSE); \
         install.packages( \
@@ -24,4 +24,4 @@ RUN koopa update koopa \
             ) \
         ); \
     "
-CMD ["R", "--no-restore", "--no-save", "--quiet"]
+CMD ["/usr/bin/R", "--no-restore", "--no-save", "--quiet"]
