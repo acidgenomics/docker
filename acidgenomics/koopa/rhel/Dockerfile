@@ -1,6 +1,6 @@
 # """
 # RHEL base image.
-# Updated 2023-03-28.
+# Updated 2023-05-02.
 #
 # Conflicts with pre-installed packages:
 # - 'bash' : 'bash-minimal'
@@ -14,7 +14,7 @@
 #   Search for "ubi9"
 # """
 
-FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1750.1675784955
+FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1817
 ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]

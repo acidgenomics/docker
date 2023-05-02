@@ -3,6 +3,7 @@
 # @note Updated 2023-03-28.
 #
 # How to set locale:
+# - https://gallery.ecr.aws/docker/library/fedora
 # - https://stackoverflow.com/questions/49197998/
 # - https://stackoverflow.com/questions/58304278/
 # - https://github.com/fedora-cloud/docker-brew-fedora/issues/14
@@ -15,7 +16,7 @@
 # - https://hub.docker.com/_/fedora
 # """
 
-FROM public.ecr.aws/docker/library/fedora:37
+FROM public.ecr.aws/docker/library/fedora:38
 ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]

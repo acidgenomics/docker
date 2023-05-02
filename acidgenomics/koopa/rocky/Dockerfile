@@ -8,6 +8,7 @@
 # https://access.redhat.com/discussions/6138732
 #
 # @seealso
+# - https://gallery.ecr.aws/docker/library/rockylinux
 # - https://hub.docker.com/_/rockylinux
 # - https://bugs.launchpad.net/tripleo/+bug/1953156
 # """

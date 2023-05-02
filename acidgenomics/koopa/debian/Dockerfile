@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2023-03-28.
+# Updated 2023-05-02.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -8,6 +8,7 @@
 # Alternatively, can use 'Etc/UTC' for time zone.
 #
 # @seealso:
+# - https://gallery.ecr.aws/debian/debian
 # - https://hub.docker.com/_/debian
 # - https://hub.docker.com/r/rocker/r-ver/dockerfile
 # - https://hub.docker.com/r/rocker/rstudio/dockerfile
@@ -15,7 +16,7 @@
 # - https://wiki.debian.org/Locale
 # """
 
-FROM public.ecr.aws/debian/debian:stable-20230227-slim
+FROM public.ecr.aws/debian/debian:stable-20230411-slim
 ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_IS_DOCKER="1"
