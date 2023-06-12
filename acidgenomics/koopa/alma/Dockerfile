@@ -12,7 +12,7 @@
 # - https://gallery.ecr.aws/almalinux/almalinux
 # """
 
-FROM public.ecr.aws/docker/library/almalinux:9.2-minimal-20230512
+FROM public.ecr.aws/docker/library/almalinux:9.2-20230512
 ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
