@@ -1,6 +1,6 @@
 # """
 # Amazon Linux base image.
-# Updated 2023-03-28.
+# Updated 2023-06-12.
 #
 # @seealso
 # - https://gallery.ecr.aws/amazonlinux/amazonlinux

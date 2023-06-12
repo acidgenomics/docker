@@ -1,6 +1,6 @@
 # """
 # Alma Linux base image.
-# Updated 2023-05-02.
+# Updated 2023-06-12.
 #
 # Conflicts with pre-installed packages:
 # - 'bash' : 'bash-minimal'
@@ -12,7 +12,7 @@
 # - https://gallery.ecr.aws/almalinux/almalinux
 # """
 
-FROM public.ecr.aws/docker/library/almalinux:9.1-20230407
+FROM public.ecr.aws/docker/library/almalinux:9.2-minimal-20230512
 ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
