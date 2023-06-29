@@ -1,6 +1,6 @@
 # """
 # RHEL base image.
-# Updated 2023-06-12.
+# Updated 2023-06-29.
 #
 # Conflicts with pre-installed packages:
 # - 'bash' : 'bash-minimal'
@@ -23,6 +23,7 @@ RUN /usr/bin/dnf -y install \
         'git' \
         'perl' \
         'procps' \
+        'python' \
         'sudo' \
         'unzip' \
  && /usr/bin/dnf clean all \

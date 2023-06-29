@@ -1,6 +1,6 @@
 # """
 # Fedora base image.
-# @note Updated 2023-03-28.
+# @note Updated 2023-06-29.
 #
 # How to set locale:
 # - https://gallery.ecr.aws/docker/library/fedora
@@ -29,6 +29,7 @@ RUN /usr/bin/dnf -y install \
         'git' \
         'perl' \
         'procps' \
+        'python' \
         'sudo' \
         'unzip' \
  && /usr/bin/dnf clean all \
