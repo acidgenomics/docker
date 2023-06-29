@@ -1,6 +1,6 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2023-03-28.
+# Updated 2023-06-29.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -40,6 +40,7 @@ RUN /usr/bin/apt-get update \
             'locales' \
             'lsb-release' \
             'perl' \
+            'python' \
             'procps' \
             'sudo' \
             'unzip' \

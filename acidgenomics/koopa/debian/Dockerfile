@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2023-06-13.
+# Updated 2023-06-29.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
