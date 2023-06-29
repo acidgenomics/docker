@@ -40,7 +40,7 @@ RUN /usr/bin/apt-get update \
             'locales' \
             'lsb-release' \
             'perl' \
-            'python' \
+            'python3' \
             'procps' \
             'sudo' \
             'unzip' \
