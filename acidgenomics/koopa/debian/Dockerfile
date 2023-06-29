@@ -41,6 +41,7 @@ RUN /usr/bin/apt-get update \
             'lsb-release' \
             'perl' \
             'procps' \
+            'python' \
             'sudo' \
             'unzip' \
  && /usr/bin/apt-get clean \
