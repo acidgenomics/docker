@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2023-06-29.
+# Updated 2023-07-17.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -17,7 +17,7 @@
 # """
 
 # > FROM public.ecr.aws/debian/debian:stable-20230411-slim
-FROM docker.io/library/debian:bookworm-20230612-slim
+FROM docker.io/library/debian:bookworm-20230703-slim
 ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_IS_DOCKER="1"

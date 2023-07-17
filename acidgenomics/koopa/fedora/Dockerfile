@@ -13,6 +13,7 @@
 # Get package version with `dnf info <pkg>`.
 #
 # @seealso
+# - https://gallery.ecr.aws/docker/library/fedora
 # - https://hub.docker.com/_/fedora
 # """
 
