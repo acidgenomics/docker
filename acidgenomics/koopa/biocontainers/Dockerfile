@@ -1,6 +1,6 @@
 # """
 # Biocontainers base image.
-# Updated 2023-03-28.
+# Updated 2023-10-25.
 # """
 
 # FIXME Need to bootstrap python3 for this.
@@ -13,6 +13,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
     | /bin/bash -s -- \
         --add-to-user-profile \
+        --bootstrap \
         --non-interactive \
         --verbose \
  && "${HOME:?}/.local/share/koopa/bin/koopa" system info
