@@ -1,6 +1,6 @@
 # """
 # Fedora base image.
-# @note Updated 2023-06-29.
+# @note Updated 2023-10-25.
 #
 # How to set locale:
 # - https://gallery.ecr.aws/docker/library/fedora
@@ -22,6 +22,7 @@ ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
 USER root
+# hadolint ignore=DL4006
 RUN /usr/bin/dnf -y install \
         'bash' \
         'coreutils' \

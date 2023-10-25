@@ -1,6 +1,6 @@
 # """
 # Amazon Linux base image.
-# Updated 2023-06-12.
+# Updated 2023-10-25.
 #
 # @seealso
 # - https://gallery.ecr.aws/amazonlinux/amazonlinux
@@ -10,12 +10,13 @@
 # - https://hub.docker.com/_/amazonlinux
 # """
 
-FROM public.ecr.aws/amazonlinux/amazonlinux:2023.0.20230315.0
+FROM public.ecr.aws/amazonlinux/amazonlinux:2.0.20231020.1
 ENV KOOPA_IS_DOCKER="1"
 ENV LANG="C.UTF-8"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
 USER root
+# hadolint ignore=DL4006
 RUN /usr/bin/dnf -y install \
         'findutils' \
         'git' \

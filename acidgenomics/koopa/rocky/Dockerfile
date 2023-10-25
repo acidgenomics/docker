@@ -1,6 +1,6 @@
 # """
 # Rocky Linux base image.
-# Updated 2023-06-12.
+# Updated 2023-10-25.
 #
 # The minimal variant doesn't contain 'dnf'.
 #
@@ -18,6 +18,7 @@ ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
 USER root
+# hadolint ignore=DL4006
 RUN /usr/bin/dnf -y install \
         'bash' \
         'curl-minimal' \

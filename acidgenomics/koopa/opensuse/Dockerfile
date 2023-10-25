@@ -23,6 +23,7 @@ ENV LANG="en_US.UTF-8"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]
 USER root
+# hadolint ignore=DL4006
 RUN /usr/bin/zypper refresh \
  && /usr/bin/zypper install -y \
         'bash' \
