@@ -32,6 +32,7 @@ RUN /sbin/apk --no-cache update \
         'git' \
         'perl' \
         'procps' \
+        'python3' \
         'shadow' \
         'sudo' \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
