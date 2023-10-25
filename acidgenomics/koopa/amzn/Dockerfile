@@ -10,7 +10,7 @@
 # - https://hub.docker.com/_/amazonlinux
 # """
 
-FROM public.ecr.aws/amazonlinux/amazonlinux:2.0.20231020.1
+FROM public.ecr.aws/amazonlinux/amazonlinux:2023
 ENV KOOPA_IS_DOCKER="1"
 ENV LANG="C.UTF-8"
 ENV TERM="xterm-256color"

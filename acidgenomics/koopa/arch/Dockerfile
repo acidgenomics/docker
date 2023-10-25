@@ -24,6 +24,7 @@ RUN /usr/sbin/pacman -Syy --noconfirm \
         'git' \
         'perl' \
         'procps' \
+        'python' \
         'shadow' \
         'sudo' \
         'unzip' \

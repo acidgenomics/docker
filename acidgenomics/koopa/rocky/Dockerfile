@@ -26,6 +26,7 @@ RUN /usr/bin/dnf -y install \
         'git' \
         'perl' \
         'procps' \
+        'python' \
         'sudo' \
         'unzip' \
  && /usr/bin/dnf clean all \

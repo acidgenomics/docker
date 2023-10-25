@@ -31,6 +31,7 @@ RUN /usr/bin/zypper refresh \
         'git' \
         'perl' \
         'procps' \
+        'python3' \
         'sudo' \
         'tar' \
         'unzip' \

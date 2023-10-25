@@ -3,6 +3,8 @@
 # Updated 2023-03-28.
 # """
 
+# FIXME Need to bootstrap python3 for this.
+
 FROM docker.io/biocontainers/biocontainers:latest
 ENV KOOPA_IS_DOCKER="1"
 ENV LANG="en_US.UTF-8"
