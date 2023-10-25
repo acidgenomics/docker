@@ -6,5 +6,5 @@
 # >     --remote='public.ecr.aws/acidgenomics/koopa:debian'
 
 koopa app docker build-all-tags \
-    --local="${HOME}/.config/koopa/docker/acidgenomics/koopa" \
+    --local="${HOME}/monorepo/docker/acidgenomics/koopa" \
     --remote='public.ecr.aws/acidgenomics/koopa'
