@@ -8,3 +8,4 @@
 koopa app docker build-all-tags \
     --local="${PWD:?}" \
     --remote='public.ecr.aws/acidgenomics/koopa'
+koopa app docker prune-all-images
