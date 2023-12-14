@@ -31,9 +31,7 @@ RUN /usr/bin/dnf -y install \
         'unzip' \
  && /usr/bin/dnf clean all \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /usr/bin/bash -s -- \
-        --non-interactive \
-        --verbose \
+    | /usr/bin/bash -s -- --non-interactive \
  && /opt/koopa/bin/koopa system info
 WORKDIR /root
 CMD ["/usr/bin/bash", "-il"]

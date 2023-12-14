@@ -36,9 +36,7 @@ RUN /sbin/apk --no-cache update \
         'shadow' \
         'sudo' \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /bin/bash -s -- \
-        --non-interactive \
-        --verbose \
+    | /bin/bash -s -- --non-interactive \
  && /opt/koopa/bin/koopa system info
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 WORKDIR /root

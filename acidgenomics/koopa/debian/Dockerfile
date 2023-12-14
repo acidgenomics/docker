@@ -51,9 +51,7 @@ RUN /usr/bin/apt-get update \
  && /usr/sbin/update-locale LANG='en_US.UTF-8' \
  && /usr/bin/locale -a \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /bin/bash -s -- \
-        --non-interactive \
-        --verbose \
+    | /bin/bash -s -- --non-interactive \
  && /opt/koopa/bin/koopa system info
 WORKDIR /root
 CMD ["/bin/bash", "-il"]
