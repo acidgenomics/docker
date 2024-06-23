@@ -22,6 +22,7 @@ RUN /usr/sbin/pacman -Syy --noconfirm \
         'bash' \
         'curl' \
         'git' \
+        'openssl' \
         'perl' \
         'procps' \
         'python' \
