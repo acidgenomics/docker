@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
 
 # To build a single distro:
 # > koopa app docker build \
