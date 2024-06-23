@@ -17,7 +17,6 @@ koopa/${dict['distro']}"
         koopa app docker build \
             --local="${dict['local']}" \
             --remote="${dict['remote']}"
-        return 0
     done
     return 0
 }
