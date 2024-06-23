@@ -1,6 +1,6 @@
 # """
 # Arch Linux base image.
-# Updated 2023-10-25.
+# Updated 2024-06-23.
 #
 # How to get the version of a package:
 # > pacman -Ss <package>
@@ -10,7 +10,7 @@
 # - https://hub.docker.com/_/archlinux
 # """
 
-FROM public.ecr.aws/docker/library/archlinux:base-20231015.0.185077
+FROM public.ecr.aws/docker/library/archlinux:base-20231112.0.191179
 ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/usr/bin/bash", "-o", "pipefail", "-c"]

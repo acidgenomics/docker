@@ -1,6 +1,6 @@
 # """
 # Ubuntu 22.04 LTS base image.
-# Updated 2023-06-29.
+# Updated 2024-06-23.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -17,7 +17,7 @@
 # - https://stackoverflow.com/questions/8671308/
 # """
 
-FROM public.ecr.aws/lts/ubuntu:22.04_stable
+FROM public.ecr.aws/lts/ubuntu:24.04_stable
 ARG DEBCONF_NONINTERACTIVE_SEEN="true"
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV KOOPA_IS_DOCKER="1"

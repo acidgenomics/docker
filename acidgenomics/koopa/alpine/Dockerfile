@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2023-10-25.
+# Updated 2024-06-23.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -18,7 +18,7 @@
 # - https://hub.docker.com/_/alpine
 # """
 
-FROM public.ecr.aws/docker/library/alpine:3.18.3
+FROM public.ecr.aws/docker/library/alpine:3.18.4
 ENV KOOPA_IS_DOCKER="1"
 ENV TERM="xterm-256color"
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
