@@ -5,11 +5,7 @@ source "$(koopa header bash)"
 
 main() {
     local -A dict
-    dict['distro']="$( \
-        koopa_read \
-            'Distro' \
-            "${dict['distro']}" \
-    )"
+    dict['distro']="$(koopa_read 'Distro' '')"
     dict['local']="${HOME}/monorepo/docker/acidgenomics/koopa/${dict['distro']}"
     dict['remote']="public.ecr.aws/acidgenomics/koopa:${dict['distro']}"
     koopa_assert_is_dir "${dict['local']}"
