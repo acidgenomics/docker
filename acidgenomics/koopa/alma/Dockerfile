@@ -1,6 +1,6 @@
 # """
 # Alma Linux base image.
-# Updated 2023-10-25.
+# Updated 2024-07-03.
 #
 # Conflicts with pre-installed packages:
 # - 'bash' : 'bash-minimal'
