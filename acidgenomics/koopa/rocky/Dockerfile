@@ -1,6 +1,6 @@
 # """
 # Rocky Linux base image.
-# Updated 2023-10-25.
+# Updated 2024-07-03.
 #
 # The minimal variant doesn't contain 'dnf'.
 #
@@ -31,7 +31,7 @@ RUN /usr/bin/dnf -y install \
         'unzip' \
  && /usr/bin/dnf clean all \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /usr/bin/bash -s -- --non-interactive \
+    | /usr/bin/bash -s -- --develop --non-interactive \
  && /opt/koopa/bin/koopa system info
 WORKDIR /root
 CMD ["/usr/bin/bash", "-il"]
