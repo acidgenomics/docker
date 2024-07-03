@@ -1,6 +1,6 @@
 # """
 # openSUSE Leap base image.
-# Updated 2024-06-23.
+# Updated 2024-07-03.
 #
 # How to set locale:
 # https://doc.opensuse.org/documentation/leap/reference/html/
@@ -37,7 +37,7 @@ RUN /usr/bin/zypper refresh \
         'unzip' \
  && /usr/bin/zypper clean \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /usr/bin/bash -s -- --non-interactive \
+    | /usr/bin/bash -s -- --develop --non-interactive \
  && /opt/koopa/bin/koopa system info
 WORKDIR /root
 CMD ["/usr/bin/bash", "-il"]
