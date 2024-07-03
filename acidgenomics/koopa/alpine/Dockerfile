@@ -1,6 +1,6 @@
 # """
 # Alpine Linux base image.
-# Updated 2024-06-23.
+# Updated 2024-07-03.
 #
 # Alpine uses ash (Almquist shell) by default.
 #
@@ -36,7 +36,7 @@ RUN /sbin/apk --no-cache update \
         'shadow' \
         'sudo' \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /bin/bash -s -- --non-interactive \
+    | /bin/bash -s -- --develop --non-interactive \
  && /opt/koopa/bin/koopa system info
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 WORKDIR /root
