@@ -1,6 +1,6 @@
 # """
 # Fedora base image.
-# @note Updated 2024-06-23.
+# @note Updated 2024-07-03.
 #
 # How to set locale:
 # - https://gallery.ecr.aws/docker/library/fedora
@@ -36,7 +36,7 @@ RUN /usr/bin/dnf -y install \
         'unzip' \
  && /usr/bin/dnf clean all \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /usr/bin/bash -s -- --non-interactive \
+    | /usr/bin/bash -s -- --develop --non-interactive \
  && /opt/koopa/bin/koopa system info
 WORKDIR /root
 CMD ["/usr/bin/bash", "-il"]
