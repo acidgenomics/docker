@@ -1,6 +1,6 @@
 # """
 # Arch Linux base image.
-# Updated 2024-06-23.
+# Updated 2024-07-03.
 #
 # How to get the version of a package:
 # > pacman -Ss <package>
@@ -30,7 +30,7 @@ RUN /usr/sbin/pacman -Syy --noconfirm \
         'sudo' \
         'unzip' \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
-    | /usr/bin/bash -s -- --non-interactive \
+    | /usr/bin/bash -s -- --develop --non-interactive \
  && /opt/koopa/bin/koopa system info
 WORKDIR /root
 CMD ["/usr/bin/bash", "-il"]
