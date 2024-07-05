@@ -1,6 +1,6 @@
 # """
 # Debian base image.
-# Updated 2024-07-03.
+# Updated 2024-07-05.
 #
 # How to get apt package version:
 # > apt-cache policy <package>
@@ -52,6 +52,7 @@ RUN /usr/bin/apt-get update \
  && /usr/bin/locale -a \
  && /usr/bin/curl -LSs 'https://koopa.acidgenomics.com/install' \
     | /bin/bash -s -- --develop --non-interactive \
+ && /opt/koopa/bin/koopa configure system base \
  && /opt/koopa/bin/koopa system info
 WORKDIR /root
 CMD ["/bin/bash", "-il"]
