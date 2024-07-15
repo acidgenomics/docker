@@ -1,4 +1,4 @@
-ARG CONDA="${KOOPA_PREFIX:?}/bin/conda"
+ARG CONDA="/opt/koopa/bin/conda"
 FROM public.ecr.aws/acidgenomics/koopa:debian
 RUN koopa update koopa \
  && koopa install conda \
